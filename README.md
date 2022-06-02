@@ -1,24 +1,8 @@
-# README
+# Gear Up
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![languages](https://img.shields.io/github/languages/top/ShermanA-13/gear-up-fe?color=red)
+![rspec](https://img.shields.io/gem/v/rspec?color=blue&label=rspec)
+![simplecov](https://img.shields.io/gem/v/simplecov?color=blue&label=simplecov)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/contributors-1-orange.svg?style=flat)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
