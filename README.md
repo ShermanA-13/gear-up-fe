@@ -6,6 +6,9 @@
 [![All Contributors](https://img.shields.io/badge/contributors-1-orange.svg?style=flat)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
+![plot](./imgs/gear_up_logo.png)
+
+
 ## General Description
 
 Logistics for group adventures outdoors can be complicated, especially when it comes to getting all of your gear in order. __Gear Up__ simplifies this by giving users a platform to easily organize trips, decide who is bringing what gear, then determine what the group still needs and who might have that gear already!
@@ -19,3 +22,6 @@ Using __Gear Up__, users are able to:
 - __Invite other users__ to the trip
 - The host as well as all invited users can then __select what gear__ from their __"shed"__ they'd like to __commit to the trip__
 - From there, users can determine what gear is __already covered__ and what gear is __still missing__ based on what the users have __already committed__!
+
+## Schema
+![plot](./imgs/schema.png)
