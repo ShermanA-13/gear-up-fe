@@ -9,7 +9,7 @@
 <hr>
 
 <p align="center">
-  <img src="./imgs/gear_up_long_logo.png" alt="logo" width="400 px"/>
+  <img src="./imgs/gear_up_long_logo.png" alt="logo" width="80%"/>
 </p>
 
 <hr>
