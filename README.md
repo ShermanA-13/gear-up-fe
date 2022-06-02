@@ -1,3 +1,4 @@
+
 # Gear Up
 
 ![languages](https://img.shields.io/github/languages/top/ShermanA-13/gear-up-fe?color=red)
@@ -5,9 +6,13 @@
 ![simplecov](https://img.shields.io/gem/v/simplecov?color=blue&label=simplecov)<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/contributors-1-orange.svg?style=flat)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+<hr>
 
-![plot](./imgs/gear_up_logo.png)
+<p align="center">
+  <img src="./imgs/gear_up_logo.png" alt="logo" width="400 px"/>
+</p>
 
+<hr>
 
 ## General Description
 
@@ -24,4 +29,6 @@ Using __Gear Up__, users are able to:
 - From there, users can determine what gear is __already covered__ and what gear is __still missing__ based on what the users have __already committed__!
 
 ## Schema
-![plot](./imgs/schema.png)
+<p align="center">
+  <img src="./imgs/schema.png" alt="schema" width="80%"/>
+</p>
