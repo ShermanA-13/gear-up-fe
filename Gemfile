@@ -46,6 +46,7 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'orderly'
   gem 'figaro'
+  gem 'rspec_junit_formatter'
 end
 
 group :test do
