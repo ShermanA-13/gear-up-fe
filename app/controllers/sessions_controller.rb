@@ -2,10 +2,9 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    user = User.find_by(email: params[:email])
-    session[:user_id] = user.id
+    session[:user_id] = params[:user_id]
     redirect_to "/dashboard"
-    
+
   #   if user != nil
   #     session[:user_id] = user.id
   #     flash[:success] = "Welcome, #{user.email}!"
