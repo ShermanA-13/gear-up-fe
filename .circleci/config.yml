@@ -2,25 +2,69 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+executors:
+  ruby-executor:
+    docker:
+      - image: cimg/ruby2.7.4
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+  # say-hello:
+  #   # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+  #   # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+  #
+  #   # docker:
+  #   #   - image: cimg/base:stable
+  #   executor: ruby-executor
+  #
+  #   # Add steps to the job
+  #   # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: "Say hello"
+  #         command: "echo Hello, World!"
+
+
+  # install-ruby:
+  #   docker:
+  #     - image: cimg/base:stable
+  #   steps:
+  #     - checkout
+  #     -run:
+  #       name: "Install Ruby"
+  #       command: "renv install etcetc"
+
+  bundle:
+    # docker:
+    #   - image: cimg/base:stable
+    executor: ruby-executor
+
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+        name: "Bundle"
+        command: "bundle install"
+
+  rspec:
+    # docker:
+    #   - image: cimg/base:stable
+    executor: ruby-executor
+
+    steps:
+      # - checkout
+      - run:
+        name: "Bundle"
+        command: "bundle exec rspec"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  # say-hello-workflow:
+  #   jobs:
+  #     - say-hello
+  rspec-workflow:
     jobs:
-      - say-hello
+      - bundle
+      - rspec
