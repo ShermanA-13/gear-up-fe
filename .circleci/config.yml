@@ -50,8 +50,6 @@ jobs:
   #         command: "bundle install"
 
   rspec:
-    # docker:
-    #   - image: cimg/base:stable
     executor: ruby-executor
     # docker:
     #   - image: cimg/ruby2.7.4
@@ -74,4 +72,4 @@ workflows:
   rspec-workflow:
     jobs:
       - rspec
-      - bundle
+      # - bundle
