@@ -36,18 +36,18 @@ jobs:
   #       name: "Install Ruby"
   #       command: "renv install etcetc"
 
-  bundle:
-    # docker:
-    #   - image: cimg/base:stable
-    executor: ruby-executor
-    # docker:
-    #   - image: cimg/ruby2.7.4
-
-    steps:
-      - checkout
-      - run:
-          name: "Bundle"
-          command: "bundle install"
+  # bundle:
+  #   # docker:
+  #   #   - image: cimg/base:stable
+  #   executor: ruby-executor
+  #   # docker:
+  #   #   - image: cimg/ruby2.7.4
+  #
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: "Bundle"
+  #         command: "bundle install"
 
   rspec:
     # docker:
@@ -59,6 +59,8 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "Bundle"
+          command: "bundle install"
           name: "RSpec"
           command: "bundle exec rspec"
 
