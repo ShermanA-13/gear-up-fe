@@ -98,6 +98,8 @@ GEM
       activesupport (>= 5.0.0)
     launchy (2.5.0)
       addressable (~> 2.7)
+    libv8-node (16.10.0.0-x86_64-darwin)
+    libv8-node (16.10.0.0-x86_64-linux)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -111,6 +113,8 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
+    mini_racer (0.6.2)
+      libv8-node (~> 16.10.0.0)
     minitest (5.15.0)
     msgpack (1.5.2)
     nio4r (2.5.8)
@@ -251,6 +255,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   launchy
   listen (>= 3.0.5, < 3.2)
+  mini_racer
   orderly
   pg (>= 0.18, < 2.0)
   pry
