@@ -39,9 +39,9 @@ jobs:
   bundle:
     # docker:
     #   - image: cimg/base:stable
-    # executor: ruby-executor
-    docker:
-      - image: cimg/ruby2.7.4
+    executor: ruby-executor
+    # docker:
+    #   - image: cimg/ruby2.7.4
 
     steps:
       - checkout
@@ -52,9 +52,9 @@ jobs:
   rspec:
     # docker:
     #   - image: cimg/base:stable
-    # executor: ruby-executor
-    docker:
-      - image: cimg/ruby2.7.4
+    executor: ruby-executor
+    # docker:
+    #   - image: cimg/ruby2.7.4
 
     steps:
       - checkout
