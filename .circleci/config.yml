@@ -25,7 +25,7 @@ jobs:
   #     - run:
   #         name: "Say hello"
   #         command: "echo Hello, World!"
-
+  #
 
   # install-ruby:
   #   docker:
@@ -39,24 +39,28 @@ jobs:
   bundle:
     # docker:
     #   - image: cimg/base:stable
-    executor: ruby-executor
+    # executor: ruby-executor
+    docker:
+      - image: cimg/ruby2.7.4
 
     steps:
       - checkout
       - run:
-        name: "Bundle"
-        command: "bundle install"
+          name: "Bundle"
+          command: "bundle install"
 
   rspec:
     # docker:
     #   - image: cimg/base:stable
-    executor: ruby-executor
+    # executor: ruby-executor
+    docker:
+      - image: cimg/ruby2.7.4
 
     steps:
-      # - checkout
+      - checkout
       - run:
-        name: "Bundle"
-        command: "bundle exec rspec"
+          name: "RSpec"
+          command: "bundle exec rspec"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
