@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
-    @user = GearUpFacade.find_user(params[:id])
-    @items = GearUpFacade.items(params[:id])[0..2]
+    @user = UserFacade.user(params[:id])
+    @items = ItemFacade.items(params[:id])[0..2]
     @trips = GearUpFacade.user_trips(params[:id]).sort_by{|trip| trip.start_date}[0..1]
 #     sandisz ^
 
