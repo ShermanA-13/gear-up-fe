@@ -5,8 +5,8 @@ describe "user show page" do
     visit "/users/1"
   end
 
-  it "shows a specific user's data" do
-    expect(page).to have_content("Something this's Page")
+  it "shows a specific user's data", :vcr do
+    expect(page).to have_content("something this's Page")
     expect(page).to have_content("Email: email@email.com")
 
     expect(page).not_to have_content("asda this's Page")
