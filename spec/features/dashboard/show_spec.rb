@@ -13,4 +13,10 @@ describe 'creates user' do
   it 'displays user name', :vcr do
     expect(page).to have_content('Pickles')
   end
+
+  it 'has a link to the users item shed', :vcr do
+    click_link("Pickles McTickles's Shed")
+
+    expect(current_path).to eq("/users/5/items")
+  end
 end
