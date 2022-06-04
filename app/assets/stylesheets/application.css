@@ -13,3 +13,57 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+h1, h2, h3, h4, h5, h6, p{
+  font-family: helvetica;
+  text-align: center;
+}
+.user_items_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+}
+
+.item_container {
+   background-color: #5c4a14;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   padding-left: 30px;
+   padding-right: 30px;
+   border-radius: 10px;
+   margin-bottom: 10px;
+   width: 80%;
+ }
+.item_container a,
+.item_container h3 {
+   color: black;
+   font-size: 30px;
+ }
+
+.user_trips_container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trip_container {
+  background-color: #1d7442;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 90%;
+}
+.trip_container a,
+.trip_container h3 {
+   color: black;
+   font-size: 30px;
+ }
+
+ .user_info{
+   text-align: center;
+ }

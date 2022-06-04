@@ -1,17 +1,23 @@
-<h1><%= @user.first_name %> <%= @user.last_name %>'s Page</h1>
-<p>Email: <%= @user.email %></p>
-<hr>
+<div class="user_info">
+  <h1><%= @user.first_name %> <%= @user.last_name %>'s Page</h1>
+  <p>Email: <%= @user.email %></p>
+  <hr>
+</div>
+
 <div id="items">
   <h2><%= @user.first_name %> <%= @user.last_name %>'s Item Shed</h2>
 
-  <% @items.each do |item| %>
-    <h3><a href="/users/<%= @user.id %>/items/<%= item.id %>"><%= item.name %></a></h3>
-    <p>Count: <%= item.count %></p>
-    <p>Description: <%= item.description %></p>
-    <p>Category: <%= item.category %></p>
-    <h6>Item ID: <%= item.id %></h6>
-    <hr>
-  <% end %>
+  <div class="user_items_container">
+    <% @items.each do |item| %>
+    <div class="item_container">
+      <h3><a href="/users/<%= @user.id %>/items/<%= item.id %>"><%= item.name %></a></h3>
+      <p>Count: <%= item.count %></p>
+      <p>Description: <%= item.description %></p>
+      <p>Category: <%= item.category %></p>
+      <h6>Item ID: <%= item.id %></h6>
+    </div>
+    <% end %>
+  </div>
 
   <h4>
     <a href="/users/<%= @user.id %>/items"><%= @user.first_name %> <%= @user.last_name %>'s Shed</a>
@@ -21,15 +27,17 @@
 
 <div id="trips">
   <h2><%= @user.first_name %> <%= @user.last_name %>'s Upcoming Trips</h2>
+  <div class="user_trips_container">
 
-  <% @trips.each do |trip| %>
-  <div id="trip-<%= trip.id %>">
-    <h3><%= trip.name %></h3>
-    <p>Location: <%= trip.location %></p>
-    <p>Description: <%= trip.description %></p>
-    <p>Start date: <%= trip.start_date %></p>
-    <p>End date: <%= trip.end_date %></p>
-    <hr>
+    <% @trips.each do |trip| %>
+    <div class="trip_container" id="trip-<%= trip.id %>">
+      <h3><%= trip.name %></h3>
+      <p>Location: <%= trip.location %></p>
+      <p>Description: <%= trip.description %></p>
+      <p>Start date: <%= trip.start_date %></p>
+      <p>End date: <%= trip.end_date %></p>
+    </div>
+
+    <% end %>
   </div>
-  <% end %>
 </div>
