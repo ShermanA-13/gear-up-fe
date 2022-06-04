@@ -50,4 +50,10 @@ describe "create an item" do
 
     expect(current_path).to eq("/users/1/items/new")
   end
+
+  it "does not show the button when visiting a different users page", :vcr do
+    visit "/users/2/items"
+    
+    expect(page).not_to have_button("Add an item to your Shed")
+  end
 end
