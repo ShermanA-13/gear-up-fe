@@ -32,4 +32,12 @@ describe "user show page" do
       expect(page).not_to have_content("Item ID: 3")
     end
   end
+
+  it "has links to item show pages", :vcr do
+    within "#items" do
+      click_link "Water Bottle"
+    end
+    expect(current_path).to eq("/users/1/items/1")
+    expect(page).to have_content("Name: Water Bottle")
+  end
 end
