@@ -6,4 +6,8 @@ class ItemsController < ApplicationController
   def index
     @items = ItemFacade.items(params[:user_id])
   end
+
+  def new
+    @user = UserFacade.user(params[:user_id])
+  end
 end

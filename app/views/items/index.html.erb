@@ -11,3 +11,7 @@
     <hr>
   </div>
 <% end %>
+
+<% if params[:user_id] == session[:user_id] %>
+  <%= button_to "Add an item to your Shed", "/users/#{session[:user_id]}/items/new", method: :get %>
+<% end %>
