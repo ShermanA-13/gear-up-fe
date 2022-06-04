@@ -38,3 +38,16 @@ describe "Item index/shed" do
     expect(page).not_to have_content("Count: 8")
   end
 end
+
+describe "create an item" do
+  before do
+    visit "/login?user_id=1"
+    click_link("something this's Shed")
+  end
+
+  it "has a button to create a new item", :vcr do
+    click_button("Add an item to your Shed")
+
+    expect(current_path).to eq("/users/1/items/new")
+  end
+end
