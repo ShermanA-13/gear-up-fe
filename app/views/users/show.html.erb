@@ -1,3 +1,14 @@
 <h1><%= @user.first_name %> <%= @user.last_name %>'s Page</h1>
-<hr>
 <p>Email: <%= @user.email %></p>
+<hr>
+<div id="items">
+  <h2><%= @user.first_name %> <%= @user.last_name %>'s Item Shed</h2>
+  <% @items[0..2].each do |item| %>
+    <h3><a href="items/<%= item.id %>"><%= item.name %></a></h3>
+    <p>Count: <%= item.count %></p>
+    <p>Description: <%= item.description %></p>
+    <p>Category: <%= item.category %></p>
+    <h6>Item ID: <%= item.id %></h6>
+    <hr>
+  <% end %>
+</div>
