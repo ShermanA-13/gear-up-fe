@@ -20,4 +20,14 @@ describe "User index page" do
     end
     # the this family :,^)
   end
+
+  it "has links to users show pages", :vcr do
+    within "#user-1" do
+      click_link("something this")
+    end
+    expect(current_path).to eq("/users/1")
+
+    expect(page).to have_content("something this's page")
+    expect(page).not_to have_content("asda this's page")
+  end
 end

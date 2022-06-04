@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://gear-up-be.herokuapp.com/api/v1/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sat, 04 Jun 2022 04:36:43 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a99fdbac496dc5d6c61bf70404ba0fed"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4f37677b-3aed-4fa2-a8ac-ec4f7440f59f
+      X-Runtime:
+      - '0.040573'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}},{"id":"2","type":"user","attributes":{"first_name":"asda","last_name":"this","email":"cheese@email.com"}},{"id":"3","type":"user","attributes":{"first_name":"monkey","last_name":"this","email":"foo@email.com"}}]}'
+  recorded_at: Sat, 04 Jun 2022 04:36:44 GMT
+recorded_with: VCR 6.1.0
