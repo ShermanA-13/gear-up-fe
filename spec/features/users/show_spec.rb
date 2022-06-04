@@ -49,4 +49,23 @@ describe "user show page" do
     expect(page).to have_content("Water Bottle")
     expect(page).to have_content("Trail Mix")
   end
+
+  it "shows the next 2 upcoming trips the user is a part of", :vcr do
+    # VCR.use_cassette("shows_a_specific_user_s_top_3_items") do
+      within "#trip-1" do
+        expect(page).to have_content("Name: first trip")
+        expect(page).to have_content("Location: somewhere")
+        expect(page).to have_content("Description: baby's first trip")
+        expect(page).to have_content("Start date: 2022-06-03")
+        expect(page).to have_content("End date: 2022-06-04")
+      end
+      within "#trip-2" do
+        expect(page).to have_content("Name: boo boo trip")
+        expect(page).to have_content("Location: nowhere")
+        expect(page).to have_content("Description: trip I guess")
+        expect(page).to have_content("Start date: 2022-06-03")
+        expect(page).to have_content("End date: 2022-06-04")
+      # end
+    end
+  end
 end
