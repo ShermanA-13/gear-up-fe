@@ -15,4 +15,10 @@ class GearUpFacade
     data = GearUpService.find_user(user_id)[:data]
     User.new(data)
   end
+
+  def self.users
+    GearUpService.users[:data].map do |data|
+      User.new(data)
+    end
+  end
 end

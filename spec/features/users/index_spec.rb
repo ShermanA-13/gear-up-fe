@@ -5,7 +5,7 @@ describe "User index page" do
     visit "/users"
   end
 
-  it "displays all users fist last name and email" do
+  it "displays all users fist last name and email", :vcr do
     within "#user-1" do
       expect(page).to have_content("something this")
       expect(page).to have_content("Email: email@email.com")
