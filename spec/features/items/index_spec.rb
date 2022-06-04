@@ -5,7 +5,7 @@ describe "Item index/shed" do
     visit "/users/1/items"
   end
 
-  it "displays all of the users items" do
+  it "displays all of the users items", :vcr do
     within "#item-1" do
       expect(page).to have_content("Water Bottle")
       expect(page).to have_content("Count: 5")
