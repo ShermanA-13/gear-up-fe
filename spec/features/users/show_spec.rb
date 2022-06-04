@@ -40,4 +40,13 @@ describe "user show page" do
     expect(current_path).to eq("/users/1/items/1")
     expect(page).to have_content("Name: Water Bottle")
   end
+
+  it "has a link to the user shed", :vcr do
+    within "#items" do
+      click_link "something this's Shed"
+    end
+    expect(current_path).to eq("/users/1/items")
+    expect(page).to have_content("Water Bottle")
+    expect(page).to have_content("Trail Mix")
+  end
 end
