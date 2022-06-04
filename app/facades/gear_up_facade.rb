@@ -10,4 +10,9 @@ class GearUpFacade
       Item.new(data)
     end
   end
+
+  def self.find_user(user_id)
+    data = GearUpService.find_user(user_id)[:data]
+    User.new(data)
+  end
 end
