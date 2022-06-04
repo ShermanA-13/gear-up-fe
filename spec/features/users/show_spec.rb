@@ -82,7 +82,7 @@ describe 'creates user' do
     visit "/login?user_id=#{@user.id}"
   end
 
-  it 'displays user name' do
+  it 'displays user name', :vcr do
     expect(page).to have_content('Pickles')
   end
 end

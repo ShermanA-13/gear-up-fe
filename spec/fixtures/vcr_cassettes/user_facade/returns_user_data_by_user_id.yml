@@ -1,14 +1,16 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/
+    method: post
+    uri: https://gear-up-be.herokuapp.com/api/v1/users
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}'
     headers:
       User-Agent:
       - Faraday v2.3.0
+      Content-Type:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,31 +23,30 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 20:31:05 GMT
+      - Sat, 04 Jun 2022 20:31:04 GMT
       Connection:
       - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"0719742016a18e908ee713d154388b5c"
+      - W/"be4be7f4977447a193a81d67907a8424"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ac7d06db-9105-4d1f-a1e5-d6b7fc24b0b4
+      - af1915c8-fbe8-4fea-a2c4-ed672a84e670
       X-Runtime:
-      - '0.006560'
+      - '0.006575'
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}},{"id":"2","type":"item","attributes":{"name":"Trail
-        Mix","description":null,"count":8,"category":0,"user_id":1}}]}'
-  recorded_at: Sat, 04 Jun 2022 20:31:05 GMT
+      string: '{"data":{"id":"5","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}}}'
+  recorded_at: Sat, 04 Jun 2022 20:31:04 GMT
 - request:
     method: get
-    uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/1
+    uri: https://gear-up-be.herokuapp.com/api/v1/users/5
     body:
       encoding: US-ASCII
       string: ''
@@ -64,25 +65,25 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 20:31:05 GMT
+      - Sat, 04 Jun 2022 20:31:04 GMT
       Connection:
       - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f8b763607ccbc2b70879b07183d144fe"
+      - W/"be4be7f4977447a193a81d67907a8424"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cd124e41-d5c5-42b2-bbd6-d7d1a661a607
+      - 000de408-a0eb-41ab-bfbb-c93700ff5d5b
       X-Runtime:
-      - '0.006636'
+      - '0.008312'
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}}}'
-  recorded_at: Sat, 04 Jun 2022 20:31:06 GMT
+      string: '{"data":{"id":"5","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}}}'
+  recorded_at: Sat, 04 Jun 2022 20:31:05 GMT
 recorded_with: VCR 6.1.0

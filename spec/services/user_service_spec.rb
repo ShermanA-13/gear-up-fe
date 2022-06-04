@@ -8,7 +8,7 @@ RSpec.describe 'user service' do
       email: 'dilllord@dills.org'
     }
   end
-  it 'creates a user and returns a new user' do
+  it 'creates a user and returns a new user', :vcr do
     response = UserService.create_user(@data)
 
     expect(response).to be_a Hash
@@ -19,7 +19,7 @@ RSpec.describe 'user service' do
     expect(response[:data][:attributes]).to have_key :email
   end
 
-  it 'returns users by id' do
+  it 'returns users by id', :vcr do
     created_user = UserService.create_user(@data)
 
     response = UserService.user(created_user[:data][:id])

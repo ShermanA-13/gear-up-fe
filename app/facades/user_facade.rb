@@ -7,8 +7,13 @@ class UserFacade
 
     def user(id)
       json = UserService.user(id)
-
       User.new(json[:data])
+    end
+
+    def users
+      UserService.users[:data].map do |data|
+        User.new(data)
+      end
     end
   end
 end

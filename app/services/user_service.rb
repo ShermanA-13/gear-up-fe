@@ -12,7 +12,11 @@ class UserService < BaseService
 
     def user(id)
       response = conn.get("/api/v1/users/#{id}")
+      get_json(response)
+    end
 
+    def users
+      response = conn.get("/api/v1/users")
       get_json(response)
     end
   end
