@@ -21,27 +21,27 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 04:38:54 GMT
+      - Sat, 04 Jun 2022 19:55:05 GMT
       Connection:
       - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"a99fdbac496dc5d6c61bf70404ba0fed"
+      - W/"0637f0fe00c05f6efcc8f6e09c234f68"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 18489622-b852-41d6-ac6f-1e49d6349ff4
+      - 4bce172b-c522-46e9-ba44-72d3f07efdfb
       X-Runtime:
-      - '0.007135'
+      - '0.004002'
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}},{"id":"2","type":"user","attributes":{"first_name":"asda","last_name":"this","email":"cheese@email.com"}},{"id":"3","type":"user","attributes":{"first_name":"monkey","last_name":"this","email":"foo@email.com"}}]}'
-  recorded_at: Sat, 04 Jun 2022 04:38:54 GMT
+      string: '{"data":[{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}},{"id":"2","type":"user","attributes":{"first_name":"asda","last_name":"this","email":"cheese@email.com"}},{"id":"3","type":"user","attributes":{"first_name":"monkey","last_name":"this","email":"foo@email.com"}},{"id":"4","type":"user","attributes":{"first_name":"John","last_name":"Bowman","email":"johntbowman.production@gmail.com"}},{"id":"5","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}}]}'
+  recorded_at: Sat, 04 Jun 2022 19:55:06 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1
@@ -63,7 +63,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 04:38:54 GMT
+      - Sat, 04 Jun 2022 19:55:05 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -73,9 +73,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 06d45e39-4732-433d-b148-3357ed88080c
+      - 29d77bec-9dd6-4990-826b-6a45cb39dbdb
       X-Runtime:
-      - '0.006113'
+      - '0.003322'
       Transfer-Encoding:
       - chunked
       Via:
@@ -83,7 +83,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}}}'
-  recorded_at: Sat, 04 Jun 2022 04:38:54 GMT
+  recorded_at: Sat, 04 Jun 2022 19:55:06 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/
@@ -105,7 +105,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 04:38:55 GMT
+      - Sat, 04 Jun 2022 19:55:06 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -115,9 +115,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - '0658e745-88c3-4f23-af96-6da7461c1e5d'
+      - 4d925c1f-e857-4d84-af38-5f9e15874872
       X-Runtime:
-      - '0.004432'
+      - '0.003860'
       Transfer-Encoding:
       - chunked
       Via:
@@ -126,7 +126,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}},{"id":"2","type":"item","attributes":{"name":"Trail
         Mix","description":null,"count":8,"category":0,"user_id":1}}]}'
-  recorded_at: Sat, 04 Jun 2022 04:38:55 GMT
+  recorded_at: Sat, 04 Jun 2022 19:55:06 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1/trips
@@ -148,7 +148,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 04:38:55 GMT
+      - Sat, 04 Jun 2022 19:55:06 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -158,9 +158,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 83163b65-311a-4f33-a1aa-a631c7f153a3
+      - 6f5b0b6d-3854-4828-ac6b-963c96b63e1f
       X-Runtime:
-      - '0.006823'
+      - '0.004225'
       Transfer-Encoding:
       - chunked
       Via:
@@ -170,5 +170,5 @@ http_interactions:
       string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"first trip","location":"somewhere","description":"baby''s
         first trip","host_id":1,"start_date":"2022-06-03","end_date":"2022-06-04"}},{"id":"2","type":"trip","attributes":{"name":"boo
         boo trip","location":"nowhere","description":"trip I guess","host_id":3,"start_date":"2022-06-03","end_date":"2022-06-04"}}]}'
-  recorded_at: Sat, 04 Jun 2022 04:38:55 GMT
+  recorded_at: Sat, 04 Jun 2022 19:55:06 GMT
 recorded_with: VCR 6.1.0

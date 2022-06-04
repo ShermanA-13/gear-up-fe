@@ -1,14 +1,16 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/
+    method: post
+    uri: https://gear-up-be.herokuapp.com/api/v1/users
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}'
     headers:
       User-Agent:
       - Faraday v2.3.0
+      Content-Type:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,26 +23,25 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 19:55:03 GMT
+      - Sat, 04 Jun 2022 19:55:02 GMT
       Connection:
       - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"0719742016a18e908ee713d154388b5c"
+      - W/"be4be7f4977447a193a81d67907a8424"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cc8cb40e-643e-47d2-9bb3-7d6e032e9c85
+      - f4345f4c-6455-43bc-8e0c-483c88612e4a
       X-Runtime:
-      - '0.003889'
+      - '0.004923'
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}},{"id":"2","type":"item","attributes":{"name":"Trail
-        Mix","description":null,"count":8,"category":0,"user_id":1}}]}'
-  recorded_at: Sat, 04 Jun 2022 19:55:04 GMT
+      string: '{"data":{"id":"5","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}}}'
+  recorded_at: Sat, 04 Jun 2022 19:55:03 GMT
 recorded_with: VCR 6.1.0
