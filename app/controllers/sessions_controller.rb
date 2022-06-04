@@ -4,15 +4,6 @@ class SessionsController < ApplicationController
   def create
     session[:user_id] = params[:user_id]
     redirect_to "/dashboard"
-
-  #   if user != nil
-  #     session[:user_id] = user.id
-  #     flash[:success] = "Welcome, #{user.email}!"
-  #     redirect_to "/dashboard"
-  #   else
-  #     flash[:error] = "Sorry, your credentials are bad."
-  #     render :new
-  #   end
   end
 
   def destroy
