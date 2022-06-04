@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 19:55:02 GMT
+      - Sat, 04 Jun 2022 20:25:38 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -33,9 +33,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f4345f4c-6455-43bc-8e0c-483c88612e4a
+      - bca091e3-b405-4aeb-9985-7c61150dfb07
       X-Runtime:
-      - '0.004923'
+      - '0.067322'
       Transfer-Encoding:
       - chunked
       Via:
@@ -43,5 +43,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"id":"5","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}}}'
-  recorded_at: Sat, 04 Jun 2022 19:55:03 GMT
+  recorded_at: Sat, 04 Jun 2022 20:25:39 GMT
 recorded_with: VCR 6.1.0

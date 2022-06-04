@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 19:55:03 GMT
+      - Sat, 04 Jun 2022 20:25:38 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -33,9 +33,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e52583dc-01ad-492c-a7ba-fef51c11d08e
+      - d1881015-80bc-4250-8a61-bf7126741200
       X-Runtime:
-      - '0.006616'
+      - '0.005084'
       Transfer-Encoding:
       - chunked
       Via:
@@ -43,7 +43,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"id":"5","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}}}'
-  recorded_at: Sat, 04 Jun 2022 19:55:03 GMT
+  recorded_at: Sat, 04 Jun 2022 20:25:39 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/5
@@ -65,7 +65,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 19:55:03 GMT
+      - Sat, 04 Jun 2022 20:25:39 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -75,9 +75,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e4d20d4d-e7eb-4f52-878b-eb16b3632eb3
+      - 6f3805e6-b356-4128-a0a2-abbfd85af465
       X-Runtime:
-      - '0.003511'
+      - '0.004468'
       Transfer-Encoding:
       - chunked
       Via:
@@ -85,5 +85,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"id":"5","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}}}'
-  recorded_at: Sat, 04 Jun 2022 19:55:04 GMT
+  recorded_at: Sat, 04 Jun 2022 20:25:39 GMT
 recorded_with: VCR 6.1.0

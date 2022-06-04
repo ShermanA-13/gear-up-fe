@@ -17,7 +17,7 @@ class UserService < BaseService
 
     def users
       response = conn.get("/api/v1/users")
-      JSON.parse(response.body, symbolize_names: true)
+      get_json(response)
     end
   end
 end
