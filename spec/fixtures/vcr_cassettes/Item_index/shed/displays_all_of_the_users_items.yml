@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 00:45:28 GMT
+      - Sat, 04 Jun 2022 04:09:39 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -31,9 +31,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d24297d3-8817-439d-a92b-411076142b0b
+      - ad2a9ba7-b136-4a30-a3b8-8f9d5468b2d8
       X-Runtime:
-      - '0.004456'
+      - '0.070627'
       Transfer-Encoding:
       - chunked
       Via:
@@ -42,5 +42,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}},{"id":"2","type":"item","attributes":{"name":"Trail
         Mix","description":null,"count":8,"category":0,"user_id":1}}]}'
-  recorded_at: Sat, 04 Jun 2022 00:45:29 GMT
+  recorded_at: Sat, 04 Jun 2022 04:09:40 GMT
 recorded_with: VCR 6.1.0

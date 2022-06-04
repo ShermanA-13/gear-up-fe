@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 00:56:35 GMT
+      - Sat, 04 Jun 2022 04:09:40 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -31,9 +31,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 63dca9d0-e21b-4b6c-b16d-5328641f6751
+      - 74d2d5bc-02ae-41fd-84ee-798298bfcd32
       X-Runtime:
-      - '0.004333'
+      - '0.004932'
       Transfer-Encoding:
       - chunked
       Via:
@@ -42,7 +42,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}},{"id":"2","type":"item","attributes":{"name":"Trail
         Mix","description":null,"count":8,"category":0,"user_id":1}}]}'
-  recorded_at: Sat, 04 Jun 2022 00:56:35 GMT
+  recorded_at: Sat, 04 Jun 2022 04:09:41 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/1
@@ -64,7 +64,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 00:56:35 GMT
+      - Sat, 04 Jun 2022 04:09:40 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -74,9 +74,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c007ecd9-0588-4033-ba6f-249e065709e1
+      - 22d3ad65-4644-465e-a0e9-0163e24c9242
       X-Runtime:
-      - '0.004817'
+      - '0.005555'
       Transfer-Encoding:
       - chunked
       Via:
@@ -84,5 +84,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}}}'
-  recorded_at: Sat, 04 Jun 2022 00:56:36 GMT
+  recorded_at: Sat, 04 Jun 2022 04:09:41 GMT
 recorded_with: VCR 6.1.0

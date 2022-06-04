@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 00:31:29 GMT
+      - Sat, 04 Jun 2022 04:09:41 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -31,9 +31,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2f3e8442-ad44-409e-8010-870e640bcf71
+      - df40ffe9-d213-4e67-a6de-4f051e6fc1da
       X-Runtime:
-      - '0.003839'
+      - '0.003872'
       Transfer-Encoding:
       - chunked
       Via:
@@ -41,5 +41,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}}}'
-  recorded_at: Sat, 04 Jun 2022 00:31:30 GMT
+  recorded_at: Sat, 04 Jun 2022 04:09:41 GMT
 recorded_with: VCR 6.1.0
