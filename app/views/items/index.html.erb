@@ -1,0 +1,13 @@
+<h1>All of your items:</h1>
+<hr>
+
+<% @items.each do |item| %>
+  <div id="item-<%= item.id %>">
+    <h2><a href="items/<%= item.id %>"><%= item.name %></a></h2>
+    <p>Count: <%= item.count %></p>
+    <p>Description: <%= item.description %></p>
+    <p>Category: <%= item.category %></p>
+    <h6>Item ID: <%= item.id %></h6>
+    <hr>
+  </div>
+<% end %>
