@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sat, 04 Jun 2022 00:56:35 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0719742016a18e908ee713d154388b5c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 63dca9d0-e21b-4b6c-b16d-5328641f6751
+      X-Runtime:
+      - '0.004333'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}},{"id":"2","type":"item","attributes":{"name":"Trail
+        Mix","description":null,"count":8,"category":0,"user_id":1}}]}'
+  recorded_at: Sat, 04 Jun 2022 00:56:35 GMT
+- request:
+    method: get
+    uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sat, 04 Jun 2022 00:56:35 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f8b763607ccbc2b70879b07183d144fe"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c007ecd9-0588-4033-ba6f-249e065709e1
+      X-Runtime:
+      - '0.004817'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}}}'
+  recorded_at: Sat, 04 Jun 2022 00:56:36 GMT
+recorded_with: VCR 6.1.0
