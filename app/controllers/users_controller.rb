@@ -3,12 +3,10 @@ class UsersController < ApplicationController
     @user = UserFacade.user(params[:id])
     @items = ItemFacade.items(params[:id])[0..2]
     @trips = GearUpFacade.user_trips(params[:id]).sort_by{|trip| trip.start_date}[0..1]
-#     sandisz ^
-
   end
 
   def index
-    @users = GearUpFacade.users
+    @users = UserFacade.users
   end
 
   def create
