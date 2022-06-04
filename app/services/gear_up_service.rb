@@ -7,4 +7,9 @@ class GearUpService
     response = conn.get("/api/v1/users/#{user_id}/items/#{item_id}")
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.items(user_id)
+    response = conn.get("/api/v1/users/#{user_id}/items/")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
