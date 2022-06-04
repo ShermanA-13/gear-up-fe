@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 20:25:41 GMT
+      - Sat, 04 Jun 2022 20:31:06 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -31,9 +31,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - eefd80f3-531c-4638-8a69-6c6b724cf25e
+      - c1a144ae-74dd-4999-aa17-93bdb9c60840
       X-Runtime:
-      - '0.003626'
+      - '0.007394'
       Transfer-Encoding:
       - chunked
       Via:
@@ -41,5 +41,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":[{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}},{"id":"2","type":"user","attributes":{"first_name":"asda","last_name":"this","email":"cheese@email.com"}},{"id":"3","type":"user","attributes":{"first_name":"monkey","last_name":"this","email":"foo@email.com"}},{"id":"4","type":"user","attributes":{"first_name":"John","last_name":"Bowman","email":"johntbowman.production@gmail.com"}},{"id":"5","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}}]}'
-  recorded_at: Sat, 04 Jun 2022 20:25:41 GMT
+  recorded_at: Sat, 04 Jun 2022 20:31:06 GMT
 recorded_with: VCR 6.1.0

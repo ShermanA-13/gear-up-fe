@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 20:25:46 GMT
+      - Sat, 04 Jun 2022 20:31:11 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -31,9 +31,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b2e9da8f-6200-4411-8e0d-1aa35689db41
+      - 403eb94a-a194-4dfe-a63f-7770e8ee5b91
       X-Runtime:
-      - '0.003458'
+      - '0.005295'
       Transfer-Encoding:
       - chunked
       Via:
@@ -41,7 +41,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}}}'
-  recorded_at: Sat, 04 Jun 2022 20:25:46 GMT
+  recorded_at: Sat, 04 Jun 2022 20:31:11 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/
@@ -63,7 +63,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 20:25:46 GMT
+      - Sat, 04 Jun 2022 20:31:11 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -73,9 +73,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d9dbf93e-eb77-42bd-9a02-b20b32174e46
+      - '0598ed31-6e5c-4604-95bc-5f1911592029'
       X-Runtime:
-      - '0.003828'
+      - '0.005993'
       Transfer-Encoding:
       - chunked
       Via:
@@ -84,7 +84,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}},{"id":"2","type":"item","attributes":{"name":"Trail
         Mix","description":null,"count":8,"category":0,"user_id":1}}]}'
-  recorded_at: Sat, 04 Jun 2022 20:25:46 GMT
+  recorded_at: Sat, 04 Jun 2022 20:31:11 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1/trips
@@ -106,7 +106,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 20:25:47 GMT
+      - Sat, 04 Jun 2022 20:31:12 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -116,9 +116,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d715022f-2b61-425e-a209-d3a976e31e3e
+      - f1b5ab3f-2384-4f01-8265-f76cd2500af2
       X-Runtime:
-      - '0.004573'
+      - '0.012459'
       Transfer-Encoding:
       - chunked
       Via:
@@ -128,7 +128,7 @@ http_interactions:
       string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"first trip","location":"somewhere","description":"baby''s
         first trip","host_id":1,"start_date":"2022-06-03","end_date":"2022-06-04"}},{"id":"2","type":"trip","attributes":{"name":"boo
         boo trip","location":"nowhere","description":"trip I guess","host_id":3,"start_date":"2022-06-03","end_date":"2022-06-04"}}]}'
-  recorded_at: Sat, 04 Jun 2022 20:25:47 GMT
+  recorded_at: Sat, 04 Jun 2022 20:31:12 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/
@@ -150,7 +150,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 20:25:46 GMT
+      - Sat, 04 Jun 2022 20:31:11 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -160,9 +160,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4aa4d687-185f-48bb-894a-3b2a8fff091b
+      - b35e9775-c6ee-46ba-b3fa-e7e257590e47
       X-Runtime:
-      - '0.003634'
+      - '0.003769'
       Transfer-Encoding:
       - chunked
       Via:
@@ -171,5 +171,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}},{"id":"2","type":"item","attributes":{"name":"Trail
         Mix","description":null,"count":8,"category":0,"user_id":1}}]}'
-  recorded_at: Sat, 04 Jun 2022 20:25:47 GMT
+  recorded_at: Sat, 04 Jun 2022 20:31:12 GMT
 recorded_with: VCR 6.1.0

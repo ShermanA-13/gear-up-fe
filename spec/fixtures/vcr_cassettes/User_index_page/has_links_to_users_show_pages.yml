@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 20:25:41 GMT
+      - Sat, 04 Jun 2022 20:31:06 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -31,9 +31,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 66a35360-92d7-43eb-9b14-ebbbb7ef6134
+      - 99defff9-b483-492d-b97e-a44774a3456e
       X-Runtime:
-      - '0.003694'
+      - '0.008032'
       Transfer-Encoding:
       - chunked
       Via:
@@ -41,7 +41,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":[{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}},{"id":"2","type":"user","attributes":{"first_name":"asda","last_name":"this","email":"cheese@email.com"}},{"id":"3","type":"user","attributes":{"first_name":"monkey","last_name":"this","email":"foo@email.com"}},{"id":"4","type":"user","attributes":{"first_name":"John","last_name":"Bowman","email":"johntbowman.production@gmail.com"}},{"id":"5","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}}]}'
-  recorded_at: Sat, 04 Jun 2022 20:25:41 GMT
+  recorded_at: Sat, 04 Jun 2022 20:31:07 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1
@@ -63,7 +63,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 20:25:42 GMT
+      - Sat, 04 Jun 2022 20:31:07 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -73,9 +73,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b610c431-b701-42fb-82ab-309acb5f3bcb
+      - 02fce3fe-016c-4388-bb79-d8f65898bbf9
       X-Runtime:
-      - '0.003757'
+      - '0.005684'
       Transfer-Encoding:
       - chunked
       Via:
@@ -83,7 +83,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}}}'
-  recorded_at: Sat, 04 Jun 2022 20:25:42 GMT
+  recorded_at: Sat, 04 Jun 2022 20:31:07 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/
@@ -105,7 +105,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 20:25:41 GMT
+      - Sat, 04 Jun 2022 20:31:07 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -115,9 +115,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 24afc98b-6a9d-4587-a837-1456a3abfb16
+      - b6e81057-af3d-4f73-831b-9a8206db99c1
       X-Runtime:
-      - '0.003622'
+      - '0.008366'
       Transfer-Encoding:
       - chunked
       Via:
@@ -126,7 +126,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}},{"id":"2","type":"item","attributes":{"name":"Trail
         Mix","description":null,"count":8,"category":0,"user_id":1}}]}'
-  recorded_at: Sat, 04 Jun 2022 20:25:42 GMT
+  recorded_at: Sat, 04 Jun 2022 20:31:07 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1/trips
@@ -148,7 +148,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 20:25:42 GMT
+      - Sat, 04 Jun 2022 20:31:07 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -158,9 +158,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 5c5c9686-b9ea-457f-acfa-0fc32cb52b93
+      - e932f37a-3414-44cc-8c16-d9161897e962
       X-Runtime:
-      - '0.006745'
+      - '0.009073'
       Transfer-Encoding:
       - chunked
       Via:
@@ -170,5 +170,5 @@ http_interactions:
       string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"first trip","location":"somewhere","description":"baby''s
         first trip","host_id":1,"start_date":"2022-06-03","end_date":"2022-06-04"}},{"id":"2","type":"trip","attributes":{"name":"boo
         boo trip","location":"nowhere","description":"trip I guess","host_id":3,"start_date":"2022-06-03","end_date":"2022-06-04"}}]}'
-  recorded_at: Sat, 04 Jun 2022 20:25:42 GMT
+  recorded_at: Sat, 04 Jun 2022 20:31:08 GMT
 recorded_with: VCR 6.1.0
