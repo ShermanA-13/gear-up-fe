@@ -1,17 +1,19 @@
 class UserService < BaseService
-  def self.create_user(data)
-    response = conn.post("/api/v1/users", "{
-      'first_name': #{data[:first_name]},
-      'last_name': #{data[:last_name]},
-      'email': #{data[:email]}}",
-      "Content-Type" => "application/json")
+  class << self
+    def create_user(data)
+      response = conn.post '/api/v1/users', {
+          first_name: "#{data[:first_name]}",
+          last_name: "#{data[:last_name]}",
+          email: "#{data[:email]}"
+        }.to_json, "Content-Type" => "application/json"
 
-    get_json(response)
-  end
+      get_json(response)
+    end
 
-  def self.user(email)
-    response = conn.get("/api/v1/users/#{email}")
+    def user(id)
+      response = conn.get("/api/v1/users/#{id}")
 
-    get_json(response)
+      get_json(response)
+    end
   end
 end
