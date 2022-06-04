@@ -1,0 +1,49 @@
+<% if session[:user_id] == @user.id %>
+
+  <%= form_with url: "/users/#{@user.id}/items", method: :post, local: true do |form| %>
+    <%= form.label :name, "Item Name" %>
+    <%= form.text_field :name %>
+    <br>
+    <%= form.label :description, "Description" %>
+    <%= form.text_area :description %>
+    <br>
+    <%= form.label :count, "Count" %>
+    <%= form.number_field :count %>
+    <br>
+    <%= form.radio_button :category, "Tent" %>
+    <%= form.label :category, "Tent" %>
+    <br>
+    <%= form.radio_button :category, "Sleeping Bag" %>
+    <%= form.label :category, "Sleeping Bag" %>
+    <br>
+    <%= form.radio_button :category, "Stoves, Grills & Fuel" %>
+    <%= form.label :category, "Stoves, Grills & Fuel" %>
+    <br>
+    <%= form.radio_button :category, "Cookware" %>
+    <%= form.label :category, "Cookware" %>
+    <br>
+    <%= form.radio_button :category, "Dishes" %>
+    <%= form.label :category, "Dishes" %>
+    <br>
+    <%= form.radio_button :category, "Ropes" %>
+    <%= form.label :category, "Ropes" %>
+    <br>
+    <%= form.radio_button :category, "Harnesses" %>
+    <%= form.label :category, "Harnesses" %>
+    <br>
+    <%= form.radio_button :category, "Belay & Rappel" %>
+    <%= form.label :category, "Belay & Rappel" %>
+    <br>
+    <%= form.radio_button :category, "Crash Pads" %>
+    <%= form.label :category, "Crash Pads" %>
+    <br>
+    <%= form.radio_button :category, "Quickdraws" %>
+    <%= form.label :category, "Quickdraws" %>
+    <br>
+    <%= form.submit "Add Item" %>
+  <% end %>
+<% else %>
+
+<h1>How did you get here...</h1>
+
+<% end %>
