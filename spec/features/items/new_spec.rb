@@ -15,4 +15,11 @@ describe "Item new page" do
 
     expect(find('form')).to have_button('Add Item')
   end
+
+  it "displays no form when user visits page", :vcr do
+    visit "/users/2/items/new"
+    expect(page).not_to have_css("form")
+
+    expect(page).to have_content("How did you get here...")
+  end
 end
