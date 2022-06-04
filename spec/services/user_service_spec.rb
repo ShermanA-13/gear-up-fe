@@ -1,13 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe 'user service' do
-  it 'creates a user and returns a new user' do
-    data = {
+  before :each do
+    @data = {
       first_name: 'Pickles',
       last_name: 'McTickles',
       email: 'dilllord@dills.org'
     }
-    response = UserService.create_user(data)
+  end
+  it 'creates a user and returns a new user' do
+    response = UserService.create_user(@data)
 
     expect(response).to be_a Hash
     expect(response[:data]).to be_a Hash
@@ -18,14 +20,9 @@ RSpec.describe 'user service' do
   end
 
   it 'returns users by id' do
-    data = {
-      first_name: 'Pickles',
-      last_name: 'McTickles',
-      email: 'dilllord@dills.org'
-    }
-    user = UserService.create_user(data)
+    created_user = UserService.create_user(@data)
 
-    response = UserService.user(user[:data][:id])
+    response = UserService.user(created_user[:data][:id])
     expect(response).to be_a Hash
     expect(response[:data]).to be_a Hash
     expect(response[:data]).to have_key :id
