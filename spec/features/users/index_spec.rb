@@ -27,7 +27,7 @@ describe "User index page" do
     end
     expect(current_path).to eq("/users/1")
 
-    expect(page).to have_content("something this's page")
-    expect(page).not_to have_content("asda this's page")
+    expect(page).to have_content("something this's Page")
+    expect(page).not_to have_content("asda this's Page")
   end
 end

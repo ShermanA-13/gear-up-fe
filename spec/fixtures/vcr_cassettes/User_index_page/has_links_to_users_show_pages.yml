@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 04:36:43 GMT
+      - Sat, 04 Jun 2022 04:38:54 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -31,9 +31,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4f37677b-3aed-4fa2-a8ac-ec4f7440f59f
+      - 18489622-b852-41d6-ac6f-1e49d6349ff4
       X-Runtime:
-      - '0.040573'
+      - '0.007135'
       Transfer-Encoding:
       - chunked
       Via:
@@ -41,5 +41,134 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":[{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}},{"id":"2","type":"user","attributes":{"first_name":"asda","last_name":"this","email":"cheese@email.com"}},{"id":"3","type":"user","attributes":{"first_name":"monkey","last_name":"this","email":"foo@email.com"}}]}'
-  recorded_at: Sat, 04 Jun 2022 04:36:44 GMT
+  recorded_at: Sat, 04 Jun 2022 04:38:54 GMT
+- request:
+    method: get
+    uri: https://gear-up-be.herokuapp.com/api/v1/users/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sat, 04 Jun 2022 04:38:54 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"61d32510e6b2135913e844e945e43a92"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 06d45e39-4732-433d-b148-3357ed88080c
+      X-Runtime:
+      - '0.006113'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}}}'
+  recorded_at: Sat, 04 Jun 2022 04:38:54 GMT
+- request:
+    method: get
+    uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sat, 04 Jun 2022 04:38:55 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0719742016a18e908ee713d154388b5c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - '0658e745-88c3-4f23-af96-6da7461c1e5d'
+      X-Runtime:
+      - '0.004432'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}},{"id":"2","type":"item","attributes":{"name":"Trail
+        Mix","description":null,"count":8,"category":0,"user_id":1}}]}'
+  recorded_at: Sat, 04 Jun 2022 04:38:55 GMT
+- request:
+    method: get
+    uri: https://gear-up-be.herokuapp.com/api/v1/users/1/trips
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sat, 04 Jun 2022 04:38:55 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"46dc6de4187c79500f1a1c37f5c39161"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 83163b65-311a-4f33-a1aa-a631c7f153a3
+      X-Runtime:
+      - '0.006823'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"first trip","location":"somewhere","description":"baby''s
+        first trip","host_id":1,"start_date":"2022-06-03","end_date":"2022-06-04"}},{"id":"2","type":"trip","attributes":{"name":"boo
+        boo trip","location":"nowhere","description":"trip I guess","host_id":3,"start_date":"2022-06-03","end_date":"2022-06-04"}}]}'
+  recorded_at: Sat, 04 Jun 2022 04:38:55 GMT
 recorded_with: VCR 6.1.0
