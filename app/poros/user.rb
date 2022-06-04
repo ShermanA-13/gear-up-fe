@@ -1,10 +1,10 @@
 class User
-  attr_reader :id, :email, :first_name, :last_name
+  attr_reader :id, :first_name, :last_name, :email
 
   def initialize(data)
     @id = data[:id]
-    @email = data[:attributes][:email]
     @first_name = data[:attributes][:first_name]
     @last_name = data[:attributes][:last_name]
+    @email = data[:attributes][:email]
   end
 end

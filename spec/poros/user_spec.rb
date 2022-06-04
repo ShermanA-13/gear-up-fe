@@ -3,13 +3,13 @@ require "rails_helper"
 RSpec.describe "user poro" do
   it "exists with attributes" do
     data = {id: "1",
-        type: "user",
-        attributes: {
-          email: "email@gmail.com",
-          first_name: "Fox",
-          last_name: "McCloud"
-        }
-      }
+      type: "user",
+      attributes: {
+        email: "email@gmail.com",
+        first_name: "Fox",
+        last_name: "McCloud"
+       }
+     }
 
     user = User.new(data)
 

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/
+    uri: https://gear-up-be.herokuapp.com/api/v1/users
     body:
       encoding: US-ASCII
       string: ''
@@ -21,26 +21,25 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sat, 04 Jun 2022 00:54:37 GMT
+      - Sat, 04 Jun 2022 04:09:41 GMT
       Connection:
       - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"0719742016a18e908ee713d154388b5c"
+      - W/"a99fdbac496dc5d6c61bf70404ba0fed"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9658e8d7-367f-4007-a382-f99a34e27e94
+      - a23b50f8-29ec-4eaf-a7e2-d7215f2ad68a
       X-Runtime:
-      - '0.037610'
+      - '0.006428'
       Transfer-Encoding:
       - chunked
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}},{"id":"2","type":"item","attributes":{"name":"Trail
-        Mix","description":null,"count":8,"category":0,"user_id":1}}]}'
-  recorded_at: Sat, 04 Jun 2022 00:54:37 GMT
+      string: '{"data":[{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}},{"id":"2","type":"user","attributes":{"first_name":"asda","last_name":"this","email":"cheese@email.com"}},{"id":"3","type":"user","attributes":{"first_name":"monkey","last_name":"this","email":"foo@email.com"}}]}'
+  recorded_at: Sat, 04 Jun 2022 04:09:42 GMT
 recorded_with: VCR 6.1.0
