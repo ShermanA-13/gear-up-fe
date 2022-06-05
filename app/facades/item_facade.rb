@@ -17,7 +17,6 @@ class ItemFacade
     end
 
     def destroy(parameters)
-      binding.pry
       ItemService.destroy(parameters)
     end
   end

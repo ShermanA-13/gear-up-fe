@@ -20,12 +20,22 @@ describe "Item show page" do
     expect(current_path).to eq("/users/1/items")
   end
 
-  xit "has a link to delete an item", :vcr do
+end
+describe "delete item" do
+  before do
     visit "/login?user_id=1"
-    visit "/users/1/items/1"
-    click_link "Delete Water Bottle"
+  end
+  it "has a link to delete an item", :vcr do
+    visit "/users/1/items"
+    click_link "Trail Mix"
 
-    expect(current_path).to eq("/users/1/items")
-    expect(page).not_to have_content("Water Bottle")
+    expect(page).to have_link("Delete Trail Mix")
+  end
+
+  it "does not have delete link on other users item pages", :vcr do
+    visit "/users/2/items"
+    click_link "Good Socks"
+
+    expect(page).not_to have_link("Delete Good Socks")
   end
 end

@@ -18,7 +18,11 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = ItemFacade.destroy(params)
-    redirect_to "/users/#{params[:user_id]}/items"
+    if session[:user_id] == params[:user_id]
+      item = ItemFacade.destroy(params)
+      redirect_to "/users/#{params[:user_id]}/items"
+    else
+      redirect_to "/users/#{params[:user_id]}/items"
+    end
   end
 end
