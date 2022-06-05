@@ -26,5 +26,10 @@ describe "item edit page" do
     expect(page).to have_content("Description: My Favorite Trail Mix")
   end
 
-  
+  it "does not show the form when visiting a different users edit page", :vcr do
+    visit "/users/2/items/3/edit"
+    expect(page).not_to have_css("form")
+
+    expect(page).to have_content("How did you get here...")
+  end
 end
