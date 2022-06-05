@@ -11,4 +11,6 @@
   <p>
     <%= link_to "Delete #{@item.name}", "/users/#{session[:user_id]}/items/#{@item.id}", method: :delete %>
   </p>
+
+  <%= button_to "Edit #{@item.name}", "/users/#{session[:user_id]}/items/#{@item.id}/update", method: :get %>
 <% end %>
