@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def show
     @item = ItemFacade.find_item(params[:user_id], params[:id])
+    # @user = UserFacade.user(params[:user_id])
   end
 
   def index

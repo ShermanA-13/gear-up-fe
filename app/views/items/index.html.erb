@@ -1,5 +1,8 @@
 <h1>All of your items:</h1>
 <hr>
+<% if params[:user_id] == session[:user_id] %>
+<%= button_to "Add an item to your Shed", "/users/#{session[:user_id]}/items/new", method: :get %>
+<% end %>
 
 <% @items.each do |item| %>
   <div id="item-<%= item.id %>">
@@ -10,8 +13,4 @@
     <h6>Item ID: <%= item.id %></h6>
     <hr>
   </div>
-<% end %>
-
-<% if params[:user_id] == session[:user_id] %>
-  <%= button_to "Add an item to your Shed", "/users/#{session[:user_id]}/items/new", method: :get %>
 <% end %>
