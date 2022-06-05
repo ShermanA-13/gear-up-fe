@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://gear-up-be.herokuapp.com/api/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"first_name":"Mr","last_name":"Test","email":"iamnotreal@gotcha.com"}'
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sun, 05 Jun 2022 21:39:08 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c2a449b0096ce5c7c122fb90182d13be"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - bca12566-a3a6-4fb2-9b75-1dc33c878276
+      X-Runtime:
+      - '0.051901'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"6","type":"user","attributes":{"first_name":"Mr","last_name":"Test","email":"iamnotreal@gotcha.com"}}}'
+  recorded_at: Sun, 05 Jun 2022 21:39:09 GMT
+- request:
+    method: get
+    uri: https://gear-up-be.herokuapp.com/api/v1/users/6
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sun, 05 Jun 2022 21:39:09 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c2a449b0096ce5c7c122fb90182d13be"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b9a4d044-6ac4-4f70-9438-2d8b5d1cd7c6
+      X-Runtime:
+      - '0.004481'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"6","type":"user","attributes":{"first_name":"Mr","last_name":"Test","email":"iamnotreal@gotcha.com"}}}'
+  recorded_at: Sun, 05 Jun 2022 21:39:09 GMT
+recorded_with: VCR 6.1.0
