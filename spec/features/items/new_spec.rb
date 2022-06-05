@@ -22,4 +22,18 @@ describe "Item new page" do
 
     expect(page).to have_content("How did you get here...")
   end
+
+  it "creates a new item and redirects to item show page", :vcr do
+      fill_in 'Item Name', with: "Tent 1"
+      fill_in 'Description', with: "1 person Tent"
+      fill_in 'Count', with: "1"
+      choose option: '1'
+      click_button 'Add Item'
+
+      expect(page).to have_content("Name: Tent 1")
+      expect(page).to have_content("Description: 1 person Tent")
+      expect(page).to have_content("Count: 1")
+      # expect(page).to have_content("Category: Tent")
+      expect(page).to have_content("Item Category: 1")
+  end
 end
