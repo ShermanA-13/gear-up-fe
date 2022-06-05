@@ -15,4 +15,13 @@ describe "item edit page" do
 
     expect(find('form')).to have_button('Update Item')
   end
+
+  it "updates the item when form is filled out", :vcr do
+    fill_in "Description", with: "My Favorite Trail Mix"
+
+    click_button "Update Item"
+
+    expect(current_path).to eq("/users/1/items/2")
+    expect(page).to have_content("Description: My Favorite Trail Mix")
+  end
 end
