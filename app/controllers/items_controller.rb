@@ -25,4 +25,8 @@ class ItemsController < ApplicationController
       redirect_to "/users/#{params[:user_id]}/items"
     end
   end
+
+  def edit
+    @item = ItemFacade.find_item(params[:user_id], params[:id])
+  end
 end

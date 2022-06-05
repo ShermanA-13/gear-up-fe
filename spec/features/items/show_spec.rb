@@ -52,6 +52,6 @@ describe "update item" do
   end
   it "the button takes you to the update page", :vcr do
     click_button "Edit Trail Mix"
-    expect(current_path).to eq("/users/1/items/2/")
+    expect(current_path).to eq("/users/1/items/2/edit")
   end
 end
