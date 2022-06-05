@@ -11,7 +11,7 @@ class Item
   end
 
   def enum_category(category_num)
-    enums = [
+    @@enums = [
       "Tents",
       "Sleeping Bag",
       "Stoves, Grills & Fuel",
@@ -23,21 +23,10 @@ class Item
       "Crash Pads",
       "Quickdraws"
     ]
-    enums[category_num.to_i]
+    @@enums[category_num.to_i]
   end
 
   def self.category_list
-    enums = [
-      "Tents",
-      "Sleeping Bag",
-      "Stoves, Grills & Fuel",
-      "Cookware",
-      "Dishes",
-      "Ropes",
-      "Harnesses",
-      "Belay & Rappel",
-      "Crash Pads",
-      "Quickdraws"
-    ]
+    @@enums
   end
 end
