@@ -10,4 +10,9 @@ class ItemsController < ApplicationController
   def new
     @user = UserFacade.user(params[:user_id])
   end
+
+  def create
+    item = ItemFacade.create(params)
+    redirect_to "/users/#{item.user_id}/items/#{item.id}"
+  end
 end
