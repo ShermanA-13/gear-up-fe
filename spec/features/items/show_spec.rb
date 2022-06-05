@@ -39,3 +39,16 @@ describe "delete item" do
     expect(page).not_to have_link("Delete Good Socks")
   end
 end
+
+describe "update item" do
+  before do
+    visit "/login?user_id=1"
+    click_link("Trail Mix")
+
+  end
+
+  it "has a button taking you to the update page", :vcr do
+    expect(page).to have_button("Edit Trail Mix")
+  end
+  
+end
