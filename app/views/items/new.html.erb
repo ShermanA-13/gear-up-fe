@@ -10,36 +10,11 @@
     <%= form.label :count, "Count" %>
     <%= form.number_field :count %>
     <br>
-    <%= form.radio_button :category, "0" %>
-    <%= form.label :category, "Tents" %>
-    <br>
-    <%= form.radio_button :category, "1" %>
-    <%= form.label :category, "Sleeping Bag" %>
-    <br>
-    <%= form.radio_button :category, "2" %>
-    <%= form.label :category, "Stoves, Grills & Fuel" %>
-    <br>
-    <%= form.radio_button :category, "3" %>
-    <%= form.label :category, "Cookware" %>
-    <br>
-    <%= form.radio_button :category, "4" %>
-    <%= form.label :category, "Dishes" %>
-    <br>
-    <%= form.radio_button :category, "5" %>
-    <%= form.label :category, "Ropes" %>
-    <br>
-    <%= form.radio_button :category, "6" %>
-    <%= form.label :category, "Harnesses" %>
-    <br>
-    <%= form.radio_button :category, "7" %>
-    <%= form.label :category, "Belay & Rappel" %>
-    <br>
-    <%= form.radio_button :category, "8" %>
-    <%= form.label :category, "Crash Pads" %>
-    <br>
-    <%= form.radio_button :category, "9" %>
-    <%= form.label :category, "Quickdraws" %>
-    <br>
+    <% Item.category_list.each_with_index do |category, index| %>
+      <%= form.radio_button :category, "#{index}" %>
+      <%= form.label :category, "#{category}" %>
+      <br>
+    <% end %>
     <%= form.submit "Add Item" %>
   <% end %>
 <% else %>

@@ -18,12 +18,12 @@ describe "item edit page" do
 
   it "updates the item when form is filled out", :vcr do
     fill_in 'Description', with: "My Favorite Trail Mix"
-    choose option: '1'
 
     click_button "Update Item"
 
     expect(current_path).to eq("/users/1/items/2")
     expect(page).to have_content("Description: My Favorite Trail Mix")
+    expect(page).to have_content("Category: Sleeping Bag")
   end
 
   it "does not show the form when visiting a different users edit page", :vcr do
