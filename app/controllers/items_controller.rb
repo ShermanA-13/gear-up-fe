@@ -28,5 +28,6 @@ class ItemsController < ApplicationController
 
   def edit
     @item = ItemFacade.find_item(params[:user_id], params[:id])
+    @user = UserFacade.user(params[:user_id])
   end
 end
