@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sun, 05 Jun 2022 03:14:36 GMT
+      - Sun, 05 Jun 2022 03:23:28 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -31,9 +31,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 26627418-0ed7-48b4-b6b7-3f3032fc9e27
+      - bd0b033f-f887-46df-ae06-b83704da2841
       X-Runtime:
-      - '0.003846'
+      - '0.003851'
       Transfer-Encoding:
       - chunked
       Via:
@@ -41,7 +41,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}}}'
-  recorded_at: Sun, 05 Jun 2022 03:14:37 GMT
+  recorded_at: Sun, 05 Jun 2022 03:23:28 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/
@@ -63,7 +63,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sun, 05 Jun 2022 03:14:37 GMT
+      - Sun, 05 Jun 2022 03:23:28 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -73,9 +73,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 85b5a4da-5577-42db-94a9-c9e74272e819
+      - 15a8b5f2-bc94-4930-b6f0-fd28302cbc46
       X-Runtime:
-      - '0.003652'
+      - '0.013127'
       Transfer-Encoding:
       - chunked
       Via:
@@ -83,7 +83,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":[{"id":"2","type":"item","attributes":{"name":"Trail Mix","description":null,"count":8,"category":0,"user_id":1}}]}'
-  recorded_at: Sun, 05 Jun 2022 03:14:37 GMT
+  recorded_at: Sun, 05 Jun 2022 03:23:29 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1/trips
@@ -105,7 +105,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sun, 05 Jun 2022 03:14:38 GMT
+      - Sun, 05 Jun 2022 03:23:28 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -115,9 +115,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2eb8e90e-e83b-40e5-8fda-4cfb519bd856
+      - e54ec475-e064-4c83-b050-d11c17131cef
       X-Runtime:
-      - '0.004276'
+      - '0.004108'
       Transfer-Encoding:
       - chunked
       Via:
@@ -127,7 +127,7 @@ http_interactions:
       string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"first trip","area_id":33912,"description":"baby''s
         first trip","host_id":1,"start_date":"2022-06-04","end_date":"2022-06-05"}},{"id":"2","type":"trip","attributes":{"name":"boo
         boo trip","area_id":33912,"description":"trip I guess","host_id":3,"start_date":"2022-06-04","end_date":"2022-06-05"}}]}'
-  recorded_at: Sun, 05 Jun 2022 03:14:38 GMT
+  recorded_at: Sun, 05 Jun 2022 03:23:29 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/2
@@ -149,7 +149,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sun, 05 Jun 2022 03:14:38 GMT
+      - Sun, 05 Jun 2022 03:23:29 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -159,9 +159,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f906c6f0-fbe5-4625-a9e0-254af7674b30
+      - a58f1d5e-d6c3-4804-a56c-127880c4f0cd
       X-Runtime:
-      - '0.003298'
+      - '0.003565'
       Transfer-Encoding:
       - chunked
       Via:
@@ -169,7 +169,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"id":"2","type":"item","attributes":{"name":"Trail Mix","description":null,"count":8,"category":0,"user_id":1}}}'
-  recorded_at: Sun, 05 Jun 2022 03:14:38 GMT
+  recorded_at: Sun, 05 Jun 2022 03:23:29 GMT
 - request:
     method: get
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1
@@ -191,7 +191,7 @@ http_interactions:
       Server:
       - Cowboy
       Date:
-      - Sun, 05 Jun 2022 03:14:38 GMT
+      - Sun, 05 Jun 2022 03:23:29 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -201,9 +201,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - eaba8373-ede9-4f9a-8191-ea1b5f96ed56
+      - 0d70681f-fcc5-4fcf-9631-202f44799ce3
       X-Runtime:
-      - '0.003460'
+      - '0.003568'
       Transfer-Encoding:
       - chunked
       Via:
@@ -211,5 +211,93 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}}}'
-  recorded_at: Sun, 05 Jun 2022 03:14:38 GMT
+  recorded_at: Sun, 05 Jun 2022 03:23:30 GMT
+- request:
+    method: patch
+    uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/2
+    body:
+      encoding: UTF-8
+      string: '{"name":"Trail Mix","description":"My Favorite Trail Mix","count":"8","category":"1","user_id":"1"}'
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sun, 05 Jun 2022 03:23:30 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0bf33ff72f88c30c92e629a848a140cc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0c4255bc-1c2c-4b3a-b19e-9359848a9d3f
+      X-Runtime:
+      - '0.010583'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"2","type":"item","attributes":{"name":"Trail Mix","description":"My
+        Favorite Trail Mix","count":8,"category":1,"user_id":1}}}'
+  recorded_at: Sun, 05 Jun 2022 03:23:30 GMT
+- request:
+    method: get
+    uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items/2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Sun, 05 Jun 2022 03:23:39 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0bf33ff72f88c30c92e629a848a140cc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 06a8e9da-d250-4567-ae99-77d1f971838f
+      X-Runtime:
+      - '0.003372'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"2","type":"item","attributes":{"name":"Trail Mix","description":"My
+        Favorite Trail Mix","count":8,"category":1,"user_id":1}}}'
+  recorded_at: Sun, 05 Jun 2022 03:23:40 GMT
 recorded_with: VCR 6.1.0

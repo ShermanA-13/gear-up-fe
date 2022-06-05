@@ -19,5 +19,10 @@ class ItemFacade
     def destroy(parameters)
       ItemService.destroy(parameters)
     end
+
+    def update(parameters)
+      json = ItemService.update(parameters)
+      Item.new(json[:data])
+    end
   end
 end

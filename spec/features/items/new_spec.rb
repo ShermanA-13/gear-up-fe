@@ -28,6 +28,7 @@ describe "Item new page" do
       fill_in 'Description', with: "1 person Tent"
       fill_in 'Count', with: "1"
       choose option: '1'
+      
       click_button 'Add Item'
 
       expect(page).to have_content("Name: Tent 1")

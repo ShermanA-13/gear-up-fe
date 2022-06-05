@@ -22,6 +22,18 @@ class ItemService < BaseService
       get_json(response)
     end
 
+    def update(parameters)
+      response = conn.patch "/api/v1/users/#{parameters[:user_id]}/items/#{parameters[:id]}", {
+        name: "#{parameters[:name]}",
+        description: "#{parameters[:description]}",
+        count: "#{parameters[:count]}",
+        category: "#{parameters[:category]}",
+        user_id: "#{parameters[:user_id]}"
+      }.to_json, "Content-Type" => "application/json"
+
+      get_json(response)
+    end
+
     def destroy(parameters)
       response = conn.delete("/api/v1/users/#{parameters[:user_id]}/items/#{parameters[:id]}")
     end

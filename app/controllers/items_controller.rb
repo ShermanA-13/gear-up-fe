@@ -30,4 +30,10 @@ class ItemsController < ApplicationController
     @item = ItemFacade.find_item(params[:user_id], params[:id])
     @user = UserFacade.user(params[:user_id])
   end
+
+  def update
+    item = ItemFacade.update(params)
+    redirect_to "/users/#{item.user_id}/items/#{item.id}"
+  end
+
 end
