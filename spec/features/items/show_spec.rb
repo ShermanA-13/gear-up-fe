@@ -14,4 +14,9 @@ describe "Item show page" do
     expect(page).not_to have_content("Count: 8")
   end
 
+  it "has a link to return to the user's item index", :vcr do
+    click_link("Return to the Item Shed")
+
+    expect(current_path).to eq("/users/1/items")
+  end
 end
