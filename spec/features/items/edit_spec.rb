@@ -9,7 +9,7 @@ describe "item edit page" do
     expect(find('form')).to have_content('Item Name')
     expect(find('form')).to have_content('Description')
     expect(find('form')).to have_content('Count')
-    expect(find('form')).to have_content('1')
+    expect(find('form')).to have_content('Tents')
     expect(find('form')).to have_content('Sleeping Bag')
     expect(find('form')).to have_content('Stoves, Grills & Fuel')
 

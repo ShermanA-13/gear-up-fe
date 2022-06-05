@@ -176,7 +176,7 @@ http_interactions:
     uri: https://gear-up-be.herokuapp.com/api/v1/users/1/items
     body:
       encoding: UTF-8
-      string: '{"name":"Tent 1","description":"1 person Tent","count":"1","category":"1","user_id":"1"}'
+      string: '{"name":"Tent 1","description":"1 person Tent","count":"1","category":"0","user_id":"1"}'
     headers:
       User-Agent:
       - Faraday v2.3.0
@@ -214,7 +214,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"id":"5","type":"item","attributes":{"name":"Tent 1","description":"1
-        person Tent","count":1,"category":1,"user_id":1}}}'
+        person Tent","count":1,"category":0,"user_id":1}}}'
   recorded_at: Sun, 05 Jun 2022 00:17:36 GMT
 - request:
     method: get
@@ -257,6 +257,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"data":{"id":"5","type":"item","attributes":{"name":"Tent 1","description":"1
-        person Tent","count":1,"category":1,"user_id":1}}}'
+        person Tent","count":1,"category":0,"user_id":1}}}'
   recorded_at: Sun, 05 Jun 2022 00:19:31 GMT
 recorded_with: VCR 6.1.0

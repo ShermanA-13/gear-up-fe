@@ -6,7 +6,24 @@ class Item
     @name = data[:attributes][:name]
     @description = data[:attributes][:description]
     @count = data[:attributes][:count]
-    @category = data[:attributes][:category]
+    @category = enum_category(data[:attributes][:category])
     @user_id = data[:attributes][:user_id]
   end
+
+  def enum_category(category_num)
+    enums = [
+      "Tents",
+      "Sleeping Bag",
+      "Stoves, Grills & Fuel",
+      "Cookware",
+      "Dishes",
+      "Ropes",
+      "Harnesses",
+      "Belay & Rappel",
+      "Crash Pads",
+      "Quickdraws"
+    ]
+    enums[category_num.to_i]
+  end
+
 end
