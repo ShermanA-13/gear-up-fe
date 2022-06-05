@@ -16,4 +16,9 @@ class ItemsController < ApplicationController
     item = ItemFacade.create(params)
     redirect_to "/users/#{item.user_id}/items/#{item.id}"
   end
+
+  def destroy
+    item = ItemFacade.destroy(params)
+    redirect_to "/users/#{params[:user_id]}/items"
+  end
 end

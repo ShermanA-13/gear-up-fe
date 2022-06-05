@@ -21,5 +21,9 @@ class ItemService < BaseService
 
       get_json(response)
     end
+
+    def destroy(parameters)
+      response = conn.delete("/api/v1/users/#{parameters[:user_id]}/items/#{parameters[:id]}")
+    end
   end
 end

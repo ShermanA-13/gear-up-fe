@@ -15,5 +15,10 @@ class ItemFacade
       json = ItemService.create(parameters)
       Item.new(json[:data])
     end
+
+    def destroy(parameters)
+      binding.pry
+      ItemService.destroy(parameters)
+    end
   end
 end
