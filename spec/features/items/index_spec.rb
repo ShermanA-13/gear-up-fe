@@ -28,7 +28,9 @@ describe "Item index/shed" do
   end
 
   it "each item links to the item's show page", :vcr do
-    click_link("Water Bottle")
+    within "#item-1" do
+      click_link("View Item")
+    end
 
     expect(current_path).to eq("/users/1/items/1")
     expect(page).to have_content("Name: Water Bottle")
@@ -42,18 +44,16 @@ end
 describe "create an item" do
   before do
     visit "/login?user_id=1"
-    click_link("something this's Shed")
+    click_link("My Shed")
   end
 
   it "has a button to create a new item", :vcr do
     click_button("Add an item to your Shed")
-
     expect(current_path).to eq("/users/1/items/new")
   end
 
   it "does not show the button when visiting a different users page", :vcr do
     visit "/users/2/items"
-    
     expect(page).not_to have_button("Add an item to your Shed")
   end
 end

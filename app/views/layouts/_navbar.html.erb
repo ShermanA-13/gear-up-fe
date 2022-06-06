@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <% if session[:user_id] %>
+    <a class="navbar-brand" href="/dashboard">
+      <%= image_tag "gear_up_logo.png", height: 50 %>
+    </a>
+  <% else %>
+    <a class="navbar-brand" href="/">
+      <%= image_tag "gear_up_logo.png", height: 50 %>
+    </a>
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <% if !session[:user_id] %>
+      <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href='/auth/google_oauth2'>Login <span class="sr-only">(current)</span></a>
+          </li>
+      </ul>
+    <% else %>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/logout">Logout <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/<%= session[:user_id]%>/items">MyShed</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">MyTrips</a>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</nav>

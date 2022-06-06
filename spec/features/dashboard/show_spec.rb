@@ -15,7 +15,7 @@ describe 'creates user' do
   end
 
   it 'has a link to the users item shed', :vcr do
-    click_link("Pickles McTickles's Shed")
+    click_link("My Shed")
 
     expect(current_path).to eq("/users/5/items")
   end

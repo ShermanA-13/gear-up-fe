@@ -1,16 +1,29 @@
-<h1>All of your items:</h1>
 <hr>
 <% if params[:user_id] == session[:user_id] %>
-<%= button_to "Add an item to your Shed", "/users/#{session[:user_id]}/items/new", method: :get %>
+  <h1>All of your items:</h1>
+  <%= button_to "Add an item to your Shed", "/users/#{session[:user_id]}/items/new", method: :get %>
+  <br>
+<% else %>
+  <h1>Another User's Shed (refactor to get user name)</h1>
 <% end %>
+<div class="card-group">
+  <% @items.each do |item| %>
+    <div id="item-<%= item.id %>">
+      <div class="card text-center" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= item.name %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= item.category %></h6>
+          <h6 class="card-subtitle mb-2 text-muted">Count: <%= item.count %></h6>
+          <h6 class="card-subtitle mb-2 text-muted">Item ID: <%= item.id %></h6>
+          <% if !item.description || item.description.empty?%>
+            <p class="card-text">No Description</p>
+          <% else %>
+            <p class="card-text"><%= item.description %></p>
+          <% end %>
+          <a href="items/<%= item.id %>" class="btn btn-primary">View Item</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
-<% @items.each do |item| %>
-  <div id="item-<%= item.id %>">
-    <h2><a href="items/<%= item.id %>"><%= item.name %></a></h2>
-    <p>Count: <%= item.count %></p>
-    <p>Description: <%= item.description %></p>
-    <p>Category: <%= item.category %></p>
-    <h6>Item ID: <%= item.id %></h6>
-    <hr>
-  </div>
-<% end %>
+</div>
