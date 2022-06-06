@@ -1,23 +1,8 @@
 class TripFacade
-  def self.get_trips(query)
-    json = TripService.get_trips(query)
-    json[:data].map do |trip|
-      trip[:attributes][:id] = trip[:id]
-      Trip.new(trip[:attributes])
-    end
-  end
-
-  def self.data_hash(trips)
-    if trips != []
-      trips.map { |trip| trip.data_hash }
-    end
-  end
-
   def self.get_trip_by_id(id)
     trip_data = TripService.get_trip_by_id(id)[:data]
 
-    # trip_data[:attributes][:id] = trip_data[:id]
-    # Trip.new(trip_data[:attributes])
+    trip_data[:attributes][:id] = trip_data[:id]
     Trip.new(trip_data)
   end
 
