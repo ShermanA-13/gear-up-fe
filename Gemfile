@@ -33,8 +33,15 @@ gem "jbuilder", "~> 2.5"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false
+# add faraday for http requests
+gem "faraday"
+# add bootstrap and related FE gems
+# gem "bootstrap", "~> 4.0.0"
 gem "bootstrap", "~> 4.0.0"
-gem 'jquery-rails'
+gem "jquery-rails"
+gem "simple_form"
+gem "popper_js"
+gem "tether-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -65,5 +72,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "faraday"
-gem 'omniauth-google-oauth2'
+gem "omniauth-google-oauth2"
+gem "standardrb"
