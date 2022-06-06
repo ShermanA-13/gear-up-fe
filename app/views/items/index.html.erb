@@ -15,7 +15,7 @@
           <h6 class="card-subtitle mb-2 text-muted"><%= item.category %></h6>
           <h6 class="card-subtitle mb-2 text-muted">Count: <%= item.count %></h6>
           <h6 class="card-subtitle mb-2 text-muted">Item ID: <%= item.id %></h6>
-          <% if item.description %>
+          <% if item.description.empty? %>
             <p class="card-text">No Description</p>
           <% else %>
             <p class="card-text"><%= item.description %></p>
