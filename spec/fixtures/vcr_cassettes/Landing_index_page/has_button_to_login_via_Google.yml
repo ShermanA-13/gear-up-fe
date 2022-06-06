@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://gear-up-be.herokuapp.com/api/v1/users
+    uri: http://localhost:5000/api/v1/users
     body:
       encoding: UTF-8
       string: '{"first_name":"Mr","last_name":"Test","email":"iamnotreal@gotcha.com"}'
@@ -20,33 +20,25 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Cowboy
-      Date:
-      - Mon, 06 Jun 2022 02:44:07 GMT
-      Connection:
-      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"c2a449b0096ce5c7c122fb90182d13be"
+      - W/"210d0040fb27a9d9271db26592054b69"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3c8abc76-b605-439b-8f01-e12eda087819
+      - c4426ec9-e230-4b26-9633-87e6e44ee543
       X-Runtime:
-      - '0.006031'
+      - '0.002095'
       Transfer-Encoding:
       - chunked
-      Via:
-      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"6","type":"user","attributes":{"first_name":"Mr","last_name":"Test","email":"iamnotreal@gotcha.com"}}}'
-  recorded_at: Mon, 06 Jun 2022 02:44:07 GMT
+      string: '{"data":{"id":"5","type":"user","attributes":{"first_name":"Mr","last_name":"Test","email":"iamnotreal@gotcha.com"}}}'
+  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
 - request:
     method: get
-    uri: https://gear-up-be.herokuapp.com/api/v1/users/6
+    uri: http://localhost:5000/api/v1/users/5
     body:
       encoding: US-ASCII
       string: ''
@@ -62,33 +54,25 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Cowboy
-      Date:
-      - Mon, 06 Jun 2022 02:44:06 GMT
-      Connection:
-      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"c2a449b0096ce5c7c122fb90182d13be"
+      - W/"210d0040fb27a9d9271db26592054b69"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 531af35b-95c3-4e26-b454-520c68a02aa4
+      - e044ccd6-8cdb-49fb-a699-2b88ae282323
       X-Runtime:
-      - '0.006951'
+      - '0.001952'
       Transfer-Encoding:
       - chunked
-      Via:
-      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"6","type":"user","attributes":{"first_name":"Mr","last_name":"Test","email":"iamnotreal@gotcha.com"}}}'
-  recorded_at: Mon, 06 Jun 2022 02:44:07 GMT
+      string: '{"data":{"id":"5","type":"user","attributes":{"first_name":"Mr","last_name":"Test","email":"iamnotreal@gotcha.com"}}}'
+  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
 - request:
     method: get
-    uri: https://gear-up-be.herokuapp.com/api/v1/users/6/items/
+    uri: http://localhost:5000/api/v1/users/5/items/
     body:
       encoding: US-ASCII
       string: ''
@@ -104,12 +88,6 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Cowboy
-      Date:
-      - Mon, 06 Jun 2022 02:44:07 GMT
-      Connection:
-      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
@@ -117,20 +95,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 247b7790-4ca8-49e7-b6c0-c076ef7fc439
+      - 1fbad9f0-34da-4f23-9997-9b6aa6bb3e40
       X-Runtime:
-      - '0.003001'
+      - '0.001715'
       Transfer-Encoding:
       - chunked
-      Via:
-      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '{"data":[]}'
-  recorded_at: Mon, 06 Jun 2022 02:44:08 GMT
+  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
 - request:
     method: get
-    uri: https://gear-up-be.herokuapp.com/api/v1/users/6/trips
+    uri: http://localhost:5000/api/v1/users/5/trips
     body:
       encoding: US-ASCII
       string: ''
@@ -146,12 +122,6 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Cowboy
-      Date:
-      - Mon, 06 Jun 2022 02:44:07 GMT
-      Connection:
-      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
@@ -159,15 +129,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cf721ba4-8bb2-49b0-ba00-529b016f46c4
+      - e3b46f3b-5f7d-4b45-ae19-4327922cb17f
       X-Runtime:
-      - '0.003217'
+      - '0.002598'
       Transfer-Encoding:
       - chunked
-      Via:
-      - 1.1 vegur
     body:
       encoding: UTF-8
       string: '{"data":[]}'
-  recorded_at: Mon, 06 Jun 2022 02:44:08 GMT
+  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
 recorded_with: VCR 6.1.0

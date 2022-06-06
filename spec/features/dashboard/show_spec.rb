@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe 'creates user' do
   before :each do
     data = {
@@ -16,7 +18,6 @@ describe 'creates user' do
 
   it 'has a link to the users item shed', :vcr do
     click_link("My Shed")
-
-    expect(current_path).to eq("/users/5/items")
+    expect(current_path).to eq("/users/#{@user.id}/items")
   end
 end

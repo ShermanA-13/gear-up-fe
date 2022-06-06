@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://gear-up-be.herokuapp.com/api/v1/users
+    uri: http://localhost:5000/api/v1/users
     body:
       encoding: US-ASCII
       string: ''
@@ -18,28 +18,20 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Cowboy
-      Date:
-      - Sat, 04 Jun 2022 20:31:06 GMT
-      Connection:
-      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"0637f0fe00c05f6efcc8f6e09c234f68"
+      - W/"f7839ec9f76d8e03a04bc69f98ad70e2"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c1a144ae-74dd-4999-aa17-93bdb9c60840
+      - '008296d4-ab6d-41ff-ba82-c45642354a30'
       X-Runtime:
-      - '0.007394'
+      - '0.001666'
       Transfer-Encoding:
       - chunked
-      Via:
-      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}},{"id":"2","type":"user","attributes":{"first_name":"asda","last_name":"this","email":"cheese@email.com"}},{"id":"3","type":"user","attributes":{"first_name":"monkey","last_name":"this","email":"foo@email.com"}},{"id":"4","type":"user","attributes":{"first_name":"John","last_name":"Bowman","email":"johntbowman.production@gmail.com"}},{"id":"5","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}}]}'
-  recorded_at: Sat, 04 Jun 2022 20:31:06 GMT
+      string: '{"data":[{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}},{"id":"2","type":"user","attributes":{"first_name":"asda","last_name":"this","email":"cheese@email.com"}},{"id":"3","type":"user","attributes":{"first_name":"monkey","last_name":"this","email":"foo@email.com"}},{"id":"4","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}},{"id":"5","type":"user","attributes":{"first_name":"Mr","last_name":"Test","email":"iamnotreal@gotcha.com"}}]}'
+  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
 recorded_with: VCR 6.1.0

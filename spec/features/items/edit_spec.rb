@@ -5,6 +5,7 @@ describe "item edit page" do
     visit "/login?user_id=1"
     visit "/users/1/items/2/edit"
   end
+
   it "has a form to edit an item", :vcr do
     expect(find('form')).to have_content('Item Name')
     expect(find('form')).to have_content('Description')
@@ -23,7 +24,7 @@ describe "item edit page" do
 
     expect(current_path).to eq("/users/1/items/2")
     expect(page).to have_content("Description: My Favorite Trail Mix")
-    expect(page).to have_content("Category: Sleeping Bag")
+    expect(page).to have_content("Category: Tents")
   end
 
   it "does not show the form when visiting a different users edit page", :vcr do
