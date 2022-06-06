@@ -85,16 +85,16 @@ end
 OmniAuth.config.test_mode = true
 OmniAuth.config.silence_get_warning = true
 OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
-        provider: 'google_oauth2',
-        uid: '12345678910',
-        info: {
-            email: 'iamnotreal@gotcha.com',
-            first_name: 'Mr',
-            last_name: 'Test'
-        },
-        credentials: {
-            token: 'abcdefg12345',
-            refresh_token: 'abcdefg12345',
-            expires_at: DateTime.now,
-        }
-    })
+    provider: 'google_oauth2',
+    uid: '12345678910',
+    info: {
+        email: 'iamnotreal@gotcha.com',
+        first_name: 'Mr',
+        last_name: 'Test'
+    },
+    credentials: {
+        token: 'abcdefg12345',
+        refresh_token: 'abcdefg12345',
+        expires_at: DateTime.now,
+    }
+})
