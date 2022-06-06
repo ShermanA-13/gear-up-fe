@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://gear-up-be.herokuapp.com/api/v1/users
+    uri: http://localhost:5000/api/v1/users
     body:
       encoding: UTF-8
       string: '{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}'
@@ -20,33 +20,25 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Cowboy
-      Date:
-      - Sat, 04 Jun 2022 20:31:04 GMT
-      Connection:
-      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"be4be7f4977447a193a81d67907a8424"
+      - W/"ce0f55569ad2f76de54fb8414bbf846b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - af1915c8-fbe8-4fea-a2c4-ed672a84e670
+      - f0cb9312-6441-47a8-99a4-6398a7b0a0ce
       X-Runtime:
-      - '0.006575'
+      - '0.002015'
       Transfer-Encoding:
       - chunked
-      Via:
-      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"5","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}}}'
-  recorded_at: Sat, 04 Jun 2022 20:31:04 GMT
+      string: '{"data":{"id":"4","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}}}'
+  recorded_at: Mon, 06 Jun 2022 20:06:49 GMT
 - request:
     method: get
-    uri: https://gear-up-be.herokuapp.com/api/v1/users/5
+    uri: http://localhost:5000/api/v1/users/4
     body:
       encoding: US-ASCII
       string: ''
@@ -62,28 +54,20 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Cowboy
-      Date:
-      - Sat, 04 Jun 2022 20:31:04 GMT
-      Connection:
-      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"be4be7f4977447a193a81d67907a8424"
+      - W/"ce0f55569ad2f76de54fb8414bbf846b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 000de408-a0eb-41ab-bfbb-c93700ff5d5b
+      - a12c0b29-2168-4f80-b8bd-14f31d2e581c
       X-Runtime:
-      - '0.008312'
+      - '0.001747'
       Transfer-Encoding:
       - chunked
-      Via:
-      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"5","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}}}'
-  recorded_at: Sat, 04 Jun 2022 20:31:05 GMT
+      string: '{"data":{"id":"4","type":"user","attributes":{"first_name":"Pickles","last_name":"McTickles","email":"dilllord@dills.org"}}}'
+  recorded_at: Mon, 06 Jun 2022 20:06:49 GMT
 recorded_with: VCR 6.1.0

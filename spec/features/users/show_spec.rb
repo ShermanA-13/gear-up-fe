@@ -55,17 +55,15 @@ describe "user show page" do
 
       within "#trip-1" do
         expect(page).to have_content("first trip")
-        expect(page).to have_content("Location: somewhere")
         expect(page).to have_content("Description: baby's first trip")
-        expect(page).to have_content("Start date: 2022-06-03")
-        expect(page).to have_content("End date: 2022-06-04")
+        expect(page).to have_content("Start date: 2022-06-06")
+        expect(page).to have_content("End date: 2022-06-07")
       end
       within "#trip-2" do
         expect(page).to have_content("boo boo trip")
-        expect(page).to have_content("Location: nowhere")
         expect(page).to have_content("Description: trip I guess")
-        expect(page).to have_content("Start date: 2022-06-03")
-        expect(page).to have_content("End date: 2022-06-04")
+        expect(page).to have_content("Start date: 2022-06-06")
+        expect(page).to have_content("End date: 2022-06-07")
     end
   end
 end

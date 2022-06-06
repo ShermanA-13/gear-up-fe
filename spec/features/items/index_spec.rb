@@ -3,6 +3,9 @@ require "rails_helper"
 describe "Item index/shed" do
   before do
     # VCR.insert_cassette("displays_all_of_the_users_items")
+    # json_response = File.read('spec/fixtures/items/user_items.json')
+    # stub_request(:get, "https://gear-up-be.herokuapp.com/api/v1/users/1/items").
+    #   to_return(status: 200, body: json_response)
     visit "/users/1/items"
   end
 
@@ -11,6 +14,7 @@ describe "Item index/shed" do
   end
 
   it "displays all of the users items", :vcr do
+    # save_and_open_page
     within "#item-1" do
       expect(page).to have_content("Water Bottle")
       expect(page).to have_content("Count: 5")
