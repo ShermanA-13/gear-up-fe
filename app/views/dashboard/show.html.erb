@@ -6,7 +6,7 @@
 
 <div id="items">
   <h3>
-    <a href="/users/<%= @user.id %>/items"><%= @user.first_name %> <%= @user.last_name %>'s Shed</a>
+    <a href="/users/<%= @user.id %>/items">My Shed</a>
   </h3>
 
   <div class="user_items_container">
@@ -25,7 +25,7 @@
 
 <% if !@trips.empty? %>
   <div id="trips">
-    <h2><%= @user.first_name %> <%= @user.last_name %>'s Upcoming Trips</h2>
+    <h2>My Trips</h2>
     <div class="user_trips_container">
       <% @trips.each do |trip| %>
       <div class="trip_container" id="trip-<%= trip.id %>">
@@ -38,4 +38,6 @@
       <% end %>
     </div>
   </div>
+<% else %>
+  <h3>No Trips Planned Yet</h3>
 <% end %>
