@@ -40,7 +40,7 @@ gem "faraday"
 gem "bootstrap", "~> 4.0.0"
 gem "jquery-rails"
 gem "simple_form"
-gem "popper_js"
+
 gem "tether-rails"
 
 group :development, :test do
