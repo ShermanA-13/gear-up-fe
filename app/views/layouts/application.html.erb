@@ -10,11 +10,10 @@
   </head>
 
   <body>
-    <div class="logo_container">
-      <a href="/">
-        <%= image_tag "gear_up_logo.png", height: 80 %>
-      </a>
-    </div>
+    <% if flash[:success] %>
+      <%= flash[:success] %>
+    <% end %>
+    <%= render "layouts/navbar" %>
     <%= yield %>
   </body>
 </html>
