@@ -1,0 +1,24 @@
+<% if session[:user_id] == @user.id %>
+
+  <%= form_with url: "/users/#{@user.id}/items", method: :post, local: true do |form| %>
+    <%= form.label :name, "Item Name" %>
+    <%= form.text_field :name %>
+    <br>
+    <%= form.label :description, "Description" %>
+    <%= form.text_area :description %>
+    <br>
+    <%= form.label :count, "Count" %>
+    <%= form.number_field :count %>
+    <br>
+    <% Item.category_list.each_with_index do |category, index| %>
+      <%= form.radio_button :category, "#{index}" %>
+      <%= form.label :category, "#{category}" %>
+      <br>
+    <% end %>
+    <%= form.submit "Add Item" %>
+  <% end %>
+<% else %>
+
+<h1>How did you get here...</h1>
+
+<% end %>

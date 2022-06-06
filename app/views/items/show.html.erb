@@ -1,7 +1,16 @@
 <h1>Item Show Page</h1>
 <hr>
 
+<p><a href="/users/<%= @item.user_id %>/items">Return to the Item Shed</a></p>
+
 <h3>Name: <%= @item.name %></h3>
 <p>Description: <%= @item.description %></p>
 <p>Count: <%= @item.count %></p>
 <p>Item Category: <%= @item.category %></p>
+<% if session[:user_id] == params[:user_id] %>
+  <p>
+    <%= link_to "Delete #{@item.name}", "/users/#{session[:user_id]}/items/#{@item.id}", method: :delete %>
+  </p>
+
+  <%= button_to "Edit #{@item.name}", "/users/#{session[:user_id]}/items/#{@item.id}/edit", method: :get %>
+<% end %>

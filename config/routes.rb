@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
 
   resources :users, only: [:show, :index] do
-    resources :items, only: [:show, :index]
+    resources :items, only: [:show, :index, :new, :create, :destroy, :edit, :update]
   end
 end
