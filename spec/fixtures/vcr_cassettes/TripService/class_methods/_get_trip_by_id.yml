@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://gear-up-be.herokuapp.com/api/v1/trips/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 06 Jun 2022 19:20:19 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2ad26bb3bded90ae2c18e1144f9b528a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3e1f3736-8748-4645-9222-0e0e9b389c93
+      X-Runtime:
+      - '0.004015'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"trip","attributes":{"name":"first trip","area_id":33912,"description":"baby''s
+        first trip","host_id":1,"start_date":"2022-06-04","end_date":"2022-06-05"}}}'
+  recorded_at: Mon, 06 Jun 2022 19:20:19 GMT
+recorded_with: VCR 6.1.0

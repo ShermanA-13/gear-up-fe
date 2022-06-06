@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://gear-up-be.herokuapp.com/api/v1/users/1/trips
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Date:
+      - Mon, 06 Jun 2022 20:46:48 GMT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9bac620d6d6b6a82907c45cf91a227c0"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - dbacae68-91db-4ce3-9c4d-ab97c296d1ba
+      X-Runtime:
+      - '0.917453'
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"2","type":"trip","attributes":{"name":"boo boo trip","area_id":33912,"description":"trip
+        I guess","host_id":3,"start_date":"2022-06-04","end_date":"2022-06-05"}}]}'
+  recorded_at: Mon, 06 Jun 2022 20:46:49 GMT
+recorded_with: VCR 6.1.0
