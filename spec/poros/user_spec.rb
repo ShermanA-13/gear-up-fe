@@ -13,7 +13,5 @@ RSpec.describe "user poro" do
     expect(user.first_name).to eq("Gandalf")
     expect(user.last_name).to eq("DaGrey")
     expect(user.email).to eq("email@gmail.com")
-    expect(user.first_name).to eq("Fox")
-    expect(user.last_name).to eq("McCloud")
   end
 end
