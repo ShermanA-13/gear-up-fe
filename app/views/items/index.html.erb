@@ -1,7 +1,10 @@
-<h1>All of your items:</h1>
 <hr>
 <% if params[:user_id] == session[:user_id] %>
-<%= button_to "Add an item to your Shed", "/users/#{session[:user_id]}/items/new", method: :get %>
+  <h1>All of your items:</h1>
+  <%= button_to "Add an item to your Shed", "/users/#{session[:user_id]}/items/new", method: :get %>
+  <br>
+<% else %>
+  <h1>Another User's Shed (refactor to get user name)</h1>
 <% end %>
 <div class="card-group">
   <% @items.each do |item| %>
