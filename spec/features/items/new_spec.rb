@@ -19,7 +19,6 @@ describe "Item new page" do
   it "displays no form when user visits page", :vcr do
     visit "/users/2/items/new"
     expect(page).not_to have_css("form")
-
     expect(page).to have_content("How did you get here...")
   end
 

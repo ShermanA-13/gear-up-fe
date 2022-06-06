@@ -25,16 +25,21 @@ describe "delete item" do
   before do
     visit "/login?user_id=1"
   end
+
   it "has a link to delete an item", :vcr do
     visit "/users/1/items"
-    click_link "Trail Mix"
+    within '#item-2' do
+      click_link 'View Item'
+    end
 
     expect(page).to have_link("Delete Trail Mix")
   end
 
   it "does not have delete link on other users item pages", :vcr do
     visit "/users/2/items"
-    click_link "Good Socks"
+    within '#item-3' do
+      click_link 'View Item'
+    end
 
     expect(page).not_to have_link("Delete Good Socks")
   end
