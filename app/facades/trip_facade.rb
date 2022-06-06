@@ -14,5 +14,13 @@ class TripFacade
         Trip.new(trip[:attributes])
       end
     end
+    def destroy(id)
+      TripService.destroy(id)
+    end
+
+    def update(id)
+      json = TripService.update(id)
+      Trip.new(json[:data])
+    end
   end
 end
