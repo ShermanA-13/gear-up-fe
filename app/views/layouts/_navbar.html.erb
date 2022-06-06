@@ -1,7 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/dashboard">
-    <%= image_tag "gear_up_logo.png", height: 50 %>
-  </a>
+  <% if session[:user_id] %>
+    <a class="navbar-brand" href="/dashboard">
+      <%= image_tag "gear_up_logo.png", height: 50 %>
+    </a>
+  <% else %>
+    <a class="navbar-brand" href="/">
+      <%= image_tag "gear_up_logo.png", height: 50 %>
+    </a>
+  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
