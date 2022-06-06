@@ -3,3 +3,14 @@
   <%= form.text_field :name %>
   <%= form.submit "Search" %>
 <% end %>
+
+<% if !@areas.nil? %>
+  <% @areas.each_with_index do |area, index| %>
+    <div id="area_<%= index %>">
+      <%= area.name %>
+      <br>
+      <%= area.state %>
+      <hr>
+    </div>
+  <% end %>
+<% end %>
