@@ -1,0 +1,30 @@
+<% if session[:user_id] == @user.id %>
+
+  <%= form_with url: "/users/#{@user.id}/items/#{@item.id}", method: :patch, local: true do |form| %>
+    <%= form.label :name, "Item Name" %>
+    <%= form.text_field :name, value: "#{@item.name}" %>
+    <br>
+    <%= form.label :description, "Description" %>
+    <%= form.text_area :description, value: "#{@item.description}" %>
+    <br>
+    <%= form.label :count, "Count" %>
+    <%= form.number_field :count, value: "#{@item.count}" %>
+    <br>
+    <% Item.category_list.each_with_index do |category, index| %>
+      <% if @item.category == category %>
+        <%= form.radio_button :category, "#{index}", checked: true %>
+        <%= form.label :category, "#{category}" %>
+        <br>
+      <% else %>
+        <%= form.radio_button :category, "#{index}" %>
+        <%= form.label :category, "#{category}" %>
+        <br>
+      <% end %>
+    <% end %>
+    <%= form.submit "Update Item" %>
+  <% end %>
+<% else %>
+
+<h1>How did you get here...</h1>
+
+<% end %>
