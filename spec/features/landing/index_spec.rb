@@ -8,7 +8,6 @@ RSpec.describe 'Landing index page' do
 
   it 'has button to login via Google', :vcr do
     click_link 'Login'
-
     expect(current_path).to eq('/dashboard')
   end
 end
