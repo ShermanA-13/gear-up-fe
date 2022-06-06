@@ -80,6 +80,7 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.filter_sensitive_data("Sike you thought") { ENV['GOOGLE_CLIENT_ID'] }
   config.filter_sensitive_data("Sike you thought") { ENV['GOOGLE_CLIENT_SECRET'] }
+  config.allow_http_connections_when_no_cassette = true
 end
 
 OmniAuth.config.test_mode = true
