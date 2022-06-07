@@ -14,6 +14,6 @@ class UsersController < ApplicationController
      session[:access_token] = auth_hash[:credentials][:token]
     user = UserFacade.create_user(auth_hash[:info])
 
-    redirect_to "/login?user_id=#{user.id}"
+    redirect_to "/login?user_id=#{user.id}&user_photo=#{user.user_photo}"
   end
 end
