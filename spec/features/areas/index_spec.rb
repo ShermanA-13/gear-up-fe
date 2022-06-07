@@ -38,5 +38,13 @@ describe "Area search (index) page" do
         expect(current_path).to eq("/areas/2107/trips/new")
       end
     end
+
+    it "has links to area show pages", :vcr do
+      within("#area_0") do
+        click_on "Little Yosemite Valley"
+
+        expect(current_path).to eq("/areas/2107")
+      end
+    end
   end
 end
