@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5000/api/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"first_name":"Don","last_name":"Rickles","email":"ricklord@ricks.org","user_photo":"https://fakepic.com"}'
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"59cacb391482737917845c6fb121de18"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 27def49f-c214-4918-98e1-b27e8d7b79f7
+      X-Runtime:
+      - '0.008894'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"2","type":"user","attributes":{"first_name":"Don","last_name":"Rickles","email":"ricklord@ricks.org","user_photo":"https://fakepic.com"}}}'
+  recorded_at: Tue, 07 Jun 2022 21:42:26 GMT
+recorded_with: VCR 6.1.0
