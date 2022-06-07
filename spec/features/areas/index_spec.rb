@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Area search (index) page" do
   before do
-    visit "/areas/search"
+    visit "/areas"
   end
 
   it "has a search bar", :vcr do

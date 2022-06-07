@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :items, only: [:show, :index, :new, :create, :destroy, :edit, :update]
   end
 
-  get "/areas/search", to: "areas#index"
+  get "/areas", to: "areas#index"
   # get "/areas/:area_id", to: "areas#show"
   get "/areas/:area_id/trips/new", to: "trips#new"
   # post "/areas/:area_id/trips/new", to: "trips#create"
