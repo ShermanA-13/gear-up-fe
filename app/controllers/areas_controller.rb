@@ -6,6 +6,9 @@ class AreasController < ApplicationController
   end
 
   def show
-    # @area = AreaFacade.area(params[:id])
+    @area = AreaFacade.area(params[:id])
+    if session[:user_id]
+      @user = UserFacade.user(session[:user_id])
+    end
   end
 end

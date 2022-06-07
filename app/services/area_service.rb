@@ -4,5 +4,10 @@ class AreaService < BaseService
       response = conn.get("/api/v1/areas/find_all?name=#{name}")
       get_json(response)
     end
+
+    def area(id)
+      response = conn.get("/api/v1/areas/#{id}")
+      get_json(response)
+    end
   end
 end

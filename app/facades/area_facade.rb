@@ -5,5 +5,10 @@ class AreaFacade
         Area.new(data)
       end
     end
+
+    def area(id)
+      data = AreaService.area(id)[:data]
+      Area.new(data)
+    end
   end
 end

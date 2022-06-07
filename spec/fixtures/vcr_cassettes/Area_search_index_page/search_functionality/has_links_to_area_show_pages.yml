@@ -25,9 +25,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 19dc1676-ebfe-4ab1-b683-60183a50f91e
+      - 45e986d6-c8d9-45b9-b641-2a9ee7e6d1d4
       X-Runtime:
-      - '0.196792'
+      - '0.075063'
       Transfer-Encoding:
       - chunked
     body:
@@ -41,5 +41,40 @@ http_interactions:
         Yosemite","state":"Pennsylvania","url":"https://www.mountainproject.com/area/106454642/little-yosemite","lat":"39.91958","long":"-79.5805"}},{"id":"24412","type":"area","attributes":{"name":"Yosemite
         Boulder","state":"Rhode Island","url":"https://www.mountainproject.com/area/106834295/yosemite-boulder","lat":"41.90152","long":"-71.4372"}},{"id":"31971","type":"area","attributes":{"name":"Yosemite
         Highball boulder","state":"Washington","url":"https://www.mountainproject.com/area/118702033/yosemite-highball-boulder","lat":"47.55266","long":"-120.76358"}}]}'
-  recorded_at: Tue, 07 Jun 2022 18:55:52 GMT
+  recorded_at: Tue, 07 Jun 2022 19:13:56 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/areas/2107
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"06047cd319d47923ad8dd80444dc49b7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4c8761c3-7ee4-44cb-a5c7-81464bf8c9d2
+      X-Runtime:
+      - '0.002358'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"2107","type":"area","attributes":{"name":"Little Yosemite
+        Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}}}'
+  recorded_at: Tue, 07 Jun 2022 19:13:56 GMT
 recorded_with: VCR 6.1.0
