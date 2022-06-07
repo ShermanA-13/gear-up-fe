@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe 'user service' do
   before :each do
     @data = {
-      first_name: 'Pickles',
-      last_name: 'McTickles',
-      email: 'dilllord@dills.org',
+      first_name: 'Don',
+      last_name: 'Rickles',
+      email: 'ricklord@ricks.org',
       user_photo: 'https://fakepic.com'
     }
   end
@@ -29,8 +29,9 @@ RSpec.describe 'user service' do
     expect(response).to be_a Hash
     expect(response[:data]).to be_a Hash
     expect(response[:data]).to have_key :id
-    expect(response[:data][:attributes][:first_name]).to eq('Pickles')
-    expect(response[:data][:attributes][:last_name]).to eq('McTickles')
-    expect(response[:data][:attributes][:email]).to eq('dilllord@dills.org')
+    expect(response[:data][:attributes][:first_name]).to eq('Don')
+    expect(response[:data][:attributes][:last_name]).to eq('Rickles')
+    expect(response[:data][:attributes][:email]).to eq('ricklord@ricks.org')
+    expect(response[:data][:attributes][:user_photo]).to eq('https://fakepic.com')
   end
 end
