@@ -16,6 +16,13 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+#user_photo {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  margin-left: 7px;
+}
+
 body {
   background-image: url(/assets/brook-anderson-gTQbZXL417Q-unsplash.jpg);
   background-size: cover;
