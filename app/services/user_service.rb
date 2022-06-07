@@ -5,9 +5,9 @@ class UserService < BaseService
           first_name: "#{data[:first_name]}",
           last_name: "#{data[:last_name]}",
           email: "#{data[:email]}",
-          user_photo: "#{data[:email]}"
+          user_photo: "#{data[:user_photo]}"
         }.to_json, "Content-Type" => "application/json"
-
+        # binding.pry
       get_json(response)
     end
 

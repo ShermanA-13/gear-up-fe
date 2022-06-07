@@ -5,9 +5,11 @@ RSpec.describe 'user service' do
     @data = {
       first_name: 'Pickles',
       last_name: 'McTickles',
-      email: 'dilllord@dills.org'
+      email: 'dilllord@dills.org',
+      user_photo: 'https://fakepic.com'
     }
   end
+
   it 'creates a user and returns a new user', :vcr do
     response = UserService.create_user(@data)
 
@@ -17,6 +19,7 @@ RSpec.describe 'user service' do
     expect(response[:data][:attributes]).to have_key :first_name
     expect(response[:data][:attributes]).to have_key :last_name
     expect(response[:data][:attributes]).to have_key :email
+    expect(response[:data][:attributes]).to have_key :user_photo
   end
 
   it 'returns users by id', :vcr do
