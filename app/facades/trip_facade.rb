@@ -11,6 +11,9 @@ class TripFacade
     end
   end
 
+  def self.create_trip(params)
+  end
+
   def destroy(id)
     TripService.destroy(id)
   end

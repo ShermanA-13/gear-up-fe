@@ -1,17 +1,17 @@
 <h1>Create Trip to <%= @area.name %>, <%= @area.state %></h1>
 
 <%= form_with url: "/areas/#{@area.id}/trips/new", method: :post, local: true do |f| %>
-<%= f.label :trip_name %>
-<%= f.text_field :trip_name %>
-<br><br>
-<%= f.label :start_date %>
-<%= f.date_field :start_date %>
-<br><br>
-<%= f.label :end_date %>
-<%= f.date_field :end_date %>
-<br><br>
-<%= f.label :description %>
-<%= f.text_field :description %>
-<br><br>
-<%= f.submit "Add friends" %>
+  <%= f.label :trip_name %>
+  <%= f.text_field :trip_name %>
+  <br><br>
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date %>
+  <br><br>
+  <%= f.label :end_date %>
+  <%= f.date_field :end_date %>
+  <br><br>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <br><br>
+  <%= f.submit "Add friends" %>
 <% end %>
