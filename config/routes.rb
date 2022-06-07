@@ -14,5 +14,8 @@ Rails.application.routes.draw do
     resources :trips, only: [:index, :create, :show]
     resources :items, only: [:show, :index, :new, :create, :destroy, :edit, :update]
   end
+
   resources :trips, only: [:show, :update, :destroy]
+
+  get "/areas/search", to: "areas#index"
 end
