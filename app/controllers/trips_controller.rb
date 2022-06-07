@@ -1,5 +1,7 @@
 class TripsController < ApplicationController
   def new
+    # if session[:user_id]
+    @area = AreaFacade.get_area_by_id(params[:id])
   end
 
   def show

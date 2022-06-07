@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   resources :trips, only: [:show, :update, :destroy]
 
   get "/areas/search", to: "areas#index"
+  get "/areas/:id/trips/new", to: "trips#new"
+  post "/areas/:id/trips/new", to: "trips#create"
 end
