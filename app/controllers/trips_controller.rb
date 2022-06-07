@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   def new
-    @area = AreaFacade.get_area_by_id(params[:id])
+    @area = AreaFacade.get_area_by_id(params[:area_id])
   end
 
   def show
@@ -12,10 +12,10 @@ class TripsController < ApplicationController
   end
 
   def create
-    TripFacade.create_trip(params)
+    @trip = TripFacade.create_trip(params)
 
-    # @area = AreaFacade.get_area_by_id(params[:id])
-    # redirect_to "/areas/#{@area.id}/trips/new/users"
+    @area = AreaFacade.get_area_by_id(params[:area_id])
+    redirect_to "/areas/#{@area.id}/trips/#{@trip.id}/users/new"
   end
 
   def update
