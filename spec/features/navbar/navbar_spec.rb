@@ -32,4 +32,12 @@ RSpec.describe 'navbar' do
     end
     expect(current_path).to eq("/users/#{@user.id}/trips")
   end
+
+  it 'logo links to rooth path when user is not logged in', :vcr do
+    within('.navbar-nav') do
+      click_on 'Logout'
+    end
+    find('.navbar-brand').click
+    expect(current_path).to eq(root_path)
+  end
 end
