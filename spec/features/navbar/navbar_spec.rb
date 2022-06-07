@@ -26,7 +26,7 @@ RSpec.describe 'navbar' do
     expect(current_path).to eq("/users/#{@user.id}/items")
   end
 
-  it 'links to user shed', :vcr do
+  it 'links to user trips page', :vcr do
     within('.navbar-nav') do
       click_on 'MyTrips'
     end
