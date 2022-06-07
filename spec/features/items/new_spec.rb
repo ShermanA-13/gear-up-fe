@@ -34,6 +34,5 @@ describe "Item new page" do
       expect(page).to have_content("Description: 1 person Tent")
       expect(page).to have_content("Count: 1")
       expect(page).to have_content("Item Category: Tents")
-      # expect(page).to have_content("Item Category: 1")
   end
 end
