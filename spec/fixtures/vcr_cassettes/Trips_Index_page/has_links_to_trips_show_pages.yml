@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/1/trips
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5b9da25b411abc03a9b2c4a5a008addd"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 74ada3e9-33b6-4d4f-a330-ba1a390cd902
+      X-Runtime:
+      - '0.002126'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"first trip","area_id":1,"description":"baby''s
+        first trip","host_id":1,"start_date":"2022-06-05","end_date":"2022-06-06"}},{"id":"2","type":"trip","attributes":{"name":"boo
+        boo trip","area_id":1,"description":"trip I guess","host_id":3,"start_date":"2022-06-05","end_date":"2022-06-06"}}]}'
+  recorded_at: Tue, 07 Jun 2022 01:42:20 GMT
+recorded_with: VCR 6.1.0

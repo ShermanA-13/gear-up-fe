@@ -12,7 +12,6 @@ RSpec.describe "trips poro" do
 
   it "has attributes" do
     expect(trip.name).to eq("Steve's Crag")
-    expect(trip.location).to eq("some location")
     expect(trip.description).to eq("test desctiption")
     expect(trip.start_date).to eq("2022-07-10")
     expect(trip.end_date).to eq("2022-07-20")
