@@ -1,0 +1,110 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"61d32510e6b2135913e844e945e43a92"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1a6e2f96-2ce3-4fdf-99a9-6a63f5279509
+      X-Runtime:
+      - '0.001550'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}}}'
+  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/1/items/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"ab62c8784a298ec211896513e6d10bbc"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8769866d-b810-4aff-aa69-7acf3e367343
+      X-Runtime:
+      - '0.002053'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}},{"id":"2","type":"item","attributes":{"name":"Trail
+        Mix","description":"My Favorite Trail Mix","count":8,"category":0,"user_id":1}},{"id":"5","type":"item","attributes":{"name":"Tent
+        1","description":"1 person Tent","count":1,"category":0,"user_id":1}},{"id":"6","type":"item","attributes":{"name":"Tent
+        1","description":"1 person Tent","count":1,"category":0,"user_id":1}}]}'
+  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/1/trips
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"89ad45b9f60190fb349c248e3a8c41fd"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4419cd53-e326-4a90-8cdf-c4ae6cda990c
+      X-Runtime:
+      - '0.002544'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"first trip","area_id":1,"description":"baby''s
+        first trip","host_id":1,"start_date":"2022-06-06","end_date":"2022-06-07"}},{"id":"2","type":"trip","attributes":{"name":"boo
+        boo trip","area_id":1,"description":"trip I guess","host_id":3,"start_date":"2022-06-06","end_date":"2022-06-07"}}]}'
+  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
+recorded_with: VCR 6.1.0

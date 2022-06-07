@@ -1,0 +1,141 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:5000/api/v1/users
+    body:
+      encoding: UTF-8
+      string: '{"first_name":"Mr","last_name":"Test","email":"iamnotreal@gotcha.com"}'
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"210d0040fb27a9d9271db26592054b69"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c4426ec9-e230-4b26-9633-87e6e44ee543
+      X-Runtime:
+      - '0.002095'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"5","type":"user","attributes":{"first_name":"Mr","last_name":"Test","email":"iamnotreal@gotcha.com"}}}'
+  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"210d0040fb27a9d9271db26592054b69"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e044ccd6-8cdb-49fb-a699-2b88ae282323
+      X-Runtime:
+      - '0.001952'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"5","type":"user","attributes":{"first_name":"Mr","last_name":"Test","email":"iamnotreal@gotcha.com"}}}'
+  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/5/items/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1fbad9f0-34da-4f23-9997-9b6aa6bb3e40
+      X-Runtime:
+      - '0.001715'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/5/trips
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e3b46f3b-5f7d-4b45-ae19-4327922cb17f
+      X-Runtime:
+      - '0.002598'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
+recorded_with: VCR 6.1.0
