@@ -16,7 +16,7 @@ RSpec.describe 'navbar' do
   it 'logo links to user dashboard', :vcr do
     visit "/users/#{@user.id}/items"
 
-    find('.navbar-brand').click
+    find('#logo').click
     expect(current_path).to eq('/dashboard')
   end
 

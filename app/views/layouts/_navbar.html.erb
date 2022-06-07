@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <% if session[:user_id] %>
-    <a class="navbar-brand" href="/dashboard">
+    <a class="navbar-brand" id="logo" href="/dashboard">
       <%= image_tag "gear_up_logo.png", height: 50 %>
     </a>
   <% else %>
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" id="logo" href="/">
       <%= image_tag "gear_up_logo.png", height: 50 %>
     </a>
   <% end %>
