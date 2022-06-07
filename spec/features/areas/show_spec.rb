@@ -28,5 +28,8 @@ describe "Area show page" do
     visit "/login?user_id=1"
     visit "/areas/2107"
     expect(page).to have_button("Create a Trip for this Area")
+
+    click_on "Create a Trip for this Area"
+    expect(current_path).to eq("/areas/2107/trips/new")
   end
 end
