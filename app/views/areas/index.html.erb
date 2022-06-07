@@ -7,7 +7,7 @@
 <% if !@areas.nil? %>
   <% @areas.each_with_index do |area, index| %>
     <div id="area_<%= index %>">
-      <%= area.name %>
+      <a href="/areas/<%= area.id %>"><%= area.name %></a>
       <br>
       <%= area.state %>
       <br>
