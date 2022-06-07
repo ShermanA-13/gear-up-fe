@@ -29,11 +29,13 @@
         <li class="nav-item">
           <a class="nav-link" href="/users/<%= session[:user_id]%>/trips">MyTrips</a>
         </li>
-        <li class="nav-item">
-          <a class="navbar-brand">
-            <img id="user_photo" src="<%= session[:user_photo]%>">
-          </a>
-        </li>
+        <% if session[:user_photo] != "" %>
+          <li class="nav-item">
+            <a class="navbar-brand">
+              <img id="user_photo" src="<%= session[:user_photo]%>">
+            </a>
+          </li>
+        <% end %>
       </ul>
     <% end %>
   </div>

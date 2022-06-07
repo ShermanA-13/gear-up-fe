@@ -27,6 +27,17 @@ class Item
   end
 
   def self.category_list
-    @@enums
+    [
+      "Tents",
+      "Sleeping Bag",
+      "Stoves, Grills & Fuel",
+      "Cookware",
+      "Dishes",
+      "Ropes",
+      "Harnesses",
+      "Belay & Rappel",
+      "Crash Pads",
+      "Quickdraws"
+    ]
   end
 end
