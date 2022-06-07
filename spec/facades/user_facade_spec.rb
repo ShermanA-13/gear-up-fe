@@ -3,9 +3,10 @@ require 'rails_helper'
 RSpec.describe 'user facade' do
   before :each do
     data = {
-      first_name: 'Pickles',
-      last_name: 'McTickles',
-      email: 'dilllord@dills.org'
+      first_name: 'Don',
+      last_name: 'Rickles',
+      email: 'ricklord@ricks.org',
+      user_photo: 'https://fakepic.com'
     }
     @created_user = UserFacade.create_user(data)
   end
@@ -16,8 +17,9 @@ RSpec.describe 'user facade' do
 
   it 'returns user data by user id', :vcr do
     user = UserFacade.user(@created_user.id)
-    expect(user.first_name).to eq('Pickles')
-    expect(user.last_name).to eq('McTickles')
-    expect(user.email).to eq('dilllord@dills.org')
+    expect(user.first_name).to eq('Don')
+    expect(user.last_name).to eq('Rickles')
+    expect(user.email).to eq('ricklord@ricks.org')
+    expect(user.user_photo).to eq('https://fakepic.com')
   end
 end
