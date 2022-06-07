@@ -10,6 +10,8 @@
       <%= area.name %>
       <br>
       <%= area.state %>
+      <br>
+      <%= button_to "Create a Trip for this Area", "/areas/#{area.id}/trips/new", method: :get %>
       <hr>
     </div>
   <% end %>

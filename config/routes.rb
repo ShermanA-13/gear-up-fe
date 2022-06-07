@@ -15,4 +15,9 @@ Rails.application.routes.draw do
   end
 
   get "/areas/search", to: "areas#index"
+  # get "/areas/:area_id", to: "areas#show"
+  get "/areas/:area_id/trips/new", to: "trips#new"
+  # post "/areas/:area_id/trips/new", to: "trips#create"
+  # get "/areas/:area_id/trips/new/users", to: "user_trips#new"
+  # post "/areas/:area_id/trips/new/users", to: "user_trips#create"
 end
