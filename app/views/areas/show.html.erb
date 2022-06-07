@@ -9,3 +9,7 @@
   <h5>Latitude: <%= @area.lat %></h5>
   <h5>Longitude: <%= @area.long %></h5>
 </div>
+
+<% if session[:user_id] %>
+  <%= button_to "Create a Trip for this Area", "/areas/#{@area.id}/trips/new", method: :get %>
+<% end %>

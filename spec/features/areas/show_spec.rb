@@ -21,12 +21,12 @@ describe "Area show page" do
   end
 
   it "does not show the new trip button if user is not logged in", :vcr do
-    expect(page).not_to have_button("Create a New Trip for this Area")
+    expect(page).not_to have_button("Create a Trip for this Area")
   end
 
   it "does show the new trip button if user is logged in", :vcr do
     visit "/login?user_id=1"
     visit "/areas/2107"
-    expect(page).to have_button("Create a New Trip for this Area")
+    expect(page).to have_button("Create a Trip for this Area")
   end
 end
