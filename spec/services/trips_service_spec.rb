@@ -3,7 +3,7 @@ RSpec.describe TripService do
   describe "class methods" do
     before do
       data = {
-        id: 1,
+        id: 3,
         attributes: {
           name: "Adventure Time",
           description: "Quite the adventure",

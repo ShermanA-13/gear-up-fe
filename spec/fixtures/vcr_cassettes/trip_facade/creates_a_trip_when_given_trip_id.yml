@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://gear-up-be.herokuapp.com/api/v1/trips/1
+    uri: http://localhost:5000/api/v1/trips/1
     body:
       encoding: US-ASCII
       string: ''
@@ -18,29 +18,21 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Cowboy
-      Date:
-      - Sun, 05 Jun 2022 23:37:25 GMT
-      Connection:
-      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"2ad26bb3bded90ae2c18e1144f9b528a"
+      - W/"f138e4c5359a9a9e9ba18de7dfe71be4"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - d1d2179c-6e2c-41c0-b488-0aab80bf9f34
+      - c00765b1-4a24-49eb-942c-8c1e53e4f205
       X-Runtime:
-      - '0.004801'
+      - '0.004424'
       Transfer-Encoding:
       - chunked
-      Via:
-      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"trip","attributes":{"name":"first trip","area_id":33912,"description":"baby''s
-        first trip","host_id":1,"start_date":"2022-06-04","end_date":"2022-06-05"}}}'
-  recorded_at: Sun, 05 Jun 2022 23:37:26 GMT
+      string: '{"data":{"id":"1","type":"trip","attributes":{"name":"first trip","area_id":1,"description":"baby''s
+        first trip","host_id":1,"start_date":"2022-06-05","end_date":"2022-06-06"}}}'
+  recorded_at: Tue, 07 Jun 2022 00:38:49 GMT
 recorded_with: VCR 6.1.0

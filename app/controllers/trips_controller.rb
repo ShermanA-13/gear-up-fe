@@ -12,6 +12,7 @@ class TripsController < ApplicationController
 
   def create
     trip = TripFacade.create(params)
+
     redirect_to "/users/#{trip.user_id}/trips/#{trip.id}"
   end
 

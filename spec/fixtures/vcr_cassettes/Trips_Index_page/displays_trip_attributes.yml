@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://gear-up-be.herokuapp.com/api/v1/users/1/trips
+    uri: http://localhost:5000/api/v1/users/1/trips
     body:
       encoding: US-ASCII
       string: ''
@@ -18,29 +18,22 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - Cowboy
-      Date:
-      - Mon, 06 Jun 2022 20:46:48 GMT
-      Connection:
-      - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"9bac620d6d6b6a82907c45cf91a227c0"
+      - W/"5b9da25b411abc03a9b2c4a5a008addd"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - dbacae68-91db-4ce3-9c4d-ab97c296d1ba
+      - '069282e0-5547-4292-8642-fa149667ff04'
       X-Runtime:
-      - '0.917453'
+      - '0.142768'
       Transfer-Encoding:
       - chunked
-      Via:
-      - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"2","type":"trip","attributes":{"name":"boo boo trip","area_id":33912,"description":"trip
-        I guess","host_id":3,"start_date":"2022-06-04","end_date":"2022-06-05"}}]}'
-  recorded_at: Mon, 06 Jun 2022 20:46:49 GMT
+      string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"first trip","area_id":1,"description":"baby''s
+        first trip","host_id":1,"start_date":"2022-06-05","end_date":"2022-06-06"}},{"id":"2","type":"trip","attributes":{"name":"boo
+        boo trip","area_id":1,"description":"trip I guess","host_id":3,"start_date":"2022-06-05","end_date":"2022-06-06"}}]}'
+  recorded_at: Tue, 07 Jun 2022 01:42:20 GMT
 recorded_with: VCR 6.1.0

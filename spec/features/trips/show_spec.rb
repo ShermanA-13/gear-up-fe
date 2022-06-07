@@ -7,8 +7,8 @@ describe "Trip show page" do
 
   it "displays the Trips attributes (name, start_date, end_date)", :vcr do
     expect(page).to have_content("Name: first trip")
-    expect(page).to have_content("Start Date: 2022-06-04")
-    expect(page).to have_content("End Date: 2022-06-05")
+    expect(page).to have_content("Start Date: 2022-06-05")
+    expect(page).to have_content("End Date: 2022-06-06")
     expect(page).to have_content("Description: baby's first trip")
 
     expect(page).not_to have_content("Name: Big Bummer")
