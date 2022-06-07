@@ -91,7 +91,8 @@ OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
     info: {
         email: 'iamnotreal@gotcha.com',
         first_name: 'Mr',
-        last_name: 'Test'
+        last_name: 'Test',
+        user_photo: 'https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c'
     },
     credentials: {
         token: 'abcdefg12345',
