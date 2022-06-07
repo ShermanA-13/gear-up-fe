@@ -40,4 +40,15 @@ RSpec.describe 'navbar' do
     find('.navbar-brand').click
     expect(current_path).to eq(root_path)
   end
+
+  it 'displays only logo and Login links when user is not logged in', :vcr do
+    within('.navbar-nav') do
+      click_on 'Logout'
+    end
+    expect(page).not_to have_content('Logout')
+    expect(page).not_to have_content('MyShed')
+    expect(page).not_to have_content('MyTrips')
+
+    expect(page).to have_content('Login')
+  end
 end
