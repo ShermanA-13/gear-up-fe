@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <% if session[:user_id] %>
-    <a class="navbar-brand" href="/dashboard">
+    <a class="navbar-brand" id="logo" href="/dashboard">
       <%= image_tag "gear_up_logo.png", height: 50 %>
     </a>
   <% else %>
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" id="logo" href="/">
       <%= image_tag "gear_up_logo.png", height: 50 %>
     </a>
   <% end %>
@@ -29,6 +29,13 @@
         <li class="nav-item">
           <a class="nav-link" href="/users/<%= session[:user_id]%>/trips">MyTrips</a>
         </li>
+        <% if session[:user_photo] != "" %>
+          <li class="nav-item">
+            <a class="navbar-brand">
+              <img id="user_photo" src="<%= session[:user_photo]%>">
+            </a>
+          </li>
+        <% end %>
       </ul>
     <% end %>
   </div>

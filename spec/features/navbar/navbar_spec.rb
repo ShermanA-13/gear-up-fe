@@ -3,9 +3,10 @@ require 'rails_helper'
 RSpec.describe 'navbar' do
   before do
     data = {
-      first_name: 'Pickles',
-      last_name: 'McTickles',
-      email: 'dilllord@dills.org'
+      first_name: 'Bonny',
+      last_name: 'Jowman',
+      email: 'ivebeentrapped@inthecomputer.org',
+      user_photo: 'https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c'
     }
 
     @user = UserFacade.create_user(data)
@@ -15,7 +16,7 @@ RSpec.describe 'navbar' do
   it 'logo links to user dashboard', :vcr do
     visit "/users/#{@user.id}/items"
 
-    find('.navbar-brand').click
+    find('#logo').click
     expect(current_path).to eq('/dashboard')
   end
 

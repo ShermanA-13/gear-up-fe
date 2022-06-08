@@ -3,11 +3,13 @@ require 'rails_helper'
 RSpec.describe 'user service' do
   before :each do
     @data = {
-      first_name: 'Pickles',
-      last_name: 'McTickles',
-      email: 'dilllord@dills.org'
+      first_name: 'Don',
+      last_name: 'Rickles',
+      email: 'ricklord@ricks.org',
+      user_photo: 'https://fakepic.com'
     }
   end
+
   it 'creates a user and returns a new user', :vcr do
     response = UserService.create_user(@data)
 
@@ -17,6 +19,7 @@ RSpec.describe 'user service' do
     expect(response[:data][:attributes]).to have_key :first_name
     expect(response[:data][:attributes]).to have_key :last_name
     expect(response[:data][:attributes]).to have_key :email
+    expect(response[:data][:attributes]).to have_key :user_photo
   end
 
   it 'returns users by id', :vcr do
@@ -26,8 +29,9 @@ RSpec.describe 'user service' do
     expect(response).to be_a Hash
     expect(response[:data]).to be_a Hash
     expect(response[:data]).to have_key :id
-    expect(response[:data][:attributes][:first_name]).to eq('Pickles')
-    expect(response[:data][:attributes][:last_name]).to eq('McTickles')
-    expect(response[:data][:attributes][:email]).to eq('dilllord@dills.org')
+    expect(response[:data][:attributes][:first_name]).to eq('Don')
+    expect(response[:data][:attributes][:last_name]).to eq('Rickles')
+    expect(response[:data][:attributes][:email]).to eq('ricklord@ricks.org')
+    expect(response[:data][:attributes][:user_photo]).to eq('https://fakepic.com')
   end
 end
