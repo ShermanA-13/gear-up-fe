@@ -1,6 +1,6 @@
 class TripService < BaseService
   def self.get_trip_by_id(id)
-    response = conn.get("/api/v1/trips/#{id}")
+    response = conn.get("/api/v1/trips/#{id}/info")
     get_json(response)
   end
 

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get "/areas/:area_id/trips/:trip_id/users/new", to: "trip_users#new"
   get "/areas/:area_id/trips/new", to: "trips#new"
   post "/users/:user_id/trips/new", to: "trips#create"
+  post "/trips/:trip_id/users", to: "trip_users#create"
 
   resources :trips, only: [:show, :update, :destroy]
 end
