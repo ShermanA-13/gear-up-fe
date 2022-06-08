@@ -51,4 +51,16 @@ describe "create an item" do
     visit "/users/2/items"
     expect(page).not_to have_button("Add an item to your Shed")
   end
+
+  describe "error handling" do
+    before do
+      visit "users/0/items"
+    end
+
+    it "fails gracefully" do
+      expect(page).to have_content("No user with id 0")
+      expect(page).to have_content("Status: NOT FOUND")
+      expect(page).to have_content("Code: 404")
+    end
+  end
 end
