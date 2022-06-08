@@ -6,6 +6,8 @@
 
 <% if !@areas.nil? %>
   <% @areas.each_with_index do |area, index| %>
+  <div class="card">
+
     <div id="area_<%= index %>">
       <a href="/areas/<%= area.id %>"><%= area.name %></a>
       <br>
@@ -13,6 +15,7 @@
       <br>
       <%= button_to "Create a Trip for this Area", "/areas/#{area.id}/trips/new", method: :get %>
       <hr>
+    </div>
     </div>
   <% end %>
 <% end %>

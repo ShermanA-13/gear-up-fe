@@ -21,6 +21,38 @@ body {
   background-attachment: fixed;
 }
 
+.item_form_container{
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_text_container label{
+  padding-right: 20px;
+}
+.form_text_container{
+  background-color: grey;
+  margin: 10px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
+  width: 700px;
+}
+
+.form_catg_container{
+  background-color: #faf2e2;
+  margin: 10px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
+  width: 100%;
+}
 
 h1, h2, h3, h4, h5, h6, p{
   font-family: helvetica;
