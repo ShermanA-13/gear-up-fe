@@ -15,6 +15,9 @@ class ItemsController < ApplicationController
 
   def new
     @user = UserFacade.user(params[:user_id])
+    unless @user.class == User
+      @error = @user
+    end
   end
 
   def create
