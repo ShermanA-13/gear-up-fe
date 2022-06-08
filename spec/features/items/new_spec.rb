@@ -35,4 +35,13 @@ describe "Item new page" do
       expect(page).to have_content("Count: 1")
       expect(page).to have_content("Item Category: Tents")
   end
+
+  describe "error handling" do
+    it "fails gracefully if user ID does not exist" do
+      visit "/users/0/items/new"
+      expect(page).to have_content("No user with id 0")
+      expect(page).to have_content("Status: NOT FOUND")
+      expect(page).to have_content("Code: 404")
+    end
+  end
 end
