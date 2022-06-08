@@ -1,8 +1,12 @@
 class ItemFacade
   class << self
     def find_item(user_id, item_id)
-      data = ItemService.find_item(user_id, item_id)[:data]
-      Item.new(data)
+      json = ItemService.find_item(user_id, item_id)
+      if json[:data]
+        Item.new(json[:data])
+      else
+        Error.new(json[:errors])
+      end
     end
 
     def items(user_id)
