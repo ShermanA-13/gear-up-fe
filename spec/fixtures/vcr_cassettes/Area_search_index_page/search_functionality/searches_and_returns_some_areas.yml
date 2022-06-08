@@ -25,9 +25,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - db790544-6b46-442b-802f-70616e2dfd9f
+      - b3ecf356-b497-4b57-b72b-fbea45d735d2
       X-Runtime:
-      - '0.039168'
+      - '0.203370'
       Transfer-Encoding:
       - chunked
     body:
@@ -41,5 +41,5 @@ http_interactions:
         Yosemite","state":"Pennsylvania","url":"https://www.mountainproject.com/area/106454642/little-yosemite","lat":"39.91958","long":"-79.5805"}},{"id":"24412","type":"area","attributes":{"name":"Yosemite
         Boulder","state":"Rhode Island","url":"https://www.mountainproject.com/area/106834295/yosemite-boulder","lat":"41.90152","long":"-71.4372"}},{"id":"31971","type":"area","attributes":{"name":"Yosemite
         Highball boulder","state":"Washington","url":"https://www.mountainproject.com/area/118702033/yosemite-highball-boulder","lat":"47.55266","long":"-120.76358"}}]}'
-  recorded_at: Mon, 06 Jun 2022 23:49:45 GMT
+  recorded_at: Tue, 07 Jun 2022 18:25:22 GMT
 recorded_with: VCR 6.1.0

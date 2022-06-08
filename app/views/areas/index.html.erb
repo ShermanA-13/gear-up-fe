@@ -1,4 +1,4 @@
-<%= form_with url: "/areas/search", method: :get, local: true do |form| %>
+<%= form_with url: "/areas", method: :get, local: true do |form| %>
   <%= form.label :name, "Search" %>
   <%= form.text_field :name %>
   <%= form.submit "Search" %>
@@ -6,11 +6,16 @@
 
 <% if !@areas.nil? %>
   <% @areas.each_with_index do |area, index| %>
+  <div class="card">
+
     <div id="area_<%= index %>">
-      <%= area.name %>
+      <a href="/areas/<%= area.id %>"><%= area.name %></a>
       <br>
       <%= area.state %>
+      <br>
+      <%= button_to "Create a Trip for this Area", "/areas/#{area.id}/trips/new", method: :get %>
       <hr>
+    </div>
     </div>
   <% end %>
 <% end %>

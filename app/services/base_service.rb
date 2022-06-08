@@ -7,6 +7,7 @@ class BaseService
         Faraday.new("http://localhost:5000")
       else
         Faraday.new("https://gear-up-be.herokuapp.com")
+        # Faraday.new("http://localhost:5000")
       end
     end
 

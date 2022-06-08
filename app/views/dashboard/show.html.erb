@@ -1,43 +1,46 @@
-<div class="user_info">
-  <h1><%= @user.first_name %> <%= @user.last_name %>'s Page</h1>
-  <p>Email: <%= @user.email %></p>
-  <hr>
-</div>
 
-<div id="items">
-  <h3>
-    <a href="/users/<%= @user.id %>/items">My Shed</a>
-  </h3>
-
-  <div class="user_items_container">
-    <% @items.each do |item| %>
-    <div class="item_container">
-      <h3><a href="/users/<%= @user.id %>/items/<%= item.id %>"><%= item.name %></a></h3>
-      <p>Count: <%= item.count %></p>
-      <p>Description: <%= item.description %></p>
-      <p>Category: <%= item.category %></p>
-      <h6>Item ID: <%= item.id %></h6>
-    </div>
-    <% end %>
+  <div class="user_info">
+    <h1><%= @user.first_name %> <%= @user.last_name %>'s Page</h1>
+    <p>Email: <%= @user.email %></p>
+    <hr>
   </div>
-  <hr>
-</div>
 
-<% if !@trips.empty? %>
-  <div id="trips">
-    <h2>My Trips</h2>
-    <div class="user_trips_container">
-      <% @trips.each do |trip| %>
-      <div class="trip_container" id="trip-<%= trip.id %>">
-        <h3><%= trip.name %></h3>
-        <p>Location: <%= trip.location %></p>
-        <p>Description: <%= trip.description %></p>
-        <p>Start date: <%= trip.start_date %></p>
-        <p>End date: <%= trip.end_date %></p>
+<div class="area_container">
+  <div id="items">
+    <h3>
+      <a href="/users/<%= @user.id %>/items">My Shed</a>
+    </h3>
+
+    <div class="card-group">
+      <% @items.each do |item| %>
+      <div class="card">
+        <h3><a href="/users/<%= @user.id %>/items/<%= item.id %>"><%= item.name %></a></h3>
+        <p>Count: <%= item.count %></p>
+        <p>Description: <%= item.description %></p>
+        <p>Category: <%= item.category %></p>
+        <h6>Item ID: <%= item.id %></h6>
       </div>
       <% end %>
     </div>
+    <hr>
   </div>
-<% else %>
-  <h3>No Trips Planned Yet</h3>
-<% end %>
+
+  <% if !@trips.empty? %>
+    <div id="trips">
+      <h2>My Trips</h2>
+      <div class="user_trips_container">
+        <% @trips.each do |trip| %>
+        <div class="trip_container" id="trip-<%= trip.id %>">
+          <h3><%= trip.name %></h3>
+          <p>Location: <%= trip.location %></p>
+          <p>Description: <%= trip.description %></p>
+          <p>Start date: <%= trip.start_date %></p>
+          <p>End date: <%= trip.end_date %></p>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <h3>No Trips Planned Yet</h3>
+  <% end %>
+</div>
