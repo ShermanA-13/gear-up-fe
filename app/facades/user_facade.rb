@@ -7,7 +7,11 @@ class UserFacade
 
     def user(id)
       json = UserService.user(id)
-      User.new(json[:data])
+      if json[:data]
+        User.new(json[:data])
+      else
+        Error.new(json[:errors])
+      end
     end
 
     def users
