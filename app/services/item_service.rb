@@ -12,11 +12,11 @@ class ItemService < BaseService
 
     def create(parameters)
       response = conn.post "/api/v1/users/#{parameters[:user_id]}/items", {
-        name: "#{parameters[:name]}",
-        description: "#{parameters[:description]}",
-        count: "#{parameters[:count]}",
-        category: "#{parameters[:category]}",
-        user_id: "#{parameters[:user_id]}"
+        name: (parameters[:name]).to_s,
+        description: (parameters[:description]).to_s,
+        count: (parameters[:count]).to_s,
+        category: (parameters[:category]).to_s,
+        user_id: (parameters[:user_id]).to_s
       }.to_json, "Content-Type" => "application/json"
 
       get_json(response)
@@ -24,11 +24,11 @@ class ItemService < BaseService
 
     def update(parameters)
       response = conn.patch "/api/v1/users/#{parameters[:user_id]}/items/#{parameters[:id]}", {
-        name: "#{parameters[:name]}",
-        description: "#{parameters[:description]}",
-        count: "#{parameters[:count]}",
-        category: "#{parameters[:category]}",
-        user_id: "#{parameters[:user_id]}"
+        name: (parameters[:name]).to_s,
+        description: (parameters[:description]).to_s,
+        count: (parameters[:count]).to_s,
+        category: (parameters[:category]).to_s,
+        user_id: (parameters[:user_id]).to_s
       }.to_json, "Content-Type" => "application/json"
 
       get_json(response)

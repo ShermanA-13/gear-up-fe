@@ -1,0 +1,18 @@
+<h1>Create Trip to <%= @area.name %>, <%= @area.state %></h1>
+
+<%= form_with url: "/users/#{session[:user_id]}/trips/new", method: :post, local: true do |f| %>
+  <%= f.label "Trip name" %>
+  <%= f.text_field :name %>
+  <br><br>
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date %>
+  <br><br>
+  <%= f.label :end_date %>
+  <%= f.date_field :end_date %>
+  <br><br>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <br><br>
+  <%= f.hidden_field :area_id, value: @area.id %>
+  <%= f.submit "Add friends" %>
+<% end %>
