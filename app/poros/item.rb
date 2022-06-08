@@ -1,5 +1,5 @@
 class Item
-  attr_reader :id, :name, :description, :count, :category, :user_id
+  attr_reader :id, :name, :description, :count, :category, :user_id, :owner
 
   def initialize(data)
     @id = data[:id]
@@ -8,6 +8,7 @@ class Item
     @count = data[:attributes][:count]
     @category = enum_category(data[:attributes][:category])
     @user_id = data[:attributes][:user_id]
+    @owner = data[:attributes][:owner]
   end
 
   def enum_category(category_num)

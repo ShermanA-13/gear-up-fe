@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :items, only: [:show, :index, :new, :create, :destroy, :edit, :update]
   end
 
+
   get "/areas", to: "areas#index"
   get "/areas/:id", to: "areas#show"
   get "/areas/:area_id/trips/new", to: "trips#new"
@@ -24,5 +25,12 @@ Rails.application.routes.draw do
   
   resources :trips, only: [:show, :update, :destroy]
 
+
   get "/areas/search", to: "areas#index"
+  get "/areas/:area_id/trips/:trip_id/users/new", to: "trip_users#new"
+  get "/areas/:area_id/trips/new", to: "trips#new"
+  post "/users/:user_id/trips/new", to: "trips#create"
+  post "/trips/:trip_id/users", to: "trip_users#create"
+
+  resources :trips, only: [:show, :update, :destroy]
 end
