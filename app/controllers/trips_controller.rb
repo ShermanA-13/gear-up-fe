@@ -4,7 +4,7 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trip = TripFacade.get_trip_by_id(params[:id])
+    @trip = TripFacade.get_all_trip_info(params[:id])
   end
 
   def index

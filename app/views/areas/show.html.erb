@@ -1,0 +1,29 @@
+<div class="area_container">
+  <h1><%= @area.name %></h1>
+
+  <h3>State: <%= @area.state %></h3>
+  <p>
+    Learn more about this route via <a href="<%= @area.url %>">Mountain Project</a>
+  </p>
+
+  <div id="lat_long_data">
+    <h5>Latitude: <%= @area.lat %></h5>
+    <h5>Longitude: <%= @area.long %></h5>
+  </div>
+  <div class="map_container">
+    <iframe
+    width="650"
+    height="450"
+    frameborder="0" style="border:0"
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["GOOGLE_MAPS_API_KEY"] %>&q=<%= @area.lat %>,<%= @area.long %>&zoom=13&maptype=satellite"
+    allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="button_container">
+    <% if session[:user_id] %>
+    <%= button_to "Create a Trip for this Area", "/areas/#{@area.id}/trips/new", method: :get %>
+    <% end %>
+  </div>
+</div>

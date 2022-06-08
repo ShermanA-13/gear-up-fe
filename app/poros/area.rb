@@ -10,4 +10,8 @@ class Area
     @long = data[:attributes][:long]
   end
 
+  def loc_map_ready
+    binding.pry
+  end
+
 end

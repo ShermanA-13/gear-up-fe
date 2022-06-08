@@ -4,4 +4,8 @@ class AreasController < ApplicationController
       @areas = AreaFacade.search(params[:name])
     end
   end
+
+  def show
+    @area = AreaFacade.area(params[:id])
+  end
 end

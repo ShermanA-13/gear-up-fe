@@ -11,6 +11,11 @@ class TripFacade
     )
   end
 
+  def self.get_all_trip_info(id)
+    trip = TripService.get_all_trip_info(id)
+    TripInfo.new(trip)
+  end
+
   def self.trips_by_user_id(user_id)
     TripService.trips_by_user_id(user_id)[:data].map do |data|
       Trip.new(data)

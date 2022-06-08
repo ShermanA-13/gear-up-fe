@@ -2,9 +2,10 @@
 <hr>
 
 <% @users.each do |user| %>
+<div class="area_container">
   <div id="user-<%= user.id %>">
     <h2><a href="/users/<%= user.id %>"><%= user.first_name %> <%= user.last_name %></a></h2>
     <p>Email: <%= user.email %></p>
-    <hr>
   </div>
+</div>
 <% end %>

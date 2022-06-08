@@ -1,0 +1,218 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/areas/2107
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"06047cd319d47923ad8dd80444dc49b7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - cbf0b54e-874f-4138-bc69-a5e3bf6b3ec6
+      X-Runtime:
+      - '0.002300'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"2107","type":"area","attributes":{"name":"Little Yosemite
+        Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}}}'
+  recorded_at: Tue, 07 Jun 2022 19:21:45 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2ed5a7e70684515a6a6cd83a406c4304"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2a219453-c9ff-4ea1-92b2-701df2f37cae
+      X-Runtime:
+      - '0.186380'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"Margarita","last_name":"Gottlieb","email":"margarita@example.net"}}}'
+  recorded_at: Tue, 07 Jun 2022 19:21:45 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/1/items/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"db02f9f592c7cf307f04c46456aae1de"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 8c118be0-163f-4d73-9a89-889e281a6601
+      X-Runtime:
+      - '0.041088'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Sleek Wooden
+        Keyboard","description":"Fashion axe marfa etsy bespoke synth locavore.","count":3,"category":"Quickdraws","user_id":1}},{"id":"2","type":"item","attributes":{"name":"Awesome
+        Concrete Computer","description":"Cred farm-to-table kickstarter mixtape ugh
+        chambray lumbersexual irony squid.","count":1,"category":"Ropes","user_id":1}},{"id":"3","type":"item","attributes":{"name":"Enormous
+        Plastic Lamp","description":"3 wolf moon 90''s whatever artisan ugh twee lo-fi
+        bushwick chartreuse.","count":4,"category":"Stoves, Grills \u0026 Fuel","user_id":1}},{"id":"4","type":"item","attributes":{"name":"Intelligent
+        Concrete Hat","description":"You probably haven''t heard of them celiac keffiyeh
+        kinfolk gastropub.","count":1,"category":"Harnesses","user_id":1}},{"id":"5","type":"item","attributes":{"name":"Aerodynamic
+        Rubber Bottle","description":"Tilde carry keytar drinking pug godard viral
+        shabby chic.","count":1,"category":null,"user_id":1}}]}'
+  recorded_at: Tue, 07 Jun 2022 19:21:45 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/1/trips
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 77715961-bd08-41f5-8f9b-d46461209132
+      X-Runtime:
+      - '0.030329'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Tue, 07 Jun 2022 19:21:45 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/areas/2107
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"06047cd319d47923ad8dd80444dc49b7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 5fd68664-3a6f-44cb-843c-92027ebdf50e
+      X-Runtime:
+      - '0.002151'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"2107","type":"area","attributes":{"name":"Little Yosemite
+        Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}}}'
+  recorded_at: Tue, 07 Jun 2022 19:21:45 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"2ed5a7e70684515a6a6cd83a406c4304"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7bbd3f83-1dbb-4482-932e-4b6981b0f792
+      X-Runtime:
+      - '0.002021'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"Margarita","last_name":"Gottlieb","email":"margarita@example.net"}}}'
+  recorded_at: Tue, 07 Jun 2022 19:21:45 GMT
+recorded_with: VCR 6.1.0
