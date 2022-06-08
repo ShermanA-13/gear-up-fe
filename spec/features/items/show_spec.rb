@@ -2,13 +2,27 @@ require "rails_helper"
 
 describe "Item show page" do
   before do
-    visit "/users/1/items/1"
+    data = {
+      first_name: 'Bonny',
+      last_name: 'Jowman',
+      email: 'ivebeentrapped@inthecomputer.org',
+      user_photo: 'https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c'
+    }
+    @user = UserFacade.create_user(data)
+
+    visit "/login?user_id=#{@user.id}"
+    visit "/users/#{@user.id}/items/new"
+    fill_in 'Item Name', with: "Organic Crash Pad"
+    fill_in 'Description', with: "Large, red and blue"
+    fill_in 'Count', with: "5"
+    choose option: '8'
+    click_button 'Add Item'
   end
 
   it "displays the item's attributes (name, desc, categ)", :vcr do
-    expect(page).to have_content("Name: Water Bottle")
+    expect(page).to have_content("Name: Organic Crash Pad")
     expect(page).to have_content("Count: 5")
-    expect(page).to have_content("Item Category: Tents")
+    expect(page).to have_content("Item Category: Crash Pads")
 
     expect(page).not_to have_content("Name: Trail Mix")
     expect(page).not_to have_content("Count: 8")
@@ -23,11 +37,11 @@ describe "Item show page" do
 end
 describe "delete item" do
   before do
-    visit "/login?user_id=1"
+    visit "/login?user_id=3"
   end
 
   it "has a link to delete an item", :vcr do
-    visit "/users/1/items"
+    visit "/users/3/items"
     within '#item-2' do
       click_link 'View Item'
     end
@@ -47,9 +61,8 @@ end
 
 describe "update item" do
   before do
-    visit "/login?user_id=1"
+    visit "/login?user_id=3"
     click_link("Trail Mix")
-
   end
 
   it "has a button taking you to the update page", :vcr do
