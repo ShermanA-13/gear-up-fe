@@ -2,9 +2,18 @@ require "rails_helper"
 
 describe "Item new page" do
   before do
-    visit "/login?user_id=1"
-    visit "/users/1/items/new"
+    data = {
+      first_name: 'Bonny',
+      last_name: 'Jowman',
+      email: 'ivebeentrapped@inthecomputer.org',
+      user_photo: 'https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c'
+    }
+
+    @user = UserFacade.create_user(data)
+    visit "/login?user_id=#{@user.id}"
+    visit "/users/#{@user.id}/items/new"
   end
+
   it "has a form to create a new item", :vcr do
     expect(find('form')).to have_content('Item Name')
     expect(find('form')).to have_content('Description')
@@ -17,22 +26,21 @@ describe "Item new page" do
   end
 
   it "displays no form when user visits page", :vcr do
-    visit "/users/2/items/new"
+    visit "/users/10/items/new"
     expect(page).not_to have_css("form")
     expect(page).to have_content("How did you get here...")
   end
 
   it "creates a new item and redirects to item show page", :vcr do
-      fill_in 'Item Name', with: "Tent 1"
-      fill_in 'Description', with: "1 person Tent"
-      fill_in 'Count', with: "1"
-      choose option: '0'
+    fill_in 'Item Name', with: "Tent 1"
+    fill_in 'Description', with: "1 person Tent"
+    fill_in 'Count', with: "1"
+    choose option: '0'
+    click_button 'Add Item'
 
-      click_button 'Add Item'
-
-      expect(page).to have_content("Name: Tent 1")
-      expect(page).to have_content("Description: 1 person Tent")
-      expect(page).to have_content("Count: 1")
-      expect(page).to have_content("Item Category: Tents")
+    expect(page).to have_content("Name: Tent 1")
+    expect(page).to have_content("Description: 1 person Tent")
+    expect(page).to have_content("Count: 1")
+    expect(page).to have_content("Item Category: Tents")
   end
 end

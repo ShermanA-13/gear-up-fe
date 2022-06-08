@@ -1,14 +1,16 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: http://localhost:5000/api/v1/users/1
+    method: post
+    uri: http://localhost:5000/api/v1/users
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"first_name":"Bonny","last_name":"Jowman","email":"ivebeentrapped@inthecomputer.org","user_photo":""}'
     headers:
       User-Agent:
       - Faraday v2.3.0
+      Content-Type:
+      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,22 +23,22 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"61d32510e6b2135913e844e945e43a92"
+      - W/"9070c6b52e547a37817483f3805d924b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 90b7a7af-91ce-4c1d-a042-328dc92be687
+      - 2fc834c8-c11a-4f77-abe1-9eafc6e028ec
       X-Runtime:
-      - '0.002617'
+      - '0.111450'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}}}'
-  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
+      string: '{"data":{"id":"3","type":"user","attributes":{"first_name":"Bonny","last_name":"Jowman","email":"ivebeentrapped@inthecomputer.org","user_photo":"https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c"}}}'
+  recorded_at: Wed, 08 Jun 2022 17:24:18 GMT
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/users/1/items/
+    uri: http://localhost:5000/api/v1/users/3
     body:
       encoding: US-ASCII
       string: ''
@@ -55,24 +57,22 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"9ae2cc2b3453c7f41d299c566a36e679"
+      - W/"9070c6b52e547a37817483f3805d924b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b6cc989b-fc54-45db-a039-5638b4f9855d
+      - 6df9952e-6d23-4dab-b32b-a83cdad2665b
       X-Runtime:
-      - '0.001562'
+      - '0.002194'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}},{"id":"2","type":"item","attributes":{"name":"Trail
-        Mix","description":"My Favorite Trail Mix","count":8,"category":0,"user_id":1}},{"id":"5","type":"item","attributes":{"name":"Tent
-        1","description":"1 person Tent","count":1,"category":0,"user_id":1}}]}'
-  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
+      string: '{"data":{"id":"3","type":"user","attributes":{"first_name":"Bonny","last_name":"Jowman","email":"ivebeentrapped@inthecomputer.org","user_photo":"https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c"}}}'
+  recorded_at: Wed, 08 Jun 2022 17:24:19 GMT
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/users/1/trips
+    uri: http://localhost:5000/api/v1/users/3/items/
     body:
       encoding: US-ASCII
       string: ''
@@ -91,24 +91,22 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"89ad45b9f60190fb349c248e3a8c41fd"
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 75a92953-2569-407d-9a56-e529d6920618
+      - 504144a0-99c6-4cc3-86a9-b2ed3b97281c
       X-Runtime:
-      - '0.001586'
+      - '0.011468'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"first trip","area_id":1,"description":"baby''s
-        first trip","host_id":1,"start_date":"2022-06-06","end_date":"2022-06-07"}},{"id":"2","type":"trip","attributes":{"name":"boo
-        boo trip","area_id":1,"description":"trip I guess","host_id":3,"start_date":"2022-06-06","end_date":"2022-06-07"}}]}'
-  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
+      string: '{"data":[]}'
+  recorded_at: Wed, 08 Jun 2022 17:24:19 GMT
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/users/1
+    uri: http://localhost:5000/api/v1/users/3/trips
     body:
       encoding: US-ASCII
       string: ''
@@ -127,17 +125,51 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"61d32510e6b2135913e844e945e43a92"
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0ff31973-091e-4003-ad04-befb148b9317
+      - dc444cd4-337f-44a9-890e-9e594abed1dd
       X-Runtime:
-      - '0.001389'
+      - '0.015109'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}}}'
-  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
+      string: '{"data":[]}'
+  recorded_at: Wed, 08 Jun 2022 17:24:19 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9070c6b52e547a37817483f3805d924b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 93261942-dfa9-4dc0-8808-678bd9e195a3
+      X-Runtime:
+      - '0.001929'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":{"id":"3","type":"user","attributes":{"first_name":"Bonny","last_name":"Jowman","email":"ivebeentrapped@inthecomputer.org","user_photo":"https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c"}}}'
+  recorded_at: Wed, 08 Jun 2022 17:24:19 GMT
 recorded_with: VCR 6.1.0
