@@ -23,13 +23,13 @@
         <div class="form_catg_container">
           <% if @item.category == category %>
 
-            <%= form.radio_button :category, "#{category}", checked: true %>
+            <%= form.radio_button :category, "#{index}", checked: true %>
             <%= form.label :category, "#{category}" %>
             <br>
 
           <% else %>
 
-            <%= form.radio_button :category, "#{category}" %>
+            <%= form.radio_button :category, "#{index}" %>
             <%= form.label :category, "#{category}" %>
             <br>
 
