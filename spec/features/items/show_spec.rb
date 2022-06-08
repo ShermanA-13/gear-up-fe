@@ -49,12 +49,13 @@ describe "delete item" do
   end
 
   it "does not have delete link on other users item pages", :vcr do
-    visit "/users/2/items"
-    within '#item-3' do
+    visit "/users/1/items"
+    within '#item-9' do
       click_link 'View Item'
     end
 
-    expect(page).not_to have_link("Delete Good Socks")
+    expect(page).to have_content('Sleeping Bag')
+    expect(page).not_to have_link("Delete Sleeping Bag")
   end
 end
 

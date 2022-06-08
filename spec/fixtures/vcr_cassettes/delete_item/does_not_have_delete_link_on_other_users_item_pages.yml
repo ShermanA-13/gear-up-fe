@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/users/1
+    uri: http://localhost:5000/api/v1/users/3
     body:
       encoding: US-ASCII
       string: ''
@@ -21,19 +21,95 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"61d32510e6b2135913e844e945e43a92"
+      - W/"9070c6b52e547a37817483f3805d924b"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3743c580-10c3-4374-b36e-dfa0dfa16f1a
+      - dfacfe4d-4845-4508-8d61-51f51480cef4
       X-Runtime:
-      - '0.001548'
+      - '0.003478'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com"}}}'
-  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
+      string: '{"data":{"id":"3","type":"user","attributes":{"first_name":"Bonny","last_name":"Jowman","email":"ivebeentrapped@inthecomputer.org","user_photo":"https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c"}}}'
+  recorded_at: Wed, 08 Jun 2022 18:53:39 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/3/items/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"6096ffdd4ff9522d8f107dd816981cb8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2be9d528-3bcd-4cf0-b196-9f322155d55e
+      X-Runtime:
+      - '0.001797'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Tent 1","description":"1
+        person Tent","count":1,"category":0,"user_id":3}},{"id":"2","type":"item","attributes":{"name":"Organic
+        Crash Pad","description":"Large, red and blue","count":5,"category":8,"user_id":3}},{"id":"3","type":"item","attributes":{"name":"Tent
+        1","description":"1 person Tent","count":1,"category":0,"user_id":3}},{"id":"4","type":"item","attributes":{"name":"Tent
+        1","description":"1 person Tent","count":1,"category":0,"user_id":3}},{"id":"5","type":"item","attributes":{"name":"Organic
+        Crash Pad","description":"Large, red and blue","count":5,"category":0,"user_id":3}},{"id":"6","type":"item","attributes":{"name":"Organic
+        Crash Pad","description":"Large, red and blue","count":5,"category":8,"user_id":3}},{"id":"7","type":"item","attributes":{"name":"Organic
+        Crash Pad","description":"Large, red and blue","count":5,"category":8,"user_id":3}},{"id":"8","type":"item","attributes":{"name":"Organic
+        Crash Pad","description":"Large, red and blue","count":5,"category":8,"user_id":3}}]}'
+  recorded_at: Wed, 08 Jun 2022 18:53:39 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/3/trips
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 310511e2-61fc-4d8a-b69c-9bd6571d052b
+      X-Runtime:
+      - '0.002177'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[]}'
+  recorded_at: Wed, 08 Jun 2022 18:53:39 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/1/items/
@@ -55,25 +131,23 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"ab62c8784a298ec211896513e6d10bbc"
+      - W/"13d03d47dba0d1ec9103cba100b909c2"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e10a8f3a-cf63-47a6-acb9-fa2601c499d2
+      - 2450a1bf-fe3d-4810-a904-c28cecb39b2c
       X-Runtime:
-      - '0.001450'
+      - '0.001665'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":0,"user_id":1}},{"id":"2","type":"item","attributes":{"name":"Trail
-        Mix","description":"My Favorite Trail Mix","count":8,"category":0,"user_id":1}},{"id":"5","type":"item","attributes":{"name":"Tent
-        1","description":"1 person Tent","count":1,"category":0,"user_id":1}},{"id":"6","type":"item","attributes":{"name":"Tent
-        1","description":"1 person Tent","count":1,"category":0,"user_id":1}}]}'
-  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
+      string: '{"data":[{"id":"9","type":"item","attributes":{"name":"Sleeping bag","description":"REI
+        Mummy Bag","count":1,"category":1,"user_id":1}}]}'
+  recorded_at: Wed, 08 Jun 2022 18:53:39 GMT
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/users/1/trips
+    uri: http://localhost:5000/api/v1/users/1/items/9
     body:
       encoding: US-ASCII
       string: ''
@@ -92,88 +166,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"89ad45b9f60190fb349c248e3a8c41fd"
+      - W/"5d62ff4b26ba21ed1b186072b7f5b927"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b1457333-3712-4665-b87d-32bb999372ce
+      - ad894c60-b1ef-40dc-98b3-c3a7a67db09c
       X-Runtime:
-      - '0.001770'
+      - '0.001989'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"first trip","area_id":1,"description":"baby''s
-        first trip","host_id":1,"start_date":"2022-06-06","end_date":"2022-06-07"}},{"id":"2","type":"trip","attributes":{"name":"boo
-        boo trip","area_id":1,"description":"trip I guess","host_id":3,"start_date":"2022-06-06","end_date":"2022-06-07"}}]}'
-  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
-- request:
-    method: get
-    uri: http://localhost:5000/api/v1/users/2/items/
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.3.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Etag:
-      - W/"b2bc357a45ca43911fa6a10670cf0f4e"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 2a501a58-df84-4fc9-a330-9a69f02894e0
-      X-Runtime:
-      - '0.001948'
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: '{"data":[{"id":"3","type":"item","attributes":{"name":"Good Socks","description":null,"count":3,"category":0,"user_id":2}},{"id":"4","type":"item","attributes":{"name":"Fancy
-        Tent","description":null,"count":1,"category":0,"user_id":2}}]}'
-  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
-- request:
-    method: get
-    uri: http://localhost:5000/api/v1/users/2/items/3
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.3.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Etag:
-      - W/"e017b1b6e0c55258e40c0e077fab52db"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - eeafa5ec-4717-42ab-9f6b-037ed71d5a29
-      X-Runtime:
-      - '0.001415'
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: '{"data":{"id":"3","type":"item","attributes":{"name":"Good Socks","description":null,"count":3,"category":0,"user_id":2}}}'
-  recorded_at: Mon, 06 Jun 2022 20:06:51 GMT
+      string: '{"data":{"id":"9","type":"item","attributes":{"name":"Sleeping bag","description":"REI
+        Mummy Bag","count":1,"category":1,"user_id":1}}}'
+  recorded_at: Wed, 08 Jun 2022 18:53:39 GMT
 recorded_with: VCR 6.1.0
