@@ -44,11 +44,11 @@ class TripFacade
 
   def self.get_trip_by_id(id)
     trip_data = TripService.get_trip_by_id(id)[:data]
-
     trip_data[:attributes][:id] = trip_data[:id]
     Trip.new(trip_data[:attributes])
   end
 
+<<<<<<< HEAD
   def self.trips_by_user_id(id)
     trip_data = TripService.trips_by_user_id(id)[:data]
     if trip_data
@@ -58,6 +58,21 @@ class TripFacade
       end
     end
 >>>>>>> 44e9de7 (merged main with branch rebase: routes)
+=======
+  def self.trips_by_user_id(user_id)
+    TripService.trips_by_user_id(user_id)[:data].map do |data|
+      Trip.new(data)
+    end
+>>>>>>> e52e69e (merged main with branch rebase: routes)
+  end
+
+  def destroy(id)
+    TripService.destroy(id)
+  end
+
+  def update(id)
+    json = TripService.update(id)
+    Trip.new(json[:data])
   end
 
   def self.add_items_to_trip(id, items)

@@ -2,7 +2,11 @@
 http_interactions:
 - request:
     method: get
+<<<<<<<< HEAD:spec/fixtures/vcr_cassettes/Area_show_page/does_not_show_the_new_trip_button_if_user_is_not_logged_in.yml
     uri: http://localhost:5000/api/v1/areas/2107
+========
+    uri: http://localhost:5000/api/v1/users/1/trips
+>>>>>>>> e52e69e (merged main with branch rebase: routes):spec/fixtures/vcr_cassettes/Trips_Index_page/has_links_to_trips_show_pages.yml
     body:
       encoding: US-ASCII
       string: ''
@@ -21,6 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
+<<<<<<<< HEAD:spec/fixtures/vcr_cassettes/Area_show_page/does_not_show_the_new_trip_button_if_user_is_not_logged_in.yml
       - W/"06047cd319d47923ad8dd80444dc49b7"
       Cache-Control:
       - max-age=0, private, must-revalidate
@@ -28,11 +33,27 @@ http_interactions:
       - bdde33f7-384a-4b5d-b057-bb49b84eb580
       X-Runtime:
       - '0.055340'
+========
+      - W/"5b9da25b411abc03a9b2c4a5a008addd"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 74ada3e9-33b6-4d4f-a330-ba1a390cd902
+      X-Runtime:
+      - '0.002126'
+>>>>>>>> e52e69e (merged main with branch rebase: routes):spec/fixtures/vcr_cassettes/Trips_Index_page/has_links_to_trips_show_pages.yml
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
+<<<<<<<< HEAD:spec/fixtures/vcr_cassettes/Area_show_page/does_not_show_the_new_trip_button_if_user_is_not_logged_in.yml
       string: '{"data":{"id":"2107","type":"area","attributes":{"name":"Little Yosemite
         Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}}}'
   recorded_at: Tue, 07 Jun 2022 19:21:45 GMT
+========
+      string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"first trip","area_id":1,"description":"baby''s
+        first trip","host_id":1,"start_date":"2022-06-05","end_date":"2022-06-06"}},{"id":"2","type":"trip","attributes":{"name":"boo
+        boo trip","area_id":1,"description":"trip I guess","host_id":3,"start_date":"2022-06-05","end_date":"2022-06-06"}}]}'
+  recorded_at: Tue, 07 Jun 2022 01:42:20 GMT
+>>>>>>>> e52e69e (merged main with branch rebase: routes):spec/fixtures/vcr_cassettes/Trips_Index_page/has_links_to_trips_show_pages.yml
 recorded_with: VCR 6.1.0
