@@ -14,6 +14,5 @@ RSpec.describe "trip_facade" do
     trip = TripFacade.get_all_trip_info(1)
 
 
-
   end
 end

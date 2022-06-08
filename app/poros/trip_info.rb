@@ -1,4 +1,5 @@
 class TripInfo
+  attr_reader :id, :name, :start_date, :end_date, :host, :description, :lat, :long, :area, :state, :users, :items, :weather
 
   def initialize(data)
     @id = data[:id]
@@ -13,7 +14,8 @@ class TripInfo
     @state = data[:state]
     @users = create_users(data[:users])
     @items = create_items(data[:items])
-    require "pry"; binding.pry
+    @weather = create_weather(data[:weather][:forecast])
+    # require "pry"; binding.pry
   end
 
   def create_users(users)
@@ -39,6 +41,12 @@ class TripInfo
             owner: item[:owner]
             }
         }
-      end
     end
+  end
+
+  def create_weather(weather)
+    weather.map do |weather|
+      Weather.new(weather)
+    end
+  end
 end
