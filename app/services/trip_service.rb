@@ -9,6 +9,11 @@ class TripService < BaseService
     get_json(response)
   end
 
+  def self.get_all_trip_info(id)
+    response = conn.get("/api/v1/trips/#{id}")
+    get_json(response)
+  end
+
   def self.create(parameters)
     response = conn.post "/api/v1/users/#{parameters[:user_id]}/trips", {
       name: (parameters[:name]),
