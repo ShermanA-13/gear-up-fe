@@ -62,14 +62,14 @@ end
 describe "update item" do
   before do
     visit "/login?user_id=3"
-    click_link("Trail Mix")
+    visit "/users/3/items"
+    within '#item-2' do
+      click_link 'View Item'
+    end
   end
 
   it "has a button taking you to the update page", :vcr do
-    expect(page).to have_button("Edit Trail Mix")
-  end
-  it "the button takes you to the update page", :vcr do
-    click_button "Edit Trail Mix"
-    expect(current_path).to eq("/users/1/items/2/edit")
+    click_button "Edit Organic Crash Pad"
+    expect(current_path).to eq("/users/3/items/2/edit")
   end
 end
