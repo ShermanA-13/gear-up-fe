@@ -28,10 +28,10 @@ class TripInfo
       data = {
         id: user[:id],
         attributes: {
-            first_name: user[:first_name], last_name: user[:last_name], user_photo: user[:user_photo], email: user[:email]
-            }
-          }
-        User.new(data)
+          first_name: user[:first_name], last_name: user[:last_name], user_photo: user[:user_photo], email: user[:email]
+        }
+      }
+      User.new(data)
     end
   end
 
@@ -40,12 +40,12 @@ class TripInfo
       data = {
         id: item[:id],
         attributes: {
-            name: item[:name],
-            description: item[:description], count: item[:count],
-            category: item[:category],
-            owner: item[:owner]
-            }
+          name: item[:name],
+          description: item[:description], count: item[:count],
+          category: item[:category],
+          owner: item[:owner]
         }
+      }
       Item.new(data)
     end
   end
