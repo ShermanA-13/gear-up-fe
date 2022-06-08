@@ -1,3 +1,5 @@
+<% unless @error %>
+
 <hr>
 <% if params[:user_id] == session[:user_id] %>
   <h1>All of your items:</h1>
@@ -26,3 +28,13 @@
     </div>
   <% end %>
 </div>
+
+<% else %>
+
+  <div class="error_container">
+    <h1><%= @error.message %></h1>
+    <h4>Status: <%= @error.status %></h4>
+    <h4>Code: <%= @error.code %></h4>
+  </div>
+
+<% end %>

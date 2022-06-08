@@ -6,8 +6,13 @@ class ItemFacade
     end
 
     def items(user_id)
-      ItemService.items(user_id)[:data].map do |data|
-        Item.new(data)
+      json = ItemService.items(user_id)
+      if json[:data]
+        json[:data].map do |data|
+          Item.new(data)
+        end
+      else
+        Error.new(json[:errors])
       end
     end
 

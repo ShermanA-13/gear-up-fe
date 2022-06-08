@@ -6,6 +6,9 @@ class ItemsController < ApplicationController
 
   def index
     @items = ItemFacade.items(params[:user_id])
+    unless @items.class == Array
+      @error = @items
+    end
   end
 
   def new
