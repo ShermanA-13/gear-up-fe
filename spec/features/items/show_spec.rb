@@ -32,8 +32,8 @@ describe "Item show page" do
     click_link("Return to the Item Shed")
     expect(current_path).to eq("/users/3/items")
   end
-
 end
+
 describe "delete item" do
   before do
     visit "/login?user_id=3"
@@ -41,11 +41,11 @@ describe "delete item" do
 
   it "has a link to delete an item", :vcr do
     visit "/users/3/items"
-    within '#item-2' do
+    within '#item-5' do
       click_link 'View Item'
     end
 
-    expect(page).to have_link("Delete Trail Mix")
+    expect(page).to have_link("Delete Organic Crash Pad")
   end
 
   it "does not have delete link on other users item pages", :vcr do
