@@ -13,6 +13,6 @@ RSpec.describe "trip_facade" do
   it 'returns all info about a trip' do
     trip = TripFacade.get_all_trip_info(1)
 
-
+    # require "pry"; binding.pry
   end
 end

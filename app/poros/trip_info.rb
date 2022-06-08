@@ -41,6 +41,7 @@ class TripInfo
             owner: item[:owner]
             }
         }
+      Item.new(data)
     end
   end
 
