@@ -27,15 +27,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 770bc954-5a2f-47e9-99e5-f823a537ff7a
+      - 75879455-fa78-4614-bfc1-84b0c028378f
       X-Runtime:
-      - '0.003582'
+      - '0.015536'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"3","type":"user","attributes":{"first_name":"Bonny","last_name":"Jowman","email":"ivebeentrapped@inthecomputer.org","user_photo":"https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c"}}}'
-  recorded_at: Wed, 08 Jun 2022 17:25:37 GMT
+  recorded_at: Wed, 08 Jun 2022 17:32:33 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/3
@@ -61,15 +61,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7c5bd952-909f-4e75-bac1-0ae5572599bd
+      - 245d2735-e399-48e2-a5ce-7bf466270895
       X-Runtime:
-      - '0.002130'
+      - '0.002434'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"3","type":"user","attributes":{"first_name":"Bonny","last_name":"Jowman","email":"ivebeentrapped@inthecomputer.org","user_photo":"https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c"}}}'
-  recorded_at: Wed, 08 Jun 2022 17:25:37 GMT
+  recorded_at: Wed, 08 Jun 2022 17:32:33 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/3/items/
@@ -95,15 +95,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 71868936-7222-4b32-88e1-b693cf8b7681
+      - 8efa0b7b-31ac-454f-8ba9-7cff3e5d5c73
       X-Runtime:
-      - '0.002169'
+      - '0.001998'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":[]}'
-  recorded_at: Wed, 08 Jun 2022 17:25:37 GMT
+  recorded_at: Wed, 08 Jun 2022 17:32:34 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/3/trips
@@ -129,15 +129,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 308db7ed-f385-4150-b446-36e5eb306279
+      - c41c2b7b-4429-44e0-ada5-4ab6be221074
       X-Runtime:
-      - '0.002371'
+      - '0.003327'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":[]}'
-  recorded_at: Wed, 08 Jun 2022 17:25:37 GMT
+  recorded_at: Wed, 08 Jun 2022 17:32:34 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/3
@@ -163,18 +163,18 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4e54f5fa-f7f4-47d9-abb4-2e2c22289df2
+      - 495a7631-f567-4f88-b0cf-b5b2de7aed61
       X-Runtime:
-      - '0.004775'
+      - '0.001892'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"3","type":"user","attributes":{"first_name":"Bonny","last_name":"Jowman","email":"ivebeentrapped@inthecomputer.org","user_photo":"https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c"}}}'
-  recorded_at: Wed, 08 Jun 2022 17:25:38 GMT
+  recorded_at: Wed, 08 Jun 2022 17:32:34 GMT
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/users/10
+    uri: http://localhost:5000/api/v1/users/2
     body:
       encoding: US-ASCII
       string: ''
@@ -187,21 +187,23 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 200
+      message: OK
     headers:
       Content-Type:
       - application/json; charset=utf-8
+      Etag:
+      - W/"59cacb391482737917845c6fb121de18"
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 86333872-b62d-4c27-a53c-05c99cab5256
+      - 579bd9a4-0e4a-4646-9198-e5d1e387bda4
       X-Runtime:
-      - '0.017148'
+      - '0.002170'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"errors":[{"status":"NOT FOUND","message":"No user with id 10","code":404}]}'
-  recorded_at: Wed, 08 Jun 2022 17:25:38 GMT
+      string: '{"data":{"id":"2","type":"user","attributes":{"first_name":"Don","last_name":"Rickles","email":"ricklord@ricks.org","user_photo":"https://fakepic.com"}}}'
+  recorded_at: Wed, 08 Jun 2022 17:32:34 GMT
 recorded_with: VCR 6.1.0

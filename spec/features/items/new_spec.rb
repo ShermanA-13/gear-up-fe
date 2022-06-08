@@ -26,7 +26,7 @@ describe "Item new page" do
   end
 
   it "displays no form when user visits page", :vcr do
-    visit "/users/10/items/new"
+    visit "/users/2/items/new"
     expect(page).not_to have_css("form")
     expect(page).to have_content("How did you get here...")
   end
@@ -35,7 +35,7 @@ describe "Item new page" do
     fill_in 'Item Name', with: "Tent 1"
     fill_in 'Description', with: "1 person Tent"
     fill_in 'Count', with: "1"
-    choose option: '0'
+    choose option: 'Tents'
     click_button 'Add Item'
 
     expect(page).to have_content("Name: Tent 1")
