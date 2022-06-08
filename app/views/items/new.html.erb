@@ -1,34 +1,46 @@
-<div class="item_form_container">
-  <% if session[:user_id] == @user.id %>
+<% unless @error %>
 
-    <%= form_with url: "/users/#{@user.id}/items", method: :post, local: true do |form| %>
-      <div class="form_text_container">
-        <%= form.label :name, "Item Name" %>
-        <%= form.text_field :name %>
-      </div>
-      <br>
-      <div class="form_text_container">
-        <%= form.label :description, "Description" %>
-        <%= form.text_area :description %>
-      </div>
-      <br>
-      <div class="form_text_container">
-        <%= form.label :count, "Count" %>
-        <%= form.number_field :count %>
-      </div>
-      <br>
-      <% Item.category_list.each_with_index do |category, index| %>
-        <div class="form_catg_container">
-          <%= form.radio_button :category, "#{category}" %>
-          <%= form.label :category, "#{category}" %>
-          <br>
+  <div class="item_form_container">
+    <% if session[:user_id] == @user.id %>
+
+      <%= form_with url: "/users/#{@user.id}/items", method: :post, local: true do |form| %>
+        <div class="form_text_container">
+          <%= form.label :name, "Item Name" %>
+          <%= form.text_field :name %>
         </div>
+        <br>
+        <div class="form_text_container">
+          <%= form.label :description, "Description" %>
+          <%= form.text_area :description %>
+        </div>
+        <br>
+        <div class="form_text_container">
+          <%= form.label :count, "Count" %>
+          <%= form.number_field :count %>
+        </div>
+        <br>
+        <% Item.category_list.each_with_index do |category, index| %>
+          <div class="form_catg_container">
+            <%= form.radio_button :category, "#{index}" %>
+            <%= form.label :category, "#{category}" %>
+            <br>
+          </div>
+        <% end %>
+        <%= form.submit "Add Item" %>
       <% end %>
-      <%= form.submit "Add Item" %>
+    <% else %>
+
+    <h1>How did you get here...</h1>
+
     <% end %>
-  <% else %>
+  </div>
 
-  <h1>How did you get here...</h1>
+<% else %>
 
-  <% end %>
-</div>
+  <div class="error_container">
+    <h1><%= @error.message %></h1>
+    <h4>Status: <%= @error.status %></h4>
+    <h4>Code: <%= @error.code %></h4>
+  </div>
+
+<% end %>

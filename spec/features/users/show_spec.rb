@@ -66,4 +66,15 @@ describe "user show page" do
         expect(page).to have_content("End date: 2022-06-07")
     end
   end
+
+  describe "error handling" do
+    before do
+      visit "users/0"
+    end
+
+    it "fails gracefully" do
+      expect(page).to have_content("No user with id 0")
+      expect(page).to have_content("Code: 404")
+    end
+  end
 end
