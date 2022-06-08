@@ -1,7 +1,6 @@
 <div class="item_form_container">
 
   <% if session[:user_id] == @user.id %>
-
       <%= form_with url: "/users/#{@user.id}/items/#{@item.id}", method: :patch, local: true do |form| %>
       <div class="form_text_container">
         <%= form.label :name, "Item Name" %>
@@ -22,19 +21,14 @@
       <% Item.category_list.each_with_index do |category, index| %>
         <div class="form_catg_container">
           <% if @item.category == category %>
-
-            <%= form.radio_button :category, "#{category}", checked: true %>
+            <%= form.radio_button :category, "#{index}", checked: true %>
             <%= form.label :category, "#{category}" %>
             <br>
-
           <% else %>
-
             <%= form.radio_button :category, "#{category}" %>
             <%= form.label :category, "#{category}" %>
             <br>
-
           <% end %>
-
         </div>
       <% end %>
 
@@ -42,8 +36,6 @@
 
     <% end %>
   <% else %>
-
     <h1>How did you get here...</h1>
-
   <% end %>
 </div>

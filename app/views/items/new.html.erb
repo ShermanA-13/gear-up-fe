@@ -19,7 +19,7 @@
       <br>
       <% Item.category_list.each_with_index do |category, index| %>
         <div class="form_catg_container">
-          <%= form.radio_button :category, "#{category}" %>
+          <%= form.radio_button :category, "#{index}" %>
           <%= form.label :category, "#{category}" %>
           <br>
         </div>

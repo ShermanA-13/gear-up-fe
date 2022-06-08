@@ -27,15 +27,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 37614ffe-c3a1-487e-9b85-ae52b5982633
+      - 501cc521-2ec0-49f9-a21b-4e2dca071dc5
       X-Runtime:
-      - '0.023465'
+      - '0.003376'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"3","type":"user","attributes":{"first_name":"Bonny","last_name":"Jowman","email":"ivebeentrapped@inthecomputer.org","user_photo":"https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c"}}}'
-  recorded_at: Wed, 08 Jun 2022 17:49:35 GMT
+  recorded_at: Wed, 08 Jun 2022 18:21:25 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/3
@@ -61,15 +61,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f0b5fd4b-3741-4674-bda7-10d5e4a85fef
+      - fbc464f9-ba7c-4053-b630-f130a78f7b09
       X-Runtime:
-      - '0.002338'
+      - '0.001877'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"3","type":"user","attributes":{"first_name":"Bonny","last_name":"Jowman","email":"ivebeentrapped@inthecomputer.org","user_photo":"https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c"}}}'
-  recorded_at: Wed, 08 Jun 2022 17:49:35 GMT
+  recorded_at: Wed, 08 Jun 2022 18:21:25 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/3/items/
@@ -91,19 +91,22 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      - W/"a3cae59fe6df97863ae2037983e152bd"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6cbd77e8-3f07-4396-9a27-80462fff6f8c
+      - 23924d4f-1f27-47b7-a346-29c58eb809b0
       X-Runtime:
-      - '0.001711'
+      - '0.002053'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":[]}'
-  recorded_at: Wed, 08 Jun 2022 17:49:35 GMT
+      string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Tent 1","description":"1
+        person Tent","count":1,"category":0,"user_id":3}},{"id":"2","type":"item","attributes":{"name":"Organic
+        Crash Pad","description":"Large, red and blue","count":5,"category":8,"user_id":3}},{"id":"3","type":"item","attributes":{"name":"Tent
+        1","description":"1 person Tent","count":1,"category":0,"user_id":3}}]}'
+  recorded_at: Wed, 08 Jun 2022 18:21:25 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/3/trips
@@ -129,15 +132,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - dca7da6b-f2dc-4301-a122-28e5cd67e286
+      - 4813fb00-3def-4d3c-a5cf-bab169d2ec7a
       X-Runtime:
-      - '0.003097'
+      - '0.003397'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":[]}'
-  recorded_at: Wed, 08 Jun 2022 17:49:35 GMT
+  recorded_at: Wed, 08 Jun 2022 18:21:25 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/3
@@ -163,21 +166,21 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 767f4499-8977-4abb-876b-80b89b0d42ec
+      - b867c7e0-de6d-4904-975d-197f5bc2596f
       X-Runtime:
-      - '0.003297'
+      - '0.001920'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"3","type":"user","attributes":{"first_name":"Bonny","last_name":"Jowman","email":"ivebeentrapped@inthecomputer.org","user_photo":"https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c"}}}'
-  recorded_at: Wed, 08 Jun 2022 17:49:36 GMT
+  recorded_at: Wed, 08 Jun 2022 18:21:25 GMT
 - request:
     method: post
     uri: http://localhost:5000/api/v1/users/3/items
     body:
       encoding: UTF-8
-      string: '{"name":"Tent 1","description":"1 person Tent","count":"1","category":"Tents","user_id":"3"}'
+      string: '{"name":"Tent 1","description":"1 person Tent","count":"1","category":"0","user_id":"3"}'
     headers:
       User-Agent:
       - Faraday v2.3.0
@@ -195,23 +198,23 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"32b9e26decf4b8eeefb9d6bea799240f"
+      - W/"83b2314884dddc368b02f1e7088e85d9"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 5ccaff43-7422-4581-9377-007309439625
+      - b0760c5f-701d-4e77-884b-80d93fc8c208
       X-Runtime:
-      - '0.010103'
+      - '0.115723'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"item","attributes":{"name":"Tent 1","description":"1
-        person Tent","count":1,"category":"Tents","user_id":3}}}'
-  recorded_at: Wed, 08 Jun 2022 17:49:36 GMT
+      string: '{"data":{"id":"4","type":"item","attributes":{"name":"Tent 1","description":"1
+        person Tent","count":1,"category":0,"user_id":3}}}'
+  recorded_at: Wed, 08 Jun 2022 18:21:25 GMT
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/users/3/items/1
+    uri: http://localhost:5000/api/v1/users/3/items/4
     body:
       encoding: US-ASCII
       string: ''
@@ -230,18 +233,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"32b9e26decf4b8eeefb9d6bea799240f"
+      - W/"83b2314884dddc368b02f1e7088e85d9"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 37373030-f1f9-4490-a3c5-550c203f2b25
+      - 2677dc77-da43-468d-9349-7ca0c8bf62cb
       X-Runtime:
-      - '0.001669'
+      - '0.002388'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"item","attributes":{"name":"Tent 1","description":"1
-        person Tent","count":1,"category":"Tents","user_id":3}}}'
-  recorded_at: Wed, 08 Jun 2022 17:49:36 GMT
+      string: '{"data":{"id":"4","type":"item","attributes":{"name":"Tent 1","description":"1
+        person Tent","count":1,"category":0,"user_id":3}}}'
+  recorded_at: Wed, 08 Jun 2022 18:21:25 GMT
 recorded_with: VCR 6.1.0
