@@ -33,5 +33,10 @@ class ItemFacade
       json = ItemService.update(parameters)
       Item.new(json[:data])
     end
+
+    def trip_items(user_id, trip_id)
+      json = ItemService.find_trip_items(user_id, trip_id)
+      json[:data].map {|data| Item.new(data)}
+    end
   end
 end

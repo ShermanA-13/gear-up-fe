@@ -25,12 +25,27 @@ class TripService < BaseService
     get_json(response)
   end
 
-  def self.update_trip(id)
-    response = conn.patch("/api/v1/trips/#{id}")
+  def self.update_trip(params)
+    response = conn.patch "/api/v1/trips/#{params[:id]}", {
+      name: (params[:name]).to_s,
+      start_date: (params[:start_date]).to_s,
+      end_date: (params[:end_date]).to_s,
+      description: (params[:description]).to_s
+    }.to_json, "Content-Type" => "application/json"
     get_json(response)
   end
 
   def self.destroy(id)
     response = conn.delete("/api/v1/trips/#{id}")
+  end
+
+  def self.add_items_to_trip(id, items)
+    response = conn.post "/api/v1/trips/#{id}/items", {items: items}.to_json, "Content-Type" => "application/json"
+    get_json(response)
+  end
+
+  def self.edit_items_on_trip(id, items)
+    response = conn.patch "/api/v1/trips/#{id}/items", {items: items}.to_json, "Content-Type" => "application/json"
+    get_json(response)
   end
 end

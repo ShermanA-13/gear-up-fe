@@ -31,8 +31,16 @@ class TripFacade
     TripService.destroy(id)
   end
 
-  def update(id)
-    json = TripService.update(id)
+  def self.update(params)
+    json = TripService.update_trip(params)
     Trip.new(json[:data])
+  end
+
+  def self.add_items_to_trip(id, items)
+    TripService.add_items_to_trip(id, items)
+  end
+
+  def self.edit_items_on_trip(id, items)
+    TripService.edit_items_on_trip(id, items)
   end
 end
