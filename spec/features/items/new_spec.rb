@@ -19,7 +19,7 @@ RSpec.describe "Item new page" do
       allow(GearUpService).to receive(:user_trips).and_return(@trips)
       visit root_path
       click_link 'Login'
-      visit "/users/3/items/new"
+      visit "/users/1/items/new"
     end
 
     it "has a form to create a new item" do
@@ -49,10 +49,10 @@ RSpec.describe "Item new page" do
   describe 'when not logged in' do
     before do
       allow(UserService).to receive(:user).and_return(@user)
+      visit "/users/1/items/new"
     end
 
     it "displays no form when user visits page" do
-      visit "/users/3/items/new"
       expect(page).not_to have_css("form")
       expect(page).to have_content("How did you get here...")
     end
