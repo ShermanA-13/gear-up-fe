@@ -22,7 +22,12 @@ class ItemsController < ApplicationController
 
   def create
     item = ItemFacade.create(params)
-    redirect_to "/users/#{item.user_id}/items/#{item.id}"
+    if item.class == Item
+      redirect_to "/users/#{item.user_id}/items/#{item.id}"
+    else
+      flash[:alert] = item.message
+      redirect_to "/users/#{current_user.id}/items/new"
+    end
   end
 
   def destroy
