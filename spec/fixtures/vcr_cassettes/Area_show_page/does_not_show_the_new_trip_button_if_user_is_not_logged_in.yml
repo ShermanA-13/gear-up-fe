@@ -25,14 +25,14 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - bdde33f7-384a-4b5d-b057-bb49b84eb580
+      - 8709d04d-d8d9-4fd8-8d34-5f7e5256fc91
       X-Runtime:
-      - '0.055340'
+      - '0.001723'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"2107","type":"area","attributes":{"name":"Little Yosemite
         Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}}}'
-  recorded_at: Tue, 07 Jun 2022 19:21:45 GMT
+  recorded_at: Wed, 08 Jun 2022 23:50:03 GMT
 recorded_with: VCR 6.1.0
