@@ -27,7 +27,7 @@ class TripFacade
     Trip.new(json[:data])
   end
 
-  def destroy(id)
+  def self.destroy(id)
     TripService.destroy(id)
   end
 

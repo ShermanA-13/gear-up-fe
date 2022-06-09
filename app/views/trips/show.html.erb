@@ -12,6 +12,17 @@
       <p>Description: <%= @trip.description %></p>
   </div>
 
+  <div id="google_map" class="map_container">
+    <iframe
+    width="650"
+    height="450"
+    frameborder="0" style="border:0"
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["GOOGLE_MAPS_API_KEY"] %>&q=<%= @trip.lat %>,<%= @trip.long %>&zoom=13&maptype=satellite"
+    allowfullscreen>
+    </iframe>
+  </div>
+
   <div id="weather">
     <% unless @trip.weather.class == String %>
       <% binding.pry %>
@@ -20,6 +31,9 @@
     <% end %>
   </div>
 
+  <div id="buttons">
+    <%= button_to "Delete #{@trip.name}", "/trips/#{@trip.id}", method: :delete %>
+  </div>
 </div>
 
 <div id="users" class="area_container">

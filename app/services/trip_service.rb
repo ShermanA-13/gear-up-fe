@@ -30,8 +30,7 @@ class TripService < BaseService
     get_json(response)
   end
 
-  def self.delete_trip(id)
+  def self.destroy(id)
     response = conn.delete("/api/v1/trips/#{id}")
-    get_json(response)
   end
 end

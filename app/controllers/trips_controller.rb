@@ -22,4 +22,9 @@ class TripsController < ApplicationController
     trip = TripFacade.update(params)
     redirect_to "/trips/#{trip.id}"
   end
+
+  def destroy
+    TripFacade.destroy(params[:id])
+    redirect_to "/dashboard"
+  end
 end

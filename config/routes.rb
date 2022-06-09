@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   # post "/areas/:area_id/trips/new", to: "trips#create"
   # get "/areas/:area_id/trips/new/users", to: "user_trips#new"
   # post "/areas/:area_id/trips/new/users", to: "user_trips#create"
-  
+
   resources :trips, only: [:show, :update, :destroy]
 
 
@@ -32,5 +32,4 @@ Rails.application.routes.draw do
   post "/users/:user_id/trips/new", to: "trips#create"
   post "/trips/:trip_id/users", to: "trip_users#create"
 
-  resources :trips, only: [:show, :update, :destroy]
 end
