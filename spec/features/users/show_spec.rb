@@ -64,5 +64,23 @@ RSpec.describe "User show page" do
       expect(page).to have_content("Tent 1")
       expect(page).to have_content("Organic Crash Pad")
     end
+
+    it "shows next 2 upcoming trips the user is a part of" do
+      expect(page).to have_content("Bonny Jowman's Upcoming Trips")
+
+      within "#trip-1" do
+        expect(page).to have_content("boo boo trip")
+        expect(page).to have_content("Description: trip I guess")
+        expect(page).to have_content("Start date: 2022-06-07")
+        expect(page).to have_content("End date: 2022-06-08")
+      end
+
+      within "#trip-2" do
+        expect(page).to have_content("first trip")
+        expect(page).to have_content("Description: baby's first trip")
+        expect(page).to have_content("Start date: 2022-06-06")
+        expect(page).to have_content("End date: 2022-06-07")
+      end
+    end
   end
 end
