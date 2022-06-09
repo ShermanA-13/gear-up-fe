@@ -1,8 +1,14 @@
 class TripFacade
   def self.get_trip_by_id(id)
-    trip_data = TripService.get_trip_by_id(id)[:data]
-    trip_data[:attributes][:id] = trip_data[:id]
-    Trip.new(trip_data)
+    trip_data = TripService.get_trip_by_id(id)
+    Trip.new(
+      id: trip_data[:data][:id], attributes: {
+        name: trip_data[:data][:attributes][:name],
+        description: trip_data[:data][:attributes][:description],
+        start_date: trip_data[:data][:attributes][:start_date],
+        end_date: trip_data[:data][:attributes][:end_date]
+      }
+    )
   end
 
   def self.get_all_trip_info(id)
@@ -16,12 +22,17 @@ class TripFacade
     end
   end
 
-  def destroy(id)
+  def self.create_trip(params)
+    json = TripService.create(params)
+    Trip.new(json[:data])
+  end
+
+  def self.destroy(id)
     TripService.destroy(id)
   end
 
-  def update(id)
-    json = TripService.update(id)
+  def self.update(params)
+    json = TripService.update_trip(params)
     Trip.new(json[:data])
   end
 

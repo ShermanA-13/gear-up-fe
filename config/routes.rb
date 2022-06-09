@@ -22,11 +22,16 @@ Rails.application.routes.draw do
   # get "/areas/:area_id/trips/new/users", to: "user_trips#new"
   # post "/areas/:area_id/trips/new/users", to: "user_trips#create"
 
-  resources :trips, only: [:show, :update, :destroy]
-
-  get "/areas/search", to: "areas#index"
 
   get "/trips/:trip_id/items", to: "trip_items#new"
   post "/trips/:trip_id/items", to: "trip_items#create"
   patch "/trips/:trip_id/items", to: "trip_items#update"
+  
+  resources :trips, only: [:show, :edit, :update, :destroy]
+
+  get "/areas/:area_id/trips/:trip_id/users/new", to: "trip_users#new"
+  get "/areas/:area_id/trips/new", to: "trips#new"
+  post "/users/:user_id/trips/new", to: "trips#create"
+  post "/trips/:trip_id/users", to: "trip_users#create"
+
 end

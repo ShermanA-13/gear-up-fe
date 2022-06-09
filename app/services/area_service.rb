@@ -5,7 +5,8 @@ class AreaService < BaseService
       get_json(response)
     end
 
-    def area(id)
+    def area_by_id(id)
+
       response = conn.get("/api/v1/areas/#{id}")
       get_json(response)
     end
