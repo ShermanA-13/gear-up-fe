@@ -17,14 +17,14 @@ RSpec.describe "Item show page" do
       allow(ItemService).to receive(:find_item).and_return(@item)
       allow(TripService).to receive(:trips_by_user_id).and_return(@trips)
       visit root_path
-      click_link 'Login'
+      find('#login').click
       visit "/users/1/items/1"
     end
 
     it "displays the item's attributes (name, desc, categ)" do
-      expect(page).to have_content("Name: Harness")
+      expect(page).to have_content("\nHarness\n")
       expect(page).to have_content("Count: 1")
-      expect(page).to have_content("Item Category: Harnesses")
+      expect(page).to have_content("Category - Harnesses")
 
       expect(page).not_to have_content("Name: Organic Crash Pad")
     end
