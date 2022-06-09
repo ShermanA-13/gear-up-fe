@@ -1,45 +1,55 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <% if session[:user_id] %>
-    <a class="navbar-brand" id="logo" href="/dashboard">
-      <%= image_tag "gear_up_logo.png", height: 50 %>
-    </a>
-  <% else %>
-    <a class="navbar-brand" id="logo" href="/">
-      <%= image_tag "gear_up_logo.png", height: 50 %>
-    </a>
-  <% end %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <% if !session[:user_id] %>
-      <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href='/auth/google_oauth2'>Login <span class="sr-only">(current)</span></a>
-          </li>
-      </ul>
+<div class="sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <% if session[:user_id] %>
+      <a class="navbar-brand" id="logo" href="/dashboard">
+        <%= image_tag "gear_up_logo.png", height: 50 %>
+      </a>
     <% else %>
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="/logout">Logout <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/users/<%= session[:user_id]%>/items">MyShed</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/users/<%= session[:user_id]%>/trips">MyTrips</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/areas">Plan a trip!</a>
-        </li>
-        <% if session[:user_photo] != "" %>
-          <li class="nav-item">
-            <a class="navbar-brand">
-              <img id="user_photo" src="<%= session[:user_photo]%>">
-            </a>
-          </li>
-        <% end %>
-      </ul>
+      <a class="navbar-brand" id="logo" href="/">
+        <%= image_tag "gear_up_logo.png", height: 50 %>
+      </a>
     <% end %>
-  </div>
-</nav>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <% if !session[:user_id] %>
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link google_button" href='/auth/google_oauth2'>
+                <button type="button" class="login-with-google-btn" >
+                  Sign in with Google
+                </button>
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+        </ul>
+      <% else %>
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/logout">Logout <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users">People</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/<%= session[:user_id]%>/items">MyShed</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/<%= session[:user_id]%>/trips">MyTrips</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/areas">Plan a trip!</a>
+          </li>
+          <% if session[:user_photo] != "" %>
+            <li class="nav-item">
+              <a class="navbar-brand">
+                <img id="user_photo" src="<%= session[:user_photo]%>">
+              </a>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </nav>
+</div>

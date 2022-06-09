@@ -1,21 +1,22 @@
 class ItemsController < ApplicationController
   def show
     @item = ItemFacade.find_item(params[:user_id], params[:id])
-    unless @item.class == Item
+    unless @item.instance_of?(Item)
       @error = @item
     end
   end
 
   def index
+    @user = UserFacade.user(params[:user_id])
     @items = ItemFacade.items(params[:user_id])
-    unless @items.class == Array
+    unless @items.instance_of?(Array)
       @error = @items
     end
   end
 
   def new
     @user = UserFacade.user(params[:user_id])
-    unless @user.class == User
+    unless @user.instance_of?(User)
       @error = @user
     end
   end
@@ -43,5 +44,4 @@ class ItemsController < ApplicationController
     item = ItemFacade.update(params)
     redirect_to "/users/#{item.user_id}/items/#{item.id}"
   end
-
 end

@@ -1,21 +1,30 @@
-<%= form_with url: "/areas", method: :get, local: true do |form| %>
-  <%= form.label :name, "Search" %>
-  <%= form.text_field :name %>
-  <%= form.submit "Search" %>
-<% end %>
+<div class="search_container area_container">
+  <center>
+    <h1><u>Search for Areas</u></h1>
+    <br>
+    <%= form_with url: "/areas", method: :get, local: true do |form| %>
+      <% form.label :name, "Search" %>
+      <%= form.text_field :name %>
+      <%= form.submit "Search" %>
+    <% end %>
+  </center>
+</div>
 
 <% if !@areas.nil? %>
+<div class="results_container">
   <% @areas.each_with_index do |area, index| %>
-  <div class="card">
 
-    <div id="area_<%= index %>">
-      <a href="/areas/<%= area.id %>"><%= area.name %></a>
-      <br>
-      <%= area.state %>
-      <br>
-      <%= button_to "Create a Trip for this Area", "/areas/#{area.id}/trips/new", method: :get %>
-      <hr>
-    </div>
-    </div>
+  <div class="card result_card">
+    <center>
+      <div id="area_<%= index %>">
+        <a href="/areas/<%= area.id %>"><%= area.name %></a>
+        <br>
+        <%= area.state %>
+        <br>
+        <%= button_to "Create a Trip", "/areas/#{area.id}/trips/new", method: :get %>
+      </div>
+    </center>
+  </div>
   <% end %>
+</div>
 <% end %>

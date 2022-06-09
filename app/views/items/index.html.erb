@@ -1,12 +1,13 @@
 <% unless @error %>
 
-<hr>
 <% if params[:user_id] == session[:user_id] %>
-  <h1>All of your items:</h1>
-  <%= button_to "Add an item to your Shed", "/users/#{session[:user_id]}/items/new", method: :get %>
+  <div class="area_container search_container">
+    <h1><u>My Shed</u></h1>
+    <center><%= button_to "Add an item to your Shed", "/users/#{session[:user_id]}/items/new", method: :get %></center>
+  </div>
   <br>
 <% else %>
-  <h1>Another User's Shed (refactor to get user name)</h1>
+  <h1><%= @user.first_name %>'s Shed</h1>
 <% end %>
 <div class="card-group">
   <% @items.each do |item| %>
@@ -14,7 +15,7 @@
       <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title"><%= item.name %></h5>
-          <h6 class="card-subtitle mb-2 text-muted"><%= item.category %></h6>
+          <h6 class="card-subtitle mb-2 text-muted">Category - <%= item.category %></h6>
           <h6 class="card-subtitle mb-2 text-muted">Count: <%= item.count %></h6>
           <h6 class="card-subtitle mb-2 text-muted">Item ID: <%= item.id %></h6>
           <% if !item.description || item.description.empty?%>

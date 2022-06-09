@@ -1,5 +1,5 @@
 class TripInfo
-  attr_reader :id, :name, :start_date, :end_date, :host, :description, :lat, :long, :area, :state, :users, :items, :weather
+  attr_reader :id, :name, :start_date, :end_date, :host, :description, :lat, :long, :area, :state, :users, :items, :weather, :url
 
   def initialize(data)
     # binding.pry
@@ -12,13 +12,14 @@ class TripInfo
     @lat = data[:lat]
     @long = data[:long]
     @area = data[:area]
+    @url = data[:url]
     @state = data[:state]
     @users = create_users(data[:users])
     @items = create_items(data[:items])
-    unless data[:weather].class == String
-      @weather = create_weather(data[:weather][:forecast])
+    @weather = if data[:weather].instance_of?(String)
+      data[:weather]
     else
-      @weather = data[:weather]
+      create_weather(data[:weather][:forecast])
     end
   end
 

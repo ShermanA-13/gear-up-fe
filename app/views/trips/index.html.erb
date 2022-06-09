@@ -7,11 +7,12 @@
 </div>
 
 <% else %>
-<hr>
+        
+  <div class="area_container search_container">
+    <h1><u>Upcoming Trips</u></h1>
+  </div>
 
-  <h1>Upcoming Trips:</h1>
-
-<div class="container">
+<div class="card-group">
 <div class="mt-5">
   <% @trips.each do |trip| %>
     <div id="trip-<%= trip.id %>">
