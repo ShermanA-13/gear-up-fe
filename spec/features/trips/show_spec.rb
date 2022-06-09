@@ -29,4 +29,10 @@ describe "Trip show page" do
       expect(page).to have_content("Weather is currently Unavailable")
     end
   end
+
+  it "displays a map", :vcr do
+    within "#google_map" do
+      expect(page).to have_css("iframe")
+    end
+  end
 end
