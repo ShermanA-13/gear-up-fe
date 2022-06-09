@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get "/areas/:area_id/trips/new", to: "trips#new"
   post "/users/:user_id/trips/new", to: "trips#create"
   post "/trips/:trip_id/users", to: "trip_users#create"
-  # patch "/trips/:trip_id/users", to: "/trip_users#update"
+  patch "/trips/:trip_id/users", to: "trip_users#update"
 
   get "/trips/:trip_id/items", to: "trip_item#new"
 end
