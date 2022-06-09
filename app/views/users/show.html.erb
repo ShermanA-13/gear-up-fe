@@ -1,11 +1,12 @@
 <% unless @error %>
-
-  <div class="user_info">
+  <div class="user_info area_container search_container">
+    <img src="<%= @user.user_photo[0..-4] %>720-c" alt="user pic">
+    <br><br>
     <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-    <p>Email: <%= @user.email %></p>
+    <p><%= @user.email %></p>
   </div>
-  <div class="area_container">
 
+  <div class="area_container">
     <div id="items">
       <center><h3><a href="/users/<%= @user.id %>/items"><%= @user.first_name %>'s Shed</a></h3></center>
 
@@ -24,7 +25,7 @@
     </div>
 
     <div id="trips">
-      <h2>Upcoming Trips</h2>
+      <h2><u>Upcoming Trips</u></h2>
       <div class="user_trips_container">
 
         <% @trips.each do |trip| %>

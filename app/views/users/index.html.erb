@@ -1,8 +1,14 @@
-<% @users.each do |user| %>
-<div class="area_container">
-  <div id="user-<%= user.id %>">
-    <h2><a href="/users/<%= user.id %>"><%= user.first_name %> <%= user.last_name %></a></h2>
-    <p>Email: <%= user.email %></p>
+<div class="results_container">
+  <% @users.each do |user| %>
+  <div class="area_container result_card user_index_info">
+    <div id="user-<%= user.id %>">
+      <% if user.user_photo %>
+          <img src="<%= user.user_photo[0..-4] %>720-c" alt="user pic">
+      <% end %>
+      <br><br>
+      <h2><a href="/users/<%= user.id %>"><%= user.first_name %> <%= user.last_name %></a></h2>
+      <p><%= user.email %></p>
+    </div>
   </div>
+  <% end %>
 </div>
-<% end %>

@@ -63,17 +63,15 @@
   </div>
   </div>
 
-<div class="search_container area_container">
-  <h3><u><b><%= "Who's Going" %></b></u></h3>
-</div>
-
 <div id="users" class="area_container">
+  <h3><u><b>Who's Going</b></u></h3>
   <div class="card-group">
+    <br><br>
     <% @trip.users.each do |user| %>
       <div class="card">
         <h4><%= user.first_name %> <%= user.last_name %></h4>
         <p><%= user.email %></p>
-        <p><u>Items</u></p>
+        <p><u>Items to bring</u></p>
         <% @trip.items.each do |item| %>
           <% if item.owner == user.first_name %>
             <p><%= item.category %> - <%= item.name %></p>

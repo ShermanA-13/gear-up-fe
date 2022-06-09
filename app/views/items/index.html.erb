@@ -3,8 +3,8 @@
 <% if params[:user_id] == session[:user_id] %>
   <div class="area_container search_container">
     <h1><u>My Shed</u></h1>
+    <center><%= button_to "Add an item to your Shed", "/users/#{session[:user_id]}/items/new", method: :get %></center>
   </div>
-  <center><%= button_to "Add an item to your Shed", "/users/#{session[:user_id]}/items/new", method: :get %></center>
   <br>
 <% else %>
   <h1><%= @user.first_name %>'s Shed</h1>

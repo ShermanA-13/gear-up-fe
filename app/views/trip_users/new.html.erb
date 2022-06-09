@@ -1,14 +1,20 @@
-<h1>Add Friends to <%= @trip.name %></h1>
+<div class="area_container">
+  <h1><u>Add Friends to <%= @trip.name %></u></h1>
+</div>
 
-<%= form_with url: "/trips/#{@trip.id}/users", method: :post, local: true do |f| %>
-  <%= f.hidden_field(:user_ids, {multiple: true}) %>
-  <% @users.each do |user| %>
-    <div id="<%= user.id %>">
-      <%= f.check_box(:user_ids, {multiple: true}, user.id, nil) %>
-      <%= f.label "#{user.first_name} #{user.last_name}" %>
+<div class="area_container search_container">
+  <center>
+    <%= form_with url: "/trips/#{@trip.id}/users", method: :post, local: true do |f| %>
+      <%= f.hidden_field(:user_ids, {multiple: true}) %>
+      <% @users.each do |user| %>
+        <div id="<%= user.id %>">
+          <%= f.check_box(:user_ids, {multiple: true}, user.id, nil) %>
+          <%= f.label "#{user.first_name} #{user.last_name}" %>
+          <br>
+        </div>
+      <% end %>
       <br>
-    </div>
-  <% end %>
-  <br>
-  <%= f.submit "Create Trip" %>
-<% end %>
+      <%= f.submit "Create Trip" %>
+    <% end %>
+  <center>
+</div>
