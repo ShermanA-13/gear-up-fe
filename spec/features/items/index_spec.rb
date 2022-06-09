@@ -23,7 +23,6 @@ RSpec.describe "Item index page" do
     end
 
     it "displays all of the users items" do
-      # save_and_open_page
       within "#item-1" do
         expect(page).to have_content("Tent 1")
         expect(page).to have_content("Count: 1")
@@ -35,13 +34,33 @@ RSpec.describe "Item index page" do
         expect(page).to have_content("Item ID: 2")
       end
     end
+
+    it "each item links to the item's show page" do
+      within "#item-1" do
+        click_link("View Item")
+      end
+
+      expect(current_path).to eq("/users/3/items/1")
+      expect(page).to have_content("Name: Harness")
+      expect(page).to have_content("Count: 1")
+    end
+
+    it "has a button to create a new item" do
+      click_button("Add an item to your Shed")
+      expect(current_path).to eq("/users/1/items/new")
+    end
   end
 
   describe 'when not logged in' do
     before do
       allow(UserService).to receive(:user).and_return(@user)
       allow(ItemService).to receive(:find_item).and_return(@item)
-      visit "/users/1/items/1"
+      visit "/users/1/items"
+    end
+
+    it "does not show the button when visiting a different users page" do
+      visit "/users/2/items"
+      expect(page).not_to have_button("Add an item to your Shed")
     end
   end
 end
