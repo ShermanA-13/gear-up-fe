@@ -1,7 +1,7 @@
 {
     "data": [
         {
-            "id": "2",
+            "id": "1",
             "type": "trip",
             "attributes": {
                 "name": "boo boo trip",
@@ -10,6 +10,18 @@
                 "host_id": 3,
                 "start_date": "2022-06-07",
                 "end_date": "2022-06-08"
+            }
+        },
+        {
+            "id": "2",
+            "type": "trip",
+            "attributes": {
+                "name": "first trip",
+                "area_id": 33912,
+                "description": "baby's first trip",
+                "host_id": 3,
+                "start_date": "2022-06-06",
+                "end_date": "2022-06-07"
             }
         }
     ]
