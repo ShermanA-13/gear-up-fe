@@ -54,12 +54,12 @@ RSpec.describe "Item index page" do
   describe 'when not logged in' do
     before do
       allow(UserService).to receive(:user).and_return(@user)
-      allow(ItemService).to receive(:find_item).and_return(@item)
+      allow(ItemService).to receive(:items).and_return(@items)
       visit "/users/1/items"
     end
 
-    it "does not show the button when visiting a different users page" do
-      visit "/users/2/items"
+    it "does not show add item button when visiting a different users page" do
+      visit "/users/1/items"
       expect(page).not_to have_button("Add an item to your Shed")
     end
   end
