@@ -39,21 +39,19 @@ RSpec.describe 'navbar' do
       end
       expect(current_path).to eq("/users/1/trips")
     end
-
-    it 'logo links to rooth path when user is not logged in' do
-      within('.navbar-nav') do
-        click_on 'Logout'
-      end
-      find('.navbar-brand').click
-      expect(current_path).to eq(root_path)
-    end
   end
 
   describe 'when not logged in' do
     before do
       allow(UserService).to receive(:user).and_return(@user)
       allow(ItemService).to receive(:items).and_return(@items)
-      visit "/users/1/items"
+      allow(TripService).to receive(:trips_by_user_id).and_return(@trips)
+      visit "/users/1"
+    end
+
+    it 'logo links to rooth path when user is not logged in' do
+      find('.navbar-brand').click
+      expect(current_path).to eq(root_path)
     end
 
     it 'displays only logo and Login links when user is not logged in' do
