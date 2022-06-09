@@ -18,8 +18,6 @@ class TripFacade
 
   def self.trips_by_user_id(user_id)
     TripService.trips_by_user_id(user_id)[:data].map do |data|
-      require "pry"
-      binding.pry
       Trip.new(data)
     end
   end

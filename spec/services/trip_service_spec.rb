@@ -32,5 +32,8 @@ RSpec.describe TripService do
       expect(trip_data[:items]).to be_a(Array)
       expect(trip_data[:weather]).to be_a(String)
     end
+
+    it "gets trip by user_id" do
+    end
   end
 end

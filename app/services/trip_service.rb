@@ -6,6 +6,7 @@ class TripService < BaseService
 
   def self.trips_by_user_id(user_id)
     response = conn.get("api/v1/users/#{user_id}/trips")
+
     get_json(response)
   end
 
