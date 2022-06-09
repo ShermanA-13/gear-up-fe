@@ -39,4 +39,14 @@ class TripService < BaseService
     response = conn.delete("/api/v1/trips/#{id}")
     get_json(response)
   end
+
+  def self.add_items_to_trip(id, items)
+    response = conn.post "/api/v1/trips/#{id}/items", {items: items}.to_json, "Content-Type" => "application/json"
+    get_json(response)
+  end
+
+  def self.edit_items_on_trip(id, items)
+    response = conn.patch "/api/v1/trips/#{id}/items", {items: items}.to_json, "Content-Type" => "application/json"
+    get_json(response)
+  end
 end
