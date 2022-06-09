@@ -26,4 +26,9 @@ class TripsController < ApplicationController
   def edit
     @trip = TripFacade.get_all_trip_info(params[:id])
   end
+
+  def destroy
+    TripFacade.destroy(params[:id])
+    redirect_to "/dashboard"
+  end
 end

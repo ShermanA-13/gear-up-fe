@@ -2,6 +2,7 @@ class TripInfo
   attr_reader :id, :name, :start_date, :end_date, :host, :description, :lat, :long, :area, :state, :users, :items, :weather
 
   def initialize(data)
+    # binding.pry
     @id = data[:id]
     @name = data[:name]
     @start_date = data[:start_date]
@@ -14,7 +15,11 @@ class TripInfo
     @state = data[:state]
     @users = create_users(data[:users])
     @items = create_items(data[:items])
-    @weather = create_weather(data[:weather][:forecast])
+    unless data[:weather].class == String
+      @weather = create_weather(data[:weather][:forecast])
+    else
+      @weather = data[:weather]
+    end
     # require "pry"; binding.pry
   end
 
