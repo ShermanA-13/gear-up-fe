@@ -1,19 +1,19 @@
 require "rails_helper"
 RSpec.describe TripService do
   describe "class methods" do
-    # before do
-    #   data = {
-    #     id: 3,
-    #     attributes: {
-    #       name: "Adventure Time",
-    #       description: "Quite the adventure",
-    #       start_date: "2022-06-08",
-    #       end_date: "2022-06-09"
-    #     }
-    #   }
-    #   trip1 = Trip.new(data)
-    #   expect(trip1).to be_a(Trip)
-    # end
+    before do
+      data = {
+        id: 3,
+        attributes: {
+          name: "Adventure Time",
+          description: "Quite the adventure",
+          start_date: "2022-06-08",
+          end_date: "2022-06-09"
+        }
+      }
+      trip1 = Trip.new(data)
+      expect(trip1).to be_a(Trip)
+    end
     it ".get_trip_by_id", :vcr do
       trip_data = TripService.get_trip_by_id(1)
 

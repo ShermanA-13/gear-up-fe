@@ -18,6 +18,8 @@ class TripFacade
 
   def self.trips_by_user_id(user_id)
     TripService.trips_by_user_id(user_id)[:data].map do |data|
+      require "pry"
+      binding.pry
       Trip.new(data)
     end
   end
@@ -33,21 +35,6 @@ class TripFacade
 
   def self.update(params)
     json = TripService.update_trip(params)
-    Trip.new(json[:data])
-  end
-
-  def self.trips_by_user_id(user_id)
-    TripService.trips_by_user_id(user_id)[:data].map do |data|
-      Trip.new(data)
-    end
-  end
-
-  def destroy(id)
-    TripService.destroy(id)
-  end
-
-  def update(id)
-    json = TripService.update(id)
     Trip.new(json[:data])
   end
 
