@@ -10,6 +10,10 @@ class TripUsersController < ApplicationController
     redirect_to "/trips/#{@trip.id}"
   end
 
+  def index
+    @users = TripUsersFacade.get_trip_by_id(params[:user_ids])
+  end
+
   def update
     TripUsersFacade.edit_invitees(params[:trip_id], params[:users])
     redirect_to "/trips/#{@trip.id}"
