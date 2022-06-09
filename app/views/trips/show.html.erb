@@ -25,7 +25,27 @@
 
   <div id="weather">
     <% unless @trip.weather.class == String %>
-      <% binding.pry %>
+    <div class="card-group">
+      <% @trip.weather.each do |forecast| %>
+          <div class="card">
+            <h3><%= forecast.date %></h3>
+            <h4>
+              <%= forecast.weather_description %>
+              <img src="http://openweathermap.org/img/w/<%= forecast.weather_icon %>.png" alt="Weather Icon">
+            </h4>
+            <hr>
+            <h5>High: <%= forecast.high_temp %>°</h5>
+            <h5>Low: <%= forecast.low_temp %>°</h5>
+            <h5>Feels like: <%= forecast.feels_like %>°</h5>
+            <p>Humidity: <%= forecast.humidity %>%</p>
+            <p>Cloud coverage: <%= forecast.cloud_coverage %></p>
+            <p>Visibility: <%= forecast.visibility %></p>
+            <p>Wind direction: <%= forecast.wind_direction %>°</p>
+            <p>Wind gust: <%= forecast.wind_gust %> MPH</p>
+            <p>Wind speed: <%= forecast.wind_speed %> MPH</p>
+          </div>
+      <% end %>
+    </div>
     <% else %>
       <p><%= @trip.weather %></p>
     <% end %>
@@ -33,12 +53,24 @@
 
   <div id="buttons">
     <%= button_to "Delete #{@trip.name}", "/trips/#{@trip.id}", method: :delete %>
+    <%= button_to "Add my items", "/trips/#{@trip.id}/items", method: :delete %>
   </div>
 </div>
 
 <div id="users" class="area_container">
-  <% @trip.users.each do |user| %>
-    <h4><%= user.first_name %> <%= user.last_name %></h4>
-    <p><%= user.email %></p>
-  <% end %>
+  <div class="card-group">
+    <% @trip.users.each do |user| %>
+      <div class="card">
+        <h4><%= user.first_name %> <%= user.last_name %></h4>
+        <p><%= user.email %></p>
+        <p>Items:</p>
+        <% @trip.items.each do |item| %>
+          <% if item.owner == user.first_name %>
+            <p><%= item.name %></p>
+            <p><%= item.category %></p>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
