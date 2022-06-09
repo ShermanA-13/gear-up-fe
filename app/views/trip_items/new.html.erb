@@ -1,4 +1,4 @@
-<h1> What are you bringing? </h1>
+<h1><u> Add/Remove Items </u></h1>
 
 <% if @packed_items.empty? %>
     <%= form_with url: "/trips/#{@trip_id}/items", method: :post, local: true do |form| %>

@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .trip_container {
-  background-color: #1d7442;
+  background-color: rgba(76, 114, 38, 0.8);
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 30px;
@@ -139,6 +139,55 @@ h1, h2, h3, h4, h5, h6, p{
   margin: 10px;
  }
 
+ .button_to input {
+   align-items: center;
+   background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+   border: 0;
+   border-radius: 8px;
+   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+   box-sizing: border-box;
+   color: #FFFFFF;
+   display: flex;
+   font-family: Phantomsans, sans-serif;
+   font-size: 20px;
+   justify-content: center;
+   line-height: 1em;
+   max-width: 100%;
+   min-width: 140px;
+   padding: 3px;
+   text-decoration: none;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   white-space: nowrap;
+   cursor: pointer;
+ }
+
+ .button_to:active,
+ .button_to:hover input {
+   outline: 0;
+ }
+
+ .button_to span input {
+   background-color: rgb(5, 6, 45);
+   padding: 16px 24px;
+   border-radius: 6px;
+   width: 100%;
+   height: 100%;
+   transition: 300ms;
+ }
+
+ .button_to:hover span input {
+   background: none;
+ }
+
+ @media (min-width: 768px) {
+   .button_to {
+     font-size: 32px;
+     min-width: 196px;
+   }
+ }
+
 .error_container {
   background-color: rgba(255, 200, 200, 0.8);
   margin: 100px;
@@ -158,3 +207,27 @@ h1, h2, h3, h4, h5, h6, p{
 .card {
    margin: 10px;
  }
+
+.result_card {
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  min-height: 75px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search_container {
+  padding: 2%;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.results_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+}

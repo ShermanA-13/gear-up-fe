@@ -1,12 +1,13 @@
-<hr>
+<div class="area_container search_container">
+  <h1><u>Upcoming Trips</u></h1>
+</div>
 
-  <h1>Upcoming Trips:</h1>
 <div class="card-group">
   <% @trips.each do |trip| %>
     <div id="trip-<%= trip.id %>">
       <div class="card text-center" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">Name: <%= trip.name %></h5>
+          <h5 class="card-title"><b><%= trip.name %></b></h5>
           <h6 class="card-subtitle mb-2 text-muted">Start Date: <%= trip.start_date %></h6>
           <h6 class="card-subtitle mb-2 text-muted">End Date: <%= trip.end_date %></h6>
           <% if !trip.description || trip.description.empty?%>

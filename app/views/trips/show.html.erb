@@ -1,15 +1,14 @@
-
-
 <div class="area_container">
 
-  <h2 class="section-title no-border v-3">Trips Show Page</h2>
   <div class="article-content-main">
     <div class="article-header">
-      <h2 class="entry-title"><a href="#">Name: <%= @trip.name %></a></h2>
-      <h3 class="entry-date">Start Date: <%= @trip.start_date %></h3>
-      <h3 class="entry-date">End Date: <%= @trip.end_date %></h3>
+      <h1 class="entry-title"><b><%= @trip.name %></b></h1>
+      <p><%= @trip.description %></p>
+      <h5 class="entry-date">Start Date: <%= @trip.start_date %> | End Date: <%= @trip.end_date %></h5>
     </div>
-      <p>Description: <%= @trip.description %></p>
+      <p>
+        Learn more about this area on <a href="<%= @trip.url %>">Mountain Project</a>
+      </p>
   </div>
 
   <div id="google_map" class="map_container">
@@ -22,7 +21,7 @@
     allowfullscreen>
     </iframe>
   </div>
-
+  <br>
   <div id="weather">
     <% unless @trip.weather.class == String %>
     <div class="card-group">
@@ -52,10 +51,20 @@
   </div>
 
   <div id="buttons">
+    <center>
+    <br>
+    <%= button_to "Edit #{@trip.name}", "/trips/#{@trip.id}/edit", method: :get %>
+    <br>
     <%= button_to "Delete #{@trip.name}", "/trips/#{@trip.id}", method: :delete %>
-    <%= button_to "Add my items", "/trips/#{@trip.id}/items", method: :get %>
-    <%= button_to "Edit the Trip", "/trips/#{@trip.id}/edit", method: :get %>
+    <br>
+    <%= button_to "Add/Remove my items", "/trips/#{@trip.id}/items", method: :get %>
+    <br>
+    </center>
   </div>
+  </div>
+
+<div class="search_container area_container">
+  <h3><u><b><%= "Who's Going" %></b></u></h3>
 </div>
 
 <div id="users" class="area_container">
@@ -64,11 +73,10 @@
       <div class="card">
         <h4><%= user.first_name %> <%= user.last_name %></h4>
         <p><%= user.email %></p>
-        <p>Items:</p>
+        <p><u>Items</u></p>
         <% @trip.items.each do |item| %>
           <% if item.owner == user.first_name %>
-            <p><%= item.name %></p>
-            <p><%= item.category %></p>
+            <p><%= item.category %> - <%= item.name %></p>
           <% end %>
         <% end %>
       </div>

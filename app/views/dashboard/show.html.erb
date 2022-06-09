@@ -31,8 +31,7 @@
       <div class="user_trips_container">
         <% @trips.each do |trip| %>
         <div class="trip_container" id="trip-<%= trip.id %>">
-          <h3><%= trip.name %></h3>
-          <p>Location: <%= trip.location %></p>
+          <h3><a href="/trips/<%= trip.id %>"><%= trip.name %></a></h3>
           <p>Description: <%= trip.description %></p>
           <p>Start date: <%= trip.start_date %></p>
           <p>End date: <%= trip.end_date %></p>

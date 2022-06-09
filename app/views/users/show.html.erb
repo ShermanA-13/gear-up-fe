@@ -1,14 +1,13 @@
 <% unless @error %>
 
   <div class="user_info">
-    <h1><%= @user.first_name %> <%= @user.last_name %>'s Page</h1>
+    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     <p>Email: <%= @user.email %></p>
-    <hr>
   </div>
   <div class="area_container">
 
     <div id="items">
-      <h2><%= @user.first_name %> <%= @user.last_name %>'s Item Shed</h2>
+      <center><h3><a href="/users/<%= @user.id %>/items"><%= @user.first_name %>'s Shed</a></h3></center>
 
       <div class="card-group">
         <% @items.each do |item| %>
@@ -21,21 +20,16 @@
         </div>
         <% end %>
       </div>
-
-      <h4>
-        <a href="/users/<%= @user.id %>/items"><%= @user.first_name %> <%= @user.last_name %>'s Shed</a>
-      </h4>
       <hr>
     </div>
 
     <div id="trips">
-      <h2><%= @user.first_name %> <%= @user.last_name %>'s Upcoming Trips</h2>
+      <h2>Upcoming Trips</h2>
       <div class="user_trips_container">
 
         <% @trips.each do |trip| %>
         <div class="trip_container" id="trip-<%= trip.id %>">
-          <h3><%= trip.name %></h3>
-          <p>Location: <%= trip.location %></p>
+          <h3><a href="/trips/<%= trip.id %>"><%= trip.name %></a></h3>
           <p>Description: <%= trip.description %></p>
           <p>Start date: <%= trip.start_date %></p>
           <p>End date: <%= trip.end_date %></p>
