@@ -1,6 +1,6 @@
 <h1> What are you bringing? </h1>
 
-<%= form_with url: "/trips/#{@trip.id}/users/#{@user.id}/items", method: :post, local: true do |form| %>
+<%= form_with url: "/trips/#{@trip_id}/users/#{@items.first.user_id}/items", method: :post, local: true do |form| %>
 
 <%= form.label "My Items" %>
 <% @items.each do |item| %>
@@ -11,5 +11,5 @@
   </div>
 <% end %>
 
-<%= form.submit :submit, "Bring These!" %>
+<%= form.submit "Bring These!-" %>
 <% end %>

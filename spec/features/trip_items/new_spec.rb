@@ -8,5 +8,14 @@ RSpec.describe 'add trip items page' do
     visit "/trips/1/users/1/items"
 
     expect(page).to have_content("What are you bringing?")
+
+    within "#check-box-21" do
+      page.check("items[]")
+    end
+    within "#check-box-22" do
+      page.check("items[]")
+    end
+
+    click_on "Bring These!"
   end
 end

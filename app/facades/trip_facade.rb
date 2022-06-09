@@ -24,4 +24,8 @@ class TripFacade
     json = TripService.update(id)
     Trip.new(json[:data])
   end
+
+  def self.add_items_to_trip(id, items)
+    TripService.add_items_to_trip(id, items)
+  end
 end
