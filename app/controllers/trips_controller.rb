@@ -5,6 +5,10 @@ class TripsController < ApplicationController
 
   def show
     @trip = TripFacade.get_all_trip_info(params[:id])
+    if @trip.class == Error
+      @error = @trip
+    end
+    # require "pry"; binding.pry
   end
 
   def index

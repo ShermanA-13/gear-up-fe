@@ -13,7 +13,11 @@ class TripFacade
 
   def self.get_all_trip_info(id)
     trip = TripService.get_all_trip_info(id)
-    TripInfo.new(trip)
+    if trip[:errors].present?
+      Error.new(trip[:errors])
+    else
+      TripInfo.new(trip)
+    end
   end
 
   def self.trips_by_user_id(user_id)

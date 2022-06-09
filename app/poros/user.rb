@@ -8,4 +8,8 @@ class User
     @email = data[:attributes][:email]
     @user_photo = data[:attributes][:user_photo]
   end
+
+  def on_trip?(trip)
+    require "pry"; binding.pry
+  end
 end
