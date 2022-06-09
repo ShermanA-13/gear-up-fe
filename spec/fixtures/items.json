@@ -8,7 +8,7 @@
                 "description": "1 person Tent",
                 "count": 1,
                 "category": 0,
-                "user_id": 3
+                "user_id": 1
             }
         },
         {
@@ -19,7 +19,7 @@
                 "description": "Large, red and blue",
                 "count": 5,
                 "category": 8,
-                "user_id": 3
+                "user_id": 1
             }
         }
     ]
