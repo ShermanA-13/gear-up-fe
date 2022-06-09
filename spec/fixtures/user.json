@@ -1,0 +1,12 @@
+{
+    "data": {
+        "id": "3",
+        "type": "user",
+        "attributes": {
+            "first_name": "Bonny",
+            "last_name": "Jowman",
+            "email": "ivebeentrapped@inthecomputer.org",
+            "user_photo": "https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c"
+        }
+    }
+}
