@@ -10,6 +10,10 @@ class User
   end
 
   def on_trip?(trip)
-    require "pry"; binding.pry
+    trip.users.any? {|user| user.id == self.id.to_i}
+  end
+
+  def host?(trip)
+    trip.host == self.first_name
   end
 end

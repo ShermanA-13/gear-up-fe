@@ -62,10 +62,13 @@
         </div>
 
         <div id="buttons">
-          <%= button_to "Delete #{@trip.name}", "/trips/#{@trip.id}", method: :delete %>
+          <% if current_user.host?(@trip) %>
+            <%= button_to "Delete #{@trip.name}", "/trips/#{@trip.id}", method: :delete %>
+          <% end %>
           <%= button_to "Add my items", "/trips/#{@trip.id}/items", method: :get %>
         </div>
       </div>
+
 
       <div id="users" class="area_container">
         <div class="card-group">
