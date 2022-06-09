@@ -41,7 +41,7 @@ RSpec.describe "Item show page" do
         click_link 'View Item'
       end
 
-      expect(page).to have_link("Delete Organic Crash Pad")
+      expect(page).to have_link("Delete Harness")
     end
 
     it "has a button taking you to the update page" do
