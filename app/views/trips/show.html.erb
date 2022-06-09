@@ -33,6 +33,8 @@
           </iframe>
       </div>
 
+
+
       <div id="weather">
         <% unless @trip.weather.class == String %>
         <div class="card-group">
@@ -67,7 +69,7 @@
           <% end %>
           <%= button_to "Add my items", "/trips/#{@trip.id}/items", method: :get %>
         </div>
-      </div>
+
 
 
       <div id="users" class="area_container">
