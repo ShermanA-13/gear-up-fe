@@ -5,7 +5,7 @@ RSpec.describe "Create new trip pipeline" do
     visit "/login?user_id=1"
     visit "/areas/2108/trips/new"
 
-    expect(page).to have_content("Create Trip to Little Yosemite Valley, California")
+    expect(page).to have_content("Create Trip to Liberty Cap, California")
     fill_in "name", with: "Super Fun Trip"
     fill_in "Start date", with: "2023-06-07"
     fill_in "End date", with: "2023-06-09"
