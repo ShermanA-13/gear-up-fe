@@ -35,4 +35,10 @@ describe "Trip show page" do
       expect(page).to have_css("iframe")
     end
   end
+
+  it "has a button to delete the trip", :vcr do
+    within "#buttons" do
+      expect(page).to have_button("Delete first trip")
+    end
+  end
 end
