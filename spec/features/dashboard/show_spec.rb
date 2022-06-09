@@ -9,7 +9,7 @@ RSpec.describe 'user show page' do
     allow(UserService).to receive(:create_user).and_return(@user)
     allow(UserService).to receive(:user).and_return(@user)
     allow(ItemService).to receive(:items).and_return(@items)
-    allow(GearUpService).to receive(:user_trips).and_return(@trips)
+    allow(TripService).to receive(:trips_by_user_id).and_return(@trips)
     visit root_path
     click_link 'Login'
   end
@@ -21,5 +21,10 @@ RSpec.describe 'user show page' do
   it 'has a link to the users item shed' do
     click_link("MyShed")
     expect(current_path).to eq("/users/1/items")
+  end
+
+  it 'has a link to the users trip page' do
+    click_link("MyTrips")
+    expect(current_path).to eq("/users/1/trips")
   end
 end
