@@ -1,0 +1,34 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "user",
+            "attributes": {
+                "first_name": "Bonny",
+                "last_name": "Jowman",
+                "email": "ivebeentrapped@inthecomputer.org",
+                "user_photo": null
+            }
+        },
+        {
+            "id": "2",
+            "type": "user",
+            "attributes": {
+                "first_name": "lonnie",
+                "last_name": "jenkins",
+                "email": "cheese@email.com",
+                "user_photo": null
+            }
+        },
+        {
+            "id": "3",
+            "type": "user",
+            "attributes": {
+                "first_name": "monkey",
+                "last_name": "face",
+                "email": "foo@email.com",
+                "user_photo": null
+            }
+        }
+    ]
+}

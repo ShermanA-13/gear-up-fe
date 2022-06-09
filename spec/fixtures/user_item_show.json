@@ -1,0 +1,13 @@
+{
+  "data": {
+    "id": "3",
+    "type": "item",
+    "attributes": {
+        "name": "Tent 1",
+        "description": "1 person Tent",
+        "count": 1,
+        "category": 0,
+        "user_id": 1
+    }
+  }
+}
