@@ -1,8 +1,14 @@
 class AreaFacade
   class << self
     def search(name)
-      AreaService.search(name)[:data][0..14].map do |data|
-        Area.new(data)
+      # require "pry"; binding.pry
+      area = AreaService.search(name)
+      if area[:errors].present?
+        Error.new(area[:errors])
+      else
+        area[:data][0..14].map do |data|
+          Area.new(data)
+        end
       end
     end
 

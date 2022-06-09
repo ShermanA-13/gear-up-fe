@@ -63,7 +63,7 @@ end
       expect(page).not_to have_link("Delete Harness")
     end
   end
-end
+
 
 describe "error handling" do
 

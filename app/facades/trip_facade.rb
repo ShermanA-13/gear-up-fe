@@ -48,7 +48,11 @@ class TripFacade
 
   def self.update(params)
     json = TripService.update_trip(params)
-    Trip.new(json[:data])
+    if json[:errors].present?
+      Error.new(json[:errors])
+    else
+      Trip.new(json[:data])
+    end
   end
 
   def self.add_items_to_trip(id, items)

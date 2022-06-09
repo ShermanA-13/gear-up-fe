@@ -32,12 +32,20 @@ class TripsController < ApplicationController
   end
 
   def update
-    @trip = TripFacade.update(params)
-    redirect_to "/trips/#{@trip.id}"
+    @trip = TripFacade.get_all_trip_info(params[:id])
+    @updated_trip = TripFacade.update(params)
+    if @updated_trip.class == Error
+      flash[:notice] = @updated_trip.message
+      render :edit
+    elsif @trip.class == Error
+      @error = @trip
+    else
+      redirect_to "/trips/#{@trip.id}"
+    end
   end
 
   def edit
-    @trip = TripFacade.get_all_trip_info(params[:id])
+    @trip =  TripFacade.get_all_trip_info(params[:id])
     if @trip.class == Error
       @error = @trip
     end
