@@ -25,16 +25,16 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cbf0b54e-874f-4138-bc69-a5e3bf6b3ec6
+      - 38e1f361-de6c-41be-b132-9abd369e3851
       X-Runtime:
-      - '0.002300'
+      - '0.002114'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"2107","type":"area","attributes":{"name":"Little Yosemite
         Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}}}'
-  recorded_at: Tue, 07 Jun 2022 19:21:45 GMT
+  recorded_at: Thu, 09 Jun 2022 00:28:00 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/1
@@ -56,19 +56,19 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"2ed5a7e70684515a6a6cd83a406c4304"
+      - W/"aca188be849985965388fed47aad1e64"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2a219453-c9ff-4ea1-92b2-701df2f37cae
+      - 88111b0b-362b-47c7-8d00-f7d7b52714ea
       X-Runtime:
-      - '0.186380'
+      - '0.002733'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"Margarita","last_name":"Gottlieb","email":"margarita@example.net"}}}'
-  recorded_at: Tue, 07 Jun 2022 19:21:45 GMT
+      string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com","user_photo":null}}}'
+  recorded_at: Thu, 09 Jun 2022 00:28:00 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/1/items/
@@ -90,28 +90,21 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"db02f9f592c7cf307f04c46456aae1de"
+      - W/"9ccc7dae6fad37b975334ae258a1f5d4"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 8c118be0-163f-4d73-9a89-889e281a6601
+      - b8358d51-bdbc-499f-a2ff-bc6cba739215
       X-Runtime:
-      - '0.041088'
+      - '0.003155'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"1","type":"item","attributes":{"name":"Sleek Wooden
-        Keyboard","description":"Fashion axe marfa etsy bespoke synth locavore.","count":3,"category":"Quickdraws","user_id":1}},{"id":"2","type":"item","attributes":{"name":"Awesome
-        Concrete Computer","description":"Cred farm-to-table kickstarter mixtape ugh
-        chambray lumbersexual irony squid.","count":1,"category":"Ropes","user_id":1}},{"id":"3","type":"item","attributes":{"name":"Enormous
-        Plastic Lamp","description":"3 wolf moon 90''s whatever artisan ugh twee lo-fi
-        bushwick chartreuse.","count":4,"category":"Stoves, Grills \u0026 Fuel","user_id":1}},{"id":"4","type":"item","attributes":{"name":"Intelligent
-        Concrete Hat","description":"You probably haven''t heard of them celiac keffiyeh
-        kinfolk gastropub.","count":1,"category":"Harnesses","user_id":1}},{"id":"5","type":"item","attributes":{"name":"Aerodynamic
-        Rubber Bottle","description":"Tilde carry keytar drinking pug godard viral
-        shabby chic.","count":1,"category":null,"user_id":1}}]}'
-  recorded_at: Tue, 07 Jun 2022 19:21:45 GMT
+      string: '{"data":[{"id":"59","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":"Sleeping
+        Bag","user_id":1}},{"id":"60","type":"item","attributes":{"name":"Trail Mix","description":null,"count":8,"category":"Stoves,
+        Grills \u0026 Fuel","user_id":1}}]}'
+  recorded_at: Thu, 09 Jun 2022 00:28:00 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/1/trips
@@ -133,19 +126,27 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"8fe32e407a1038ee38753b70e5374b3a"
+      - W/"b4002fa2a1a7f71a10a8e08093442bb9"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 77715961-bd08-41f5-8f9b-d46461209132
+      - e3dc02bb-5fb0-4af5-af0b-c42d0f5fc920
       X-Runtime:
-      - '0.030329'
+      - '0.008118'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":[]}'
-  recorded_at: Tue, 07 Jun 2022 19:21:45 GMT
+      string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"first trip","area_id":33913,"description":"baby''s
+        first trip","host_id":1,"start_date":"2022-06-08","end_date":"2022-06-09"}},{"id":"2","type":"trip","attributes":{"name":"boo
+        boo trip","area_id":33913,"description":"trip I guess","host_id":3,"start_date":"2022-06-08","end_date":"2022-06-09"}},{"id":"8","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"8","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"9","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"9","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"10","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"10","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}}]}'
+  recorded_at: Thu, 09 Jun 2022 00:28:00 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/areas/2107
@@ -171,19 +172,19 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 5fd68664-3a6f-44cb-843c-92027ebdf50e
+      - f10d7cdf-7419-4779-b014-0d4d3622e81a
       X-Runtime:
-      - '0.002151'
+      - '0.001924'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"2107","type":"area","attributes":{"name":"Little Yosemite
         Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}}}'
-  recorded_at: Tue, 07 Jun 2022 19:21:45 GMT
+  recorded_at: Thu, 09 Jun 2022 00:28:00 GMT
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/users/1
+    uri: http://localhost:5000/api/v1/areas/2107
     body:
       encoding: US-ASCII
       string: ''
@@ -202,17 +203,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"2ed5a7e70684515a6a6cd83a406c4304"
+      - W/"06047cd319d47923ad8dd80444dc49b7"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7bbd3f83-1dbb-4482-932e-4b6981b0f792
+      - af5e53f8-92e5-4857-b122-5ea5cefa907e
       X-Runtime:
-      - '0.002021'
+      - '0.001821'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"Margarita","last_name":"Gottlieb","email":"margarita@example.net"}}}'
-  recorded_at: Tue, 07 Jun 2022 19:21:45 GMT
+      string: '{"data":{"id":"2107","type":"area","attributes":{"name":"Little Yosemite
+        Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}}}'
+  recorded_at: Thu, 09 Jun 2022 00:28:00 GMT
 recorded_with: VCR 6.1.0
