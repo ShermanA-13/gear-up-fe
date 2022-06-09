@@ -22,7 +22,11 @@ class ItemFacade
 
     def create(parameters)
       json = ItemService.create(parameters)
-      Item.new(json[:data])
+      if json[:errors].present?
+        Error.new(json[:errors])
+      else
+        Item.new(json[:data])
+      end
     end
 
     def destroy(parameters)
