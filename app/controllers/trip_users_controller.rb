@@ -1,4 +1,5 @@
 class TripUsersController < ApplicationController
+<<<<<<< HEAD
   def new
     @trip = TripFacade.get_trip_by_id(params[:trip_id])
     @users = UserFacade.users
@@ -10,4 +11,6 @@ class TripUsersController < ApplicationController
     @trip = TripFacade.get_trip_by_id(params[:trip_id])
     redirect_to "/trips/#{@trip.id}"
   end
+=======
+>>>>>>> e5d15df (feat: trip_users controller, services and routes)
 end
