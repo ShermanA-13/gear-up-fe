@@ -47,7 +47,7 @@ RSpec.describe "Item index page" do
 
     it "has a button to create a new item" do
       click_button("Add an item to your Shed")
-      expect(current_path).to eq("/users/1/items/new")
+      expect(current_path).to eq("/users/3/items/new")
     end
   end
 
