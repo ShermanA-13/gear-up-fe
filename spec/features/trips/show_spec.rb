@@ -23,4 +23,10 @@ describe "Trip show page" do
       expect(page).to have_content("cheese@email.com")
     end
   end
+
+  it "displays weather error", :vcr do
+    within "#weather" do
+      expect(page).to have_content("Weather is currently Unavailable")
+    end
+  end
 end

@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/trips/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"1db92bf47ac7ce6de6ddb5a39b66aa71"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f0e401f3-19b5-486e-a8e0-bb72870dc86c
+      X-Runtime:
+      - '0.302815'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"type":"trip info","name":"first trip","start_date":"2022-06-08","end_date":"2022-06-09","host":"something","description":"baby''s
+        first trip","lat":"42.73982","long":"-108.84939","area":"2. Fairfield Central","state":"Wyoming","users":[{"id":1,"first_name":"something","last_name":"this","email":"email@email.com","user_photo":null},{"id":2,"first_name":"asda","last_name":"this","email":"cheese@email.com","user_photo":null}],"items":[],"weather":"Weather
+        is currently Unavailable"}'
+  recorded_at: Thu, 09 Jun 2022 00:38:31 GMT
+recorded_with: VCR 6.1.0
