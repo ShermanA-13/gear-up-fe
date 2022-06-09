@@ -2,6 +2,10 @@ class AreasController < ApplicationController
   def index
     if params[:name]
       @areas = AreaFacade.search(params[:name])
+      if @areas.class == Error
+        flash[:alert] = @areas.message
+        @areas = []
+      end
     end
   end
 
