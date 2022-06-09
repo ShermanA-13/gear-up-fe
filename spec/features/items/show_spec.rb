@@ -53,16 +53,13 @@ RSpec.describe "Item show page" do
   describe 'when not logged in' do
     before do
       allow(UserService).to receive(:user).and_return(@user)
+      allow(ItemService).to receive(:find_item).and_return(@item)
+      visit "/users/1/items/1"
     end
 
     it "does not have delete link on other users item pages" do
-      visit "/users/1/items"
-      within '#item-9' do
-        click_link 'View Item'
-      end
-
-      expect(page).to have_content('Sleeping Bag')
-      expect(page).not_to have_link("Delete Sleeping Bag")
+      expect(page).to have_content('Harness')
+      expect(page).not_to have_link("Delete Harness")
     end
   end
 end
