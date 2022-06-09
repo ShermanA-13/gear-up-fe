@@ -8,4 +8,12 @@ class User
     @email = data[:attributes][:email]
     @user_photo = data[:attributes][:user_photo]
   end
+
+  def on_trip?(trip)
+    trip.users.any? {|user| user.id == self.id.to_i}
+  end
+
+  def host?(trip)
+    trip.host == self.first_name
+  end
 end

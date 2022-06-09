@@ -17,6 +17,36 @@
     </iframe>
   </div>
 
+  <div id="weather">
+    <% unless @weather.class == Weather %>
+    <br>
+    <h1>6 Day Forecast</h1>
+    <div class="card-group">
+      <% @weather.each do |forecast| %>
+          <div class="card">
+            <h3><%= forecast.date %></h3>
+            <h4>
+              <%= forecast.weather_description %>
+              <img src="http://openweathermap.org/img/w/<%= forecast.weather_icon %>.png" alt="Weather Icon">
+            </h4>
+            <hr>
+            <h5>High: <%= forecast.high_temp %>°</h5>
+            <h5>Low: <%= forecast.low_temp %>°</h5>
+            <h5>Feels like: <%= forecast.feels_like %>°</h5>
+            <p>Humidity: <%= forecast.humidity %>%</p>
+            <p>Cloud coverage: <%= forecast.cloud_coverage %></p>
+            <p>Visibility: <%= forecast.visibility %></p>
+            <p>Wind direction: <%= forecast.wind_direction %>°</p>
+            <p>Wind gust: <%= forecast.wind_gust %> MPH</p>
+            <p>Wind speed: <%= forecast.wind_speed %> MPH</p>
+          </div>
+      <% end %>
+    </div>
+    <% else %>
+      <p><%= @weather.error %></p>
+    <% end %>
+  </div>
+
   <div class="button_container">
     <% if session[:user_id] %>
     <%= button_to "Create a Trip for this Area", "/areas/#{@area.id}/trips/new", method: :get %>

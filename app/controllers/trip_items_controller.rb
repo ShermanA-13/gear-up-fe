@@ -12,7 +12,7 @@ class TripItemsController < ApplicationController
   end
 
   def update
-    TripFacade.edit_items_on_trip(params[:trip_id], params[:items])
+    TripFacade.edit_items_on_trip(params[:trip_id], params[:items], params[:user_id])
     redirect_to "/trips/#{params[:trip_id]}"
   end
 end

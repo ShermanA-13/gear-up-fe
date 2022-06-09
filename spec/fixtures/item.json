@@ -1,0 +1,13 @@
+{
+  "data": {
+    "id": "3",
+    "type": "item",
+    "attributes": {
+        "name": "Harness",
+        "description": "Petzl Adjama",
+        "count": 1,
+        "category": 6,
+        "user_id": 1
+    }
+  }
+}

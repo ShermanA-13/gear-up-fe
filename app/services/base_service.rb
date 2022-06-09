@@ -3,14 +3,7 @@ class BaseService
     private
 
     def conn
-      if ENV["RAILS_ENV"] == "test"
-
-        Faraday.new("http://localhost:5000")
-
-      else
-        # Faraday.new('https://gear-up-be.herokuapp.com')
-        Faraday.new("http://localhost:5000")
-      end
+      Faraday.new(ENV['BASE_URL'])
     end
 
     def get_json(response)

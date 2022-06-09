@@ -21,7 +21,6 @@ class TripInfo
     else
       create_weather(data[:weather][:forecast])
     end
-    # require "pry"; binding.pry
   end
 
   def create_users(users)

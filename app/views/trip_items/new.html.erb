@@ -5,6 +5,7 @@
 <div class="area_container search_container">
   <center>
   <% if @packed_items.empty? %>
+    
     <%= form_with url: "/trips/#{@trip_id}/items", method: :post, local: true do |form| %>
       <% @items.each do |item| %>
         <div id="check-box-<%=item.id%>">
@@ -12,11 +13,12 @@
               <%= check_box_tag "items[]", item.id %></p>
         </div>
       <% end %>
+
       <%= form.submit "Bring These!" %>
     <% end %>
 
   <% else %>
-      <%= form_with url: "/trips/#{@trip_id}/items", method: :patch, local: true do |form| %>
+    <%= form_with url: "/trips/#{@trip_id}/items", method: :patch, local: true do |form| %>
       <% @items.each do |item| %>
 
           <div id="check-box-<%=item.id%>">
@@ -30,8 +32,9 @@
           </div>
 
         <% end %>
+      <%= form.hidden_field :user_id, value: current_user.id %>
       <%= form.submit "Bring These!" %>
-      <% end %>
+    <% end %>
 
   <% end %>
   </center>

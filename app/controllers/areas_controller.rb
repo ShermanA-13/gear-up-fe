@@ -7,5 +7,6 @@ class AreasController < ApplicationController
 
   def show
     @area = AreaFacade.get_area_by_id(params[:id])
+    @weather = WeatherFacade.get_weather_by_area(params[:id])
   end
 end

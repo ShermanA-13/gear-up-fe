@@ -1,24 +1,30 @@
 require 'rails_helper'
 
-describe 'creates user' do
-  before :each do
-    data = {
-      first_name: 'Bonny',
-      last_name: 'Jowman',
-      email: 'ivebeentrapped@inthecomputer.org',
-      user_photo: 'https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c'
-    }
-
-    @user = UserFacade.create_user(data)
-    visit "/login?user_id=#{@user.id}"
+RSpec.describe 'user show page' do
+  before do
+    Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:google_oauth2]
+    @user = JSON.parse(File.read('spec/fixtures/user.json'), symbolize_names: true)
+    @items = JSON.parse(File.read('spec/fixtures/items.json'), symbolize_names: true)
+    @trips = JSON.parse(File.read('spec/fixtures/trips.json'), symbolize_names: true)
+    allow(UserService).to receive(:create_user).and_return(@user)
+    allow(UserService).to receive(:user).and_return(@user)
+    allow(ItemService).to receive(:items).and_return(@items)
+    allow(TripService).to receive(:trips_by_user_id).and_return(@trips)
+    visit root_path
+    click_link 'Login'
   end
 
-  it 'displays user name', :vcr do
+  it 'displays user name' do
     expect(page).to have_content('Bonny')
   end
 
-  it 'has a link to the users item shed', :vcr do
+  it 'has a link to the users item shed' do
     click_link("MyShed")
-    expect(current_path).to eq("/users/#{@user.id}/items")
+    expect(current_path).to eq("/users/1/items")
+  end
+
+  it 'has a link to the users trip page' do
+    click_link("MyTrips")
+    expect(current_path).to eq("/users/1/trips")
   end
 end

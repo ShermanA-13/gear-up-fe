@@ -25,16 +25,57 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 38e1f361-de6c-41be-b132-9abd369e3851
+      - a66d6c92-f462-4d0a-be47-bda00dd00bda
       X-Runtime:
-      - '0.002114'
+      - '0.014798'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"2107","type":"area","attributes":{"name":"Little Yosemite
         Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}}}'
-  recorded_at: Thu, 09 Jun 2022 00:28:00 GMT
+  recorded_at: Thu, 09 Jun 2022 17:05:56 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/areas/2107/weather
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"07784aa887568220cdfecbc6b5289bff"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ad632e39-3854-441d-aa85-23db5092d994
+      X-Runtime:
+      - '0.684905'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":2107,"type":"weather info","name":"Little Yosemite Valley","weather":{"forecast":[{"date":"2022-06-09","weather":{"low_temp":67.26,"high_temp":71.37,"cloud_coverage":59,"feels_like":69.39,"humidity":24,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Broken
+        Clouds","weather_icon":"04d","wind_direction":256,"wind_gust":7.47,"wind_speed":11.03}},{"date":"2022-06-10","weather":{"low_temp":57.94,"high_temp":81.45,"cloud_coverage":95,"feels_like":55.98,"humidity":54,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Overcast
+        Clouds","weather_icon":"04n","wind_direction":84,"wind_gust":3.29,"wind_speed":3.8}},{"date":"2022-06-11","weather":{"low_temp":56.71,"high_temp":79.23,"cloud_coverage":22,"feels_like":54.54,"humidity":52,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Few
+        Clouds","weather_icon":"02n","wind_direction":81,"wind_gust":3.56,"wind_speed":3.56}},{"date":"2022-06-12","weather":{"low_temp":53.31,"high_temp":75.72,"cloud_coverage":4,"feels_like":50.04,"humidity":36,"precipitation_probability":0.00375,"visibility":10000,"weather":"Clear","weather_description":"Clear
+        Sky","weather_icon":"01n","wind_direction":130,"wind_gust":5.41,"wind_speed":5.66}},{"date":"2022-06-13","weather":{"low_temp":43.36,"high_temp":66.45,"cloud_coverage":66,"feels_like":40.51,"humidity":91,"precipitation_probability":0.22125,"visibility":10000,"weather":"Clouds","weather_description":"Broken
+        Clouds","weather_icon":"04n","wind_direction":127,"wind_gust":5.35,"wind_speed":4.88}},{"date":"2022-06-14","weather":{"low_temp":46.53,"high_temp":65.05,"cloud_coverage":0,"feels_like":44.4,"humidity":44,"precipitation_probability":0,"visibility":10000,"weather":"Clear","weather_description":"Clear
+        Sky","weather_icon":"01n","wind_direction":79,"wind_gust":4.09,"wind_speed":4.61}}],"today_sunrise":"06/09/22
+        at 12:35:56 UTC","today_sunset":"06/10/22 at 03:18:42 UTC"}}'
+  recorded_at: Thu, 09 Jun 2022 17:05:57 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/1
@@ -60,15 +101,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 88111b0b-362b-47c7-8d00-f7d7b52714ea
+      - f69af06e-89ba-4f1a-b9bb-09dadc03f853
       X-Runtime:
-      - '0.002733'
+      - '0.005468'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"1","type":"user","attributes":{"first_name":"something","last_name":"this","email":"email@email.com","user_photo":null}}}'
-  recorded_at: Thu, 09 Jun 2022 00:28:00 GMT
+  recorded_at: Thu, 09 Jun 2022 17:05:58 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/1/items/
@@ -90,21 +131,20 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"9ccc7dae6fad37b975334ae258a1f5d4"
+      - W/"3feb7eed90c81188269b53eb33df2eb8"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b8358d51-bdbc-499f-a2ff-bc6cba739215
+      - 942c3acc-9ca6-4a35-9397-0de936f42676
       X-Runtime:
-      - '0.003155'
+      - '0.006642'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"59","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":"Sleeping
-        Bag","user_id":1}},{"id":"60","type":"item","attributes":{"name":"Trail Mix","description":null,"count":8,"category":"Stoves,
-        Grills \u0026 Fuel","user_id":1}}]}'
-  recorded_at: Thu, 09 Jun 2022 00:28:00 GMT
+      string: '{"data":[{"id":"63","type":"item","attributes":{"name":"Water Bottle","description":null,"count":5,"category":1,"user_id":1}},{"id":"64","type":"item","attributes":{"name":"Trail
+        Mix","description":null,"count":8,"category":2,"user_id":1}}]}'
+  recorded_at: Thu, 09 Jun 2022 17:05:58 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/users/1/trips
@@ -126,27 +166,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b4002fa2a1a7f71a10a8e08093442bb9"
+      - W/"57ebf0c84d3eb10813dbc5cfb8068aa1"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e3dc02bb-5fb0-4af5-af0b-c42d0f5fc920
+      - 5d040e43-ae2c-4fa4-9ca6-7983c8059d09
       X-Runtime:
-      - '0.008118'
+      - '0.013412'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"first trip","area_id":33913,"description":"baby''s
-        first trip","host_id":1,"start_date":"2022-06-08","end_date":"2022-06-09"}},{"id":"2","type":"trip","attributes":{"name":"boo
-        boo trip","area_id":33913,"description":"trip I guess","host_id":3,"start_date":"2022-06-08","end_date":"2022-06-09"}},{"id":"8","type":"trip","attributes":{"name":"Super
-        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"8","type":"trip","attributes":{"name":"Super
-        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"9","type":"trip","attributes":{"name":"Super
-        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"9","type":"trip","attributes":{"name":"Super
-        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"10","type":"trip","attributes":{"name":"Super
-        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"10","type":"trip","attributes":{"name":"Super
+      string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"another first
+        trip","area_id":33914,"description":"baby''s first trip","host_id":1,"start_date":"2022-06-08","end_date":"2022-06-09"}},{"id":"2","type":"trip","attributes":{"name":"boo
+        boo trip","area_id":33914,"description":"trip I guess","host_id":3,"start_date":"2022-06-08","end_date":"2022-06-09"}},{"id":"19","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"19","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"20","type":"trip","attributes":{"name":"A
+        trip with 2 of my friends","area_id":41,"description":"Monster Energy","host_id":19,"start_date":"2022-06-11","end_date":"2022-06-26"}},{"id":"23","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"23","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"24","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"24","type":"trip","attributes":{"name":"Super
         Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}}]}'
-  recorded_at: Thu, 09 Jun 2022 00:28:00 GMT
+  recorded_at: Thu, 09 Jun 2022 17:05:58 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/areas/2107
@@ -172,16 +213,57 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f10d7cdf-7419-4779-b014-0d4d3622e81a
+      - c16dd5a7-a05c-4f32-a6eb-b2ac189009f0
       X-Runtime:
-      - '0.001924'
+      - '0.001967'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"2107","type":"area","attributes":{"name":"Little Yosemite
         Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}}}'
-  recorded_at: Thu, 09 Jun 2022 00:28:00 GMT
+  recorded_at: Thu, 09 Jun 2022 17:05:58 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/areas/2107/weather
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"65c74ba90adf3e7375e21cadb4f05e62"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 86fe1136-5491-4567-8f1c-69d58105e226
+      X-Runtime:
+      - '0.584864'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":2107,"type":"weather info","name":"Little Yosemite Valley","weather":{"forecast":[{"date":"2022-06-09","weather":{"low_temp":67.26,"high_temp":71.37,"cloud_coverage":85,"feels_like":64.81,"humidity":24,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Overcast
+        Clouds","weather_icon":"04d","wind_direction":258,"wind_gust":9.35,"wind_speed":11.03}},{"date":"2022-06-10","weather":{"low_temp":57.94,"high_temp":81.45,"cloud_coverage":95,"feels_like":55.98,"humidity":54,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Overcast
+        Clouds","weather_icon":"04n","wind_direction":84,"wind_gust":3.29,"wind_speed":3.8}},{"date":"2022-06-11","weather":{"low_temp":56.71,"high_temp":79.23,"cloud_coverage":22,"feels_like":54.54,"humidity":52,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Few
+        Clouds","weather_icon":"02n","wind_direction":81,"wind_gust":3.56,"wind_speed":3.56}},{"date":"2022-06-12","weather":{"low_temp":53.31,"high_temp":75.72,"cloud_coverage":4,"feels_like":50.04,"humidity":36,"precipitation_probability":0.00375,"visibility":10000,"weather":"Clear","weather_description":"Clear
+        Sky","weather_icon":"01n","wind_direction":130,"wind_gust":5.41,"wind_speed":5.66}},{"date":"2022-06-13","weather":{"low_temp":43.36,"high_temp":66.45,"cloud_coverage":66,"feels_like":40.51,"humidity":91,"precipitation_probability":0.22125,"visibility":10000,"weather":"Clouds","weather_description":"Broken
+        Clouds","weather_icon":"04n","wind_direction":127,"wind_gust":5.35,"wind_speed":4.88}},{"date":"2022-06-14","weather":{"low_temp":46.53,"high_temp":65.05,"cloud_coverage":0,"feels_like":44.4,"humidity":44,"precipitation_probability":0,"visibility":10000,"weather":"Clear","weather_description":"Clear
+        Sky","weather_icon":"01n","wind_direction":79,"wind_gust":4.09,"wind_speed":4.61}}],"today_sunrise":"06/09/22
+        at 12:35:56 UTC","today_sunset":"06/10/22 at 03:18:42 UTC"}}'
+  recorded_at: Thu, 09 Jun 2022 17:05:59 GMT
 - request:
     method: get
     uri: http://localhost:5000/api/v1/areas/2107
@@ -207,14 +289,14 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - af5e53f8-92e5-4857-b122-5ea5cefa907e
+      - dcd999f6-7b87-4019-a4da-04f834d014e1
       X-Runtime:
-      - '0.001821'
+      - '0.077766'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"2107","type":"area","attributes":{"name":"Little Yosemite
         Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}}}'
-  recorded_at: Thu, 09 Jun 2022 00:28:00 GMT
+  recorded_at: Thu, 09 Jun 2022 17:15:13 GMT
 recorded_with: VCR 6.1.0
