@@ -45,8 +45,8 @@ RSpec.describe "Item show page" do
     end
 
     it "has a button taking you to the update page" do
-      click_button "Edit Organic Crash Pad"
-      expect(current_path).to eq("/users/3/items/2/edit")
+      click_button "Edit Harness"
+      expect(current_path).to eq("/users/3/items/3/edit")
     end
   end
 
