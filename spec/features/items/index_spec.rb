@@ -19,7 +19,7 @@ RSpec.describe "Item index page" do
       allow(GearUpService).to receive(:user_trips).and_return(@trips)
       visit root_path
       click_link 'Login'
-      visit "/users/3/items"
+      visit "/users/1/items"
     end
 
     it "displays all of the users items" do
@@ -40,14 +40,14 @@ RSpec.describe "Item index page" do
         click_link("View Item")
       end
 
-      expect(current_path).to eq("/users/3/items/1")
+      expect(current_path).to eq("/users/1/items/1")
       expect(page).to have_content("Name: Harness")
       expect(page).to have_content("Count: 1")
     end
 
     it "has a button to create a new item" do
       click_button("Add an item to your Shed")
-      expect(current_path).to eq("/users/3/items/new")
+      expect(current_path).to eq("/users/1/items/new")
     end
   end
 
@@ -59,7 +59,6 @@ RSpec.describe "Item index page" do
     end
 
     it "does not show add item button when visiting a different users page" do
-      visit "/users/1/items"
       expect(page).not_to have_button("Add an item to your Shed")
     end
   end
