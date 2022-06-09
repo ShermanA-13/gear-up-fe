@@ -22,4 +22,8 @@ class TripsController < ApplicationController
     trip = TripFacade.update(params)
     redirect_to "/trips/#{trip.id}"
   end
+
+  def edit
+    @trip = TripFacade.get_all_trip_info(params[:id])
+  end
 end
