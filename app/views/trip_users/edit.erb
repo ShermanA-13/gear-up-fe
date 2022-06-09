@@ -1,0 +1,16 @@
+<h1>Add Friends to <%= @trip.name %></h1>
+
+<%= form_with url: "/trips/#{@trip.id}/users", method: :patch, local: true do |f| %>
+  <%= f.hidden_field(:user_ids, {multiple: true}, value: current_user.id) %>
+  <% @users.each do |user| %>
+    <% if current_user.id != user.id %>
+    <div id="<%= user.id %>">
+      <%= f.check_box(:user_ids, {multiple: true}, user.id, checked: true) %>
+      <%= f.label "#{user.first_name} #{user.last_name}" %>
+      <br>
+    </div>
+    <% end %>
+  <% end %>
+  <br>
+  <%= f.submit "Create Trip" %>
+<% end %>
