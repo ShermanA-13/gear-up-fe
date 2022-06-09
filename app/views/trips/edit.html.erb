@@ -1,3 +1,12 @@
+<% if @error %>
+  <div class="error_container">
+    <h1><%= @error.message %></h1>
+    <h4>Status: <%= @error.status %></h4>
+    <h4>Code: <%= @error.code %></h4>
+  </div>
+
+<% else %>
+
 <h1>Edit <%= @trip.name %></h1>
 
 <%= form_with url: "/trips/#{@trip.id}", method: :patch, local: true do |f| %>
@@ -14,4 +23,6 @@
   <%= f.text_field :description, :value => @trip.description %>
   <br><br>
   <%= f.submit "Update Trip" %>
+<% end %>
+
 <% end %>
