@@ -40,7 +40,7 @@ RSpec.describe "Item edit page" do
 
       fill_in 'Description', with: "My Favorite Harness"
       click_button "Update Item"
-      
+
       expect(current_path).to eq("/users/1/items/2")
       expect(page).to have_content("Description: My Favorite Harness")
       expect(page).to have_content("Category: Harnesses")
@@ -50,12 +50,11 @@ RSpec.describe "Item edit page" do
   describe 'when not logged in' do
     before do
       allow(UserService).to receive(:user).and_return(@user)
-      allow(ItemService).to receive(:items).and_return(@items)
+      allow(ItemService).to receive(:find_item).and_return(@item)
       visit "/users/1/items/2/edit"
     end
 
     it "does not show the form when visiting a different users edit page" do
-      visit "/users/2/items/3/edit"
       expect(page).not_to have_css("form")
 
       expect(page).to have_content("How did you get here...")
