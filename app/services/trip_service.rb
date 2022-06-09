@@ -6,6 +6,7 @@ class TripService < BaseService
 
   def self.trips_by_user_id(user_id)
     response = conn.get("api/v1/users/#{user_id}/trips")
+
     get_json(response)
   end
 
@@ -44,8 +45,8 @@ class TripService < BaseService
     get_json(response)
   end
 
-  def self.edit_items_on_trip(id, items)
-    response = conn.patch "/api/v1/trips/#{id}/items", {items: items}.to_json, "Content-Type" => "application/json"
+  def self.edit_items_on_trip(id, items, user)
+    response = conn.patch "/api/v1/trips/#{id}/items", {items: items, user_id: user}.to_json, "Content-Type" => "application/json"
     get_json(response)
   end
 end
