@@ -55,9 +55,6 @@ RSpec.describe 'navbar' do
     end
 
     it 'displays only logo and Login links when user is not logged in' do
-      within('.navbar-nav') do
-        click_on 'Logout'
-      end
       expect(page).not_to have_content('Logout')
       expect(page).not_to have_content('MyShed')
       expect(page).not_to have_content('MyTrips')
