@@ -12,6 +12,14 @@
       <p>Description: <%= @trip.description %></p>
   </div>
 
+  <div id="weather">
+    <% unless @trip.weather.class == String %>
+      <% binding.pry %>
+    <% else %>
+      <p><%= @trip.weather %></p>
+    <% end %>
+  </div>
+
 </div>
 
 <div id="users" class="area_container">
