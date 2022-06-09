@@ -9,7 +9,6 @@ RSpec.describe "trip_facade" do
     expect(trip.description).to be_a(String)
     expect(trip.start_date).to be_a(String)
     expect(trip.end_date).to be_a(String)
-  end
 
   it 'returns all info about a trip' do
     trip = TripFacade.get_all_trip_info(1)

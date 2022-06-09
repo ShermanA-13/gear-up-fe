@@ -1,4 +1,5 @@
 class TripFacade
+<<<<<<< HEAD
   def self.get_trip_by_id(id)
     trip_data = TripService.get_trip_by_id(id)
     Trip.new(
@@ -34,6 +35,29 @@ class TripFacade
   def self.update(params)
     json = TripService.update_trip(params)
     Trip.new(json[:data])
+=======
+  def self.data_hash(trips)
+    if trips != []
+      trips.map { |trip| trip.data_hash }
+    end
+  end
+
+  def self.get_trip_by_id(id)
+    trip_data = TripService.get_trip_by_id(id)[:data]
+
+    trip_data[:attributes][:id] = trip_data[:id]
+    Trip.new(trip_data[:attributes])
+  end
+
+  def self.trips_by_user_id(id)
+    trip_data = TripService.trips_by_user_id(id)[:data]
+    if trip_data
+      trip_data.map do |trip|
+        trip[:attributes][:id] = trip[:id]
+        Trip.new(trip[:attributes])
+      end
+    end
+>>>>>>> 44e9de7 (merged main with branch rebase: routes)
   end
 
   def self.add_items_to_trip(id, items)

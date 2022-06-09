@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get "/trips/:trip_id/items", to: "trip_items#new"
   post "/trips/:trip_id/items", to: "trip_items#create"
   patch "/trips/:trip_id/items", to: "trip_items#update"
-  
+
   resources :trips, only: [:show, :edit, :update, :destroy]
 
   get "/areas/:area_id/trips/:trip_id/users/new", to: "trip_users#new"
@@ -33,5 +33,4 @@ Rails.application.routes.draw do
   post "/users/:user_id/trips/new", to: "trips#create"
   post "/trips/:trip_id/users", to: "trip_users#create"
   get "/trips/:trip_id/items", to: "trip_item#new"
-
 end
