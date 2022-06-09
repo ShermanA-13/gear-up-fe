@@ -25,8 +25,8 @@ RSpec.describe "User index page" do
 
     it "displays all users fist last name and email" do
       within "#user-1" do
-        expect(page).to have_content("tara mcdoubledara")
-        expect(page).to have_content("Email: email@email.com")
+        expect(page).to have_content("Bonny Jowman")
+        expect(page).to have_content("Email: ivebeentrapped@inthecomputer.org")
       end
       within "#user-2" do
         expect(page).to have_content("lonnie jenkins")
@@ -40,12 +40,11 @@ RSpec.describe "User index page" do
 
     it "has links to users show pages" do
       within "#user-1" do
-        click_link("something this")
+        click_link("Bonny Jowman")
       end
       expect(current_path).to eq("/users/1")
-
-      expect(page).to have_content("something this's Page")
-      expect(page).not_to have_content("asda this's Page")
+      expect(page).to have_content("Bonny Jowman's Page")
+      expect(page).not_to have_content("monkey face's Page")
     end
   end
 end
