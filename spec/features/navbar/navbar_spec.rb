@@ -14,15 +14,13 @@ RSpec.describe 'navbar' do
       allow(UserService).to receive(:create_user).and_return(@user)
       allow(UserService).to receive(:user).and_return(@user)
       allow(ItemService).to receive(:items).and_return(@items)
-      # allow(ItemService).to receive(:create).and_return(@item)
-      # allow(ItemService).to receive(:find_item).and_return(@item)
       allow(TripService).to receive(:trips_by_user_id).and_return(@trips)
       visit root_path
       click_link 'Login'
     end
 
     it 'logo links to user dashboard' do
-      visit "/users/#{@user.id}/items"
+      visit "/users/1/items"
 
       find('#logo').click
       expect(current_path).to eq('/dashboard')
