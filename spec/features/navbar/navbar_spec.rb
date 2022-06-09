@@ -30,7 +30,7 @@ RSpec.describe 'navbar' do
       within('.navbar-nav') do
         click_on 'MyShed'
       end
-      expect(current_path).to eq("/users/#{@user.id}/items")
+      expect(current_path).to eq("/users/1/items")
     end
 
     it 'links to user trips page' do
