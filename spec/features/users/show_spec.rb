@@ -4,7 +4,7 @@ RSpec.describe "User show page" do
   before do
     @user = JSON.parse(File.read('spec/fixtures/user.json'), symbolize_names: true)
     # @users = JSON.parse(File.read('spec/fixtures/users.json'), symbolize_names: true)
-    # @item = JSON.parse(File.read('spec/fixtures/item.json'), symbolize_names: true)
+    @item = JSON.parse(File.read('spec/fixtures/user_item_show.json'), symbolize_names: true)
     @items = JSON.parse(File.read('spec/fixtures/items.json'), symbolize_names: true)
     @trips = JSON.parse(File.read('spec/fixtures/trips.json'), symbolize_names: true)
   end
@@ -16,10 +16,11 @@ RSpec.describe "User show page" do
       allow(UserService).to receive(:user).and_return(@user)
       # allow(UserService).to receive(:users).and_return(@users)
       allow(ItemService).to receive(:items).and_return(@items)
-      # allow(ItemService).to receive(:find_item).and_return(@item)
+      allow(ItemService).to receive(:find_item).and_return(@item)
       allow(TripService).to receive(:trips_by_user_id).and_return(@trips)
       visit root_path
       click_link 'Login'
+      visit 'users/2'
     end
 
     it "shows user data" do
@@ -28,6 +29,40 @@ RSpec.describe "User show page" do
 
       expect(page).not_to have_content("monkey face's Page")
       expect(page).not_to have_content("Email: foo@email.com")
+    end
+
+    it "shows a user's top 3 items" do
+      within "#items" do
+        expect(page).to have_content("Bonny Jowman's Item Shed")
+
+        expect(page).to have_content("Tent 1")
+        expect(page).to have_content("Count: 1")
+        expect(page).to have_content("Item ID: 1")
+
+        expect(page).to have_content("Organic Crash Pad")
+        expect(page).to have_content("Count: 5")
+        expect(page).to have_content("Item ID: 2")
+      end
+    end
+
+    it "has links to item show pages" do
+      within "#items" do
+        click_link "Tent 1"
+      end
+
+      expect(current_path).to eq("/users/1/items/1")
+      expect(page).to have_content("Name: Tent 1")
+      expect(page).to_not have_content("Organic Crash Pad")
+    end
+
+    it "has a link to the user shed" do
+      within "#items" do
+        click_link "Bonny Jowman's Shed"
+      end
+
+      expect(current_path).to eq("/users/1/items")
+      expect(page).to have_content("Tent 1")
+      expect(page).to have_content("Organic Crash Pad")
     end
   end
 end
