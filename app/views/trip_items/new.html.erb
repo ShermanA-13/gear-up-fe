@@ -1,15 +1,38 @@
 <h1> What are you bringing? </h1>
 
-<%= form_with url: "/trips/#{@trip_id}/items", method: :post, local: true do |form| %>
+<% if @packed_items.empty? %>
+    <%= form_with url: "/trips/#{@trip_id}/items", method: :post, local: true do |form| %>
 
-<%= form.label "My Items" %>
-<% @items.each do |item| %>
-  <div id="check-box-<%=item.id%>">
+  <%= form.label "My Items" %>
+  <% @items.each do |item| %>
+        <div id="check-box-<%=item.id%>">
 
-    <p> <%= "#{item.name}" %>
-        <%= check_box_tag "items[]", item.id %></p>
-  </div>
-<% end %>
+            <p> <%= "#{item.name}" %>
+                <%= check_box_tag "items[]", item.id %></p>
+        </div>
+      <% end %>
 
-<%= form.submit "Bring These!-" %>
+  <%= form.submit "Bring These!" %>
+  <% end %>
+
+<% else %>
+    <%= form_with url: "/trips/#{@trip_id}/items", method: :patch, local: true do |form| %>
+
+    <%= form.label "My Items" %>
+    <% @items.each do |item| %>
+
+        <div id="check-box-<%=item.id%>">
+            <% if item.is_present?(@packed_items) %>
+              <p> <%= "#{item.name}" %>
+                  <%= check_box_tag "items[]", item.id, checked: true %></p>
+            <% else %>
+              <p> <%= "#{item.name}" %>
+                  <%= check_box_tag "items[]", item.id%> </p>
+            <% end %>
+        </div>
+
+      <% end %>
+    <%= form.submit "Bring These!" %>
+    <% end %>
+
 <% end %>

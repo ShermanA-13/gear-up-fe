@@ -37,5 +37,10 @@ class ItemService < BaseService
     def destroy(parameters)
       response = conn.delete("/api/v1/users/#{parameters[:user_id]}/items/#{parameters[:id]}")
     end
+
+    def find_trip_items(user_id, trip_id)
+      response = conn.get("/api/v1/trips/#{trip_id}/items/#{user_id}")
+      get_json(response)
+    end
   end
 end

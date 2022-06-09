@@ -40,4 +40,9 @@ class TripService < BaseService
     response = conn.post "/api/v1/trips/#{id}/items", {items: items}.to_json, "Content-Type" => "application/json"
     get_json(response)
   end
+
+  def self.edit_items_on_trip(id, items)
+    response = conn.patch "/api/v1/trips/#{id}/items", {items: items}.to_json, "Content-Type" => "application/json"
+    get_json(response)
+  end
 end

@@ -41,4 +41,8 @@ class Item
       "Quickdraws"
     ]
   end
+
+  def is_present?(array)
+    !array.select {|item| item.id == self.id}.empty?
+  end
 end
