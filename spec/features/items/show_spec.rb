@@ -19,7 +19,7 @@ RSpec.describe "Item show page" do
       allow(GearUpService).to receive(:user_trips).and_return(@trips)
       visit root_path
       click_link 'Login'
-      visit "/users/3/items/1"
+      visit "/users/1/items/1"
     end
 
     it "displays the item's attributes (name, desc, categ)" do
@@ -32,11 +32,11 @@ RSpec.describe "Item show page" do
 
     it "has a link to return to the user's item index" do
       click_link("Return to the Item Shed")
-      expect(current_path).to eq("/users/3/items")
+      expect(current_path).to eq("/users/1/items")
     end
 
     it "has a link to delete an item" do
-      visit "/users/3/items"
+      visit "/users/1/items"
       within '#item-1' do
         click_link 'View Item'
       end
@@ -46,7 +46,7 @@ RSpec.describe "Item show page" do
 
     it "has a button taking you to the update page" do
       click_button "Edit Harness"
-      expect(current_path).to eq("/users/3/items/3/edit")
+      expect(current_path).to eq("/users/1/items/3/edit")
     end
   end
 
