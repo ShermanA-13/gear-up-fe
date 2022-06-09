@@ -48,6 +48,8 @@ RSpec.describe "Item show page" do
       expect(current_path).to eq("/users/1/items/3/edit")
     end
   end
+end
+
 
   describe 'when not logged in' do
     before do
@@ -60,5 +62,22 @@ RSpec.describe "Item show page" do
       expect(page).to have_content('Harness')
       expect(page).not_to have_link("Delete Harness")
     end
+  end
+end
+
+describe "error handling" do
+
+  it "fails gracefully" do
+    visit "users/0/items/1"
+    expect(page).to have_content("No user with id 0")
+    expect(page).to have_content("Status: NOT FOUND")
+    expect(page).to have_content("Code: 404")
+  end
+
+  it "fails gracefully" do
+    visit "users/1/items/0"
+    expect(page).to have_content("No item with id 0")
+    expect(page).to have_content("Status: NOT FOUND")
+    expect(page).to have_content("Code: 404")
   end
 end

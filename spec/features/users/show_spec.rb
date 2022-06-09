@@ -81,4 +81,15 @@ RSpec.describe "User show page" do
       end
     end
   end
+
+  describe "error handling" do
+    before do
+      visit "users/0"
+    end
+
+    it "fails gracefully" do
+      expect(page).to have_content("No user with id 0")
+      expect(page).to have_content("Code: 404")
+    end
+  end
 end

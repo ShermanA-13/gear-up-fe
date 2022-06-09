@@ -8,7 +8,7 @@ describe "Area show page" do
   it "shows specified area information", :vcr do
     expect(page).to have_content("Little Yosemite Valley")
     expect(page).to have_content("State: California")
-    expect(page).to have_content("Learn more about this route via The Mountain Project")
+    expect(page).to have_content("Learn more about this route via Mountain Project")
     expect(page).to have_link("Mountain Project")
     within("#lat_long_data") do
       expect(page).to have_content("Latitude: 37.73648")

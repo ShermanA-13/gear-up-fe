@@ -1,5 +1,5 @@
 class Item
-  attr_reader :id, :name, :description, :count, :category, :user_id
+  attr_reader :id, :name, :description, :count, :category, :user_id, :owner
 
   def initialize(data)
     @id = data[:id]
@@ -8,6 +8,7 @@ class Item
     @count = data[:attributes][:count]
     @category = Item.category_list[data[:attributes][:category]]
     @user_id = data[:attributes][:user_id]
+    @owner = data[:attributes][:owner]
   end
 
   def self.category_list
@@ -23,5 +24,9 @@ class Item
       "Crash Pads",
       "Quickdraws"
     ]
+  end
+
+  def is_present?(array)
+    !array.select {|item| item.id == self.id}.empty?
   end
 end

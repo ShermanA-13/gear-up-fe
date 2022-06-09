@@ -1,0 +1,28 @@
+<% if @error %>
+  <div class="error_container">
+    <h1><%= @error.message %></h1>
+    <h4>Status: <%= @error.status %></h4>
+    <h4>Code: <%= @error.code %></h4>
+  </div>
+
+<% else %>
+
+<h1>Edit <%= @trip.name %></h1>
+
+<%= form_with url: "/trips/#{@trip.id}", method: :patch, local: true do |f| %>
+  <%= f.label "Trip name" %>
+  <%= f.text_field :name, :value => @trip.name %>
+  <br><br>
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date, :value => @trip.start_date %>
+  <br><br>
+  <%= f.label :end_date %>
+  <%= f.date_field :end_date, :value => @trip.end_date %>
+  <br><br>
+  <%= f.label :description %>
+  <%= f.text_field :description, :value => @trip.description %>
+  <br><br>
+  <%= f.submit "Update Trip" %>
+<% end %>
+
+<% end %>
