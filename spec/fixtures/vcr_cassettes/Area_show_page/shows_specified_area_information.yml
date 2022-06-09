@@ -25,14 +25,55 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b4b8042b-6456-4c82-8bf8-3d2bd95df97a
+      - 639f5571-bdee-41f4-92b7-f60186b8abc6
       X-Runtime:
-      - '0.142006'
+      - '0.047383'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
       string: '{"data":{"id":"2107","type":"area","attributes":{"name":"Little Yosemite
         Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}}}'
-  recorded_at: Tue, 07 Jun 2022 19:13:19 GMT
+  recorded_at: Thu, 09 Jun 2022 17:01:18 GMT
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/areas/2107/weather
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0ba8c8dc9dee643b60cad833a7c80dce"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 80f1da7a-c7b0-41e6-82fb-38cde241fb1b
+      X-Runtime:
+      - '0.434605'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":2107,"type":"weather info","name":"Little Yosemite Valley","weather":{"forecast":[{"date":"2022-06-09","weather":{"low_temp":67.26,"high_temp":71.37,"cloud_coverage":59,"feels_like":64.81,"humidity":24,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Broken
+        Clouds","weather_icon":"04d","wind_direction":258,"wind_gust":7.47,"wind_speed":6.76}},{"date":"2022-06-10","weather":{"low_temp":57.94,"high_temp":81.45,"cloud_coverage":95,"feels_like":55.98,"humidity":54,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Overcast
+        Clouds","weather_icon":"04n","wind_direction":84,"wind_gust":3.29,"wind_speed":3.8}},{"date":"2022-06-11","weather":{"low_temp":56.71,"high_temp":79.23,"cloud_coverage":22,"feels_like":54.54,"humidity":52,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Few
+        Clouds","weather_icon":"02n","wind_direction":81,"wind_gust":3.56,"wind_speed":3.56}},{"date":"2022-06-12","weather":{"low_temp":53.31,"high_temp":75.72,"cloud_coverage":4,"feels_like":50.04,"humidity":36,"precipitation_probability":0.00375,"visibility":10000,"weather":"Clear","weather_description":"Clear
+        Sky","weather_icon":"01n","wind_direction":130,"wind_gust":5.41,"wind_speed":5.66}},{"date":"2022-06-13","weather":{"low_temp":43.36,"high_temp":66.45,"cloud_coverage":66,"feels_like":40.51,"humidity":91,"precipitation_probability":0.22125,"visibility":10000,"weather":"Clouds","weather_description":"Broken
+        Clouds","weather_icon":"04n","wind_direction":127,"wind_gust":5.35,"wind_speed":4.88}},{"date":"2022-06-14","weather":{"low_temp":46.53,"high_temp":65.05,"cloud_coverage":0,"feels_like":44.4,"humidity":44,"precipitation_probability":0,"visibility":10000,"weather":"Clear","weather_description":"Clear
+        Sky","weather_icon":"01n","wind_direction":79,"wind_gust":4.09,"wind_speed":4.61}}],"today_sunrise":"06/09/22
+        at 12:35:56 UTC","today_sunset":"06/10/22 at 03:18:42 UTC"}}'
+  recorded_at: Thu, 09 Jun 2022 17:01:18 GMT
 recorded_with: VCR 6.1.0
