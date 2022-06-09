@@ -8,7 +8,6 @@ class TripsController < ApplicationController
     if @trip.class == Error
       @error = @trip
     end
-    # require "pry"; binding.pry
   end
 
   def index
