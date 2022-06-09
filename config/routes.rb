@@ -26,6 +26,6 @@ Rails.application.routes.draw do
 
   get "/areas/search", to: "areas#index"
 
-  get "/trips/:trip_id/users/:user_id/items", to: "trip_items#new"
-  post "/trips/:trip_id/users/:user_id/items", to: "trip_items#create"
+  get "/trips/:trip_id/items/new", to: "trip_items#new"
+  post "/trips/:trip_id/items", to: "trip_items#create"
 end

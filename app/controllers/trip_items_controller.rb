@@ -1,8 +1,9 @@
 class TripItemsController < ApplicationController
 
   def new
+    # require "pry"; binding.pry
     @trip_id = params[:trip_id]
-    @items = ItemFacade.items(params[:user_id])
+    @items = ItemFacade.items(session[:user_id])
   end
 
   def create
