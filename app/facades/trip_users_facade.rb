@@ -6,4 +6,8 @@ class TripUsersFacade
   def self.edit_invitees(users, id)
     TripUsersService.edit_invitees(users, id)
   end
+
+  def self.delete_invitees(users, id)
+    TripUsersService.delete_invitees(users, id)
+  end
 end

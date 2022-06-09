@@ -14,4 +14,10 @@ class TripUsersController < ApplicationController
     TripUsersFacade.edit_invitees(params[:trip_id], params[:users])
     redirect_to "/trips/#{@trip.id}"
   end
+
+  def destroy
+    TripUsersFacade.delete_trip_users(params[:user_ids], params[:trip_id])
+    @trip = TripFacade.get_trip_by_id(params[:trip_id])
+    redirect_to "/trips/#{@trip.id}"
+  end
 end
