@@ -18,7 +18,7 @@ RSpec.describe "Item edit page" do
       allow(ItemService).to receive(:create).and_return(@item)
       allow(ItemService).to receive(:find_item).and_return(@item)
       allow(ItemService).to receive(:update).and_return(@updated_item)
-      allow(GearUpService).to receive(:user_trips).and_return(@trips)
+      allow(TripService).to receive(:trips_by_user_id).and_return(@trips)
       visit root_path
       click_link 'Login'
       visit "/users/1/items/2/edit"

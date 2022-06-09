@@ -16,7 +16,7 @@ RSpec.describe "Item new page" do
       allow(ItemService).to receive(:items).and_return(@items)
       allow(ItemService).to receive(:create).and_return(@item)
       allow(ItemService).to receive(:find_item).and_return(@item)
-      allow(GearUpService).to receive(:user_trips).and_return(@trips)
+      allow(TripService).to receive(:trips_by_user_id).and_return(@trips)
       visit root_path
       click_link 'Login'
       visit "/users/1/items/new"
