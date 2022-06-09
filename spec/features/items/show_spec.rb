@@ -1,75 +1,68 @@
 require "rails_helper"
 
-describe "Item show page" do
+RSpec.describe "Item show page" do
   before do
-    data = {
-      first_name: 'Bonny',
-      last_name: 'Jowman',
-      email: 'ivebeentrapped@inthecomputer.org',
-      user_photo: 'https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c'
-    }
-    @user = UserFacade.create_user(data)
-
-    visit "/login?user_id=#{@user.id}"
-    visit "/users/#{@user.id}/items/new"
-    fill_in 'Item Name', with: "Organic Crash Pad"
-    fill_in 'Description', with: "Large, red and blue"
-    fill_in 'Count', with: "5"
-    choose option: '8'
-    click_button 'Add Item'
+    @user = JSON.parse(File.read('spec/fixtures/user.json'), symbolize_names: true)
+    @item = JSON.parse(File.read('spec/fixtures/item.json'), symbolize_names: true)
+    @items = JSON.parse(File.read('spec/fixtures/items.json'), symbolize_names: true)
+    @trips = JSON.parse(File.read('spec/fixtures/trips.json'), symbolize_names: true)
   end
 
-  it "displays the item's attributes (name, desc, categ)", :vcr do
-    expect(page).to have_content("Name: Organic Crash Pad")
-    expect(page).to have_content("Count: 5")
-    expect(page).to have_content("Item Category: Crash Pads")
-
-    expect(page).not_to have_content("Name: Trail Mix")
-    expect(page).not_to have_content("Count: 8")
-  end
-
-  it "has a link to return to the user's item index", :vcr do
-    click_link("Return to the Item Shed")
-    expect(current_path).to eq("/users/3/items")
-  end
-end
-
-describe "delete item" do
-  before do
-    visit "/login?user_id=3"
-  end
-
-  it "has a link to delete an item", :vcr do
-    visit "/users/3/items"
-    within '#item-5' do
-      click_link 'View Item'
+  describe "when logged in" do
+    before do
+      Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:google_oauth2]
+      allow(UserService).to receive(:create_user).and_return(@user)
+      allow(UserService).to receive(:user).and_return(@user)
+      allow(ItemService).to receive(:items).and_return(@items)
+      allow(ItemService).to receive(:create).and_return(@item)
+      allow(ItemService).to receive(:find_item).and_return(@item)
+      allow(GearUpService).to receive(:user_trips).and_return(@trips)
+      visit root_path
+      click_link 'Login'
+      visit "/users/3/items/1"
     end
 
-    expect(page).to have_link("Delete Organic Crash Pad")
-  end
+    it "displays the item's attributes (name, desc, categ)" do
+      expect(page).to have_content("Name: Harness")
+      expect(page).to have_content("Count: 1")
+      expect(page).to have_content("Item Category: Harnesses")
 
-  it "does not have delete link on other users item pages", :vcr do
-    visit "/users/1/items"
-    within '#item-9' do
-      click_link 'View Item'
+      expect(page).not_to have_content("Name: Organic Crash Pad")
     end
 
-    expect(page).to have_content('Sleeping Bag')
-    expect(page).not_to have_link("Delete Sleeping Bag")
-  end
-end
+    it "has a link to return to the user's item index" do
+      click_link("Return to the Item Shed")
+      expect(current_path).to eq("/users/3/items")
+    end
 
-describe "update item" do
-  before do
-    visit "/login?user_id=3"
-    visit "/users/3/items"
-    within '#item-2' do
-      click_link 'View Item'
+    it "has a link to delete an item" do
+      visit "/users/3/items"
+      within '#item-1' do
+        click_link 'View Item'
+      end
+
+      expect(page).to have_link("Delete Organic Crash Pad")
+    end
+
+    it "has a button taking you to the update page" do
+      click_button "Edit Organic Crash Pad"
+      expect(current_path).to eq("/users/3/items/2/edit")
     end
   end
 
-  it "has a button taking you to the update page", :vcr do
-    click_button "Edit Organic Crash Pad"
-    expect(current_path).to eq("/users/3/items/2/edit")
+  describe 'when not logged in' do
+    before do
+      allow(UserService).to receive(:user).and_return(@user)
+    end
+
+    it "does not have delete link on other users item pages" do
+      visit "/users/1/items"
+      within '#item-9' do
+        click_link 'View Item'
+      end
+
+      expect(page).to have_content('Sleeping Bag')
+      expect(page).not_to have_link("Delete Sleeping Bag")
+    end
   end
 end
