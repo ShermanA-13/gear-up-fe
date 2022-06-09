@@ -37,7 +37,7 @@ RSpec.describe 'navbar' do
       within('.navbar-nav') do
         click_on 'MyTrips'
       end
-      expect(current_path).to eq("/users/#{@user.id}/trips")
+      expect(current_path).to eq("/users/1/trips")
     end
 
     it 'logo links to rooth path when user is not logged in' do
