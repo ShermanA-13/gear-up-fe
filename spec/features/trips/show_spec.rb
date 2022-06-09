@@ -15,7 +15,7 @@ describe "Trip show page" do
     expect(page).not_to have_content("Description: zero fun to be had")
   end
 
-  it "displays invited users" do
+  it "displays invited users", :vcr do
     within "#users" do
       expect(page).to have_content("something this")
       expect(page).to have_content("email@email.com")

@@ -1,59 +1,22 @@
 
 
+<div class="area_container">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 text-center full-content">
-            <h2 class="section-title no-border v-3"><span>Trips</span> Show Page</h2>
-
-            <div class="mrb-45"></div>
-            <!--  /.mrb -->
-        </div>
-        <!--  /.col-md-12 -->
+  <h2 class="section-title no-border v-3">Trips Show Page</h2>
+  <div class="article-content-main">
+    <div class="article-header">
+      <h2 class="entry-title"><a href="#">Name: <%= @trip.name %></a></h2>
+      <h3 class="entry-date">Start Date: <%= @trip.start_date %></h3>
+      <h3 class="entry-date">End Date: <%= @trip.end_date %></h3>
     </div>
-    <!--  /.row -->
+      <p>Description: <%= @trip.description %></p>
+  </div>
 
-    <div class="row">
-        <div class="col-12">
-            <div class="row">
-                <div class="col-md-6 col-xl-4">
-                    <article class="post">
-                        <div class="article-v2">
-                            <figure class="article-thumb">
-                                <a href="#">
-                                    <img src="https://via.placeholder.com/350x280/FFB6C1/000000" alt="blog image" />
-                                </a>
-                            </figure>
-                            <!-- /.article-thumb -->
-                            <div class="article-content-main">
-                                <div class="article-header">
-                                    <h2 class="entry-title"><a href="#">Name: <%= @trip.name %></a></h2>
-                                    <div class="entry-meta">
-                                        <div class="entry-date">Start Date: <%= @trip.start_date %></div>
-                                        <div class="entry-date">End Date: <%= @trip.end_date %></div>
-                                        <!-- /.entry-date -->
+</div>
 
-
-                                    </div>
-                                    <!-- /.entry-meta -->
-                                </div>
-                                <!-- /.article-header -->
-                                <div class="article-content">
-                                    <p>Description: <%= @trip.description %></p>
-                                </div>
-
-
-                                        <!--  /.col-6 -->
-                                    </div>
-                                    <!--  /.row -->
-                                </div>
-                                <!--  /.article-footer -->
-                            </div>
-                            <!--  /.article-content-main -->
-                        </div>
-                        <!--  /.article-v2 -->
-                    </article>
-                    <!--  /.post -->
-                </div>
-                <!--  /.col-md-6 -->
+<div id="users" class="area_container">
+  <% @trip.users.each do |user| %>
+    <h4><%= user.first_name %> <%= user.last_name %></h4>
+    <p><%= user.email %></p>
+  <% end %>
+</div>
