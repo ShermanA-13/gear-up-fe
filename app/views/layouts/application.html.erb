@@ -11,10 +11,10 @@
   </head>
 
   <body>
-    <% if flash[:success] %>
-      <%= flash[:success] %>
-    <% end %>
     <%= render "layouts/navbar" %>
+    <% flash.each do |type, message| %>
+    <div> <%= message %> </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

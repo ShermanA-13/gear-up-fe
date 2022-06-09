@@ -1,3 +1,12 @@
+<% if @error %>
+
+<div class="error_container">
+  <h1><%= @error.message %></h1>
+  <h4>Status: <%= @error.status %></h4>
+  <h4>Code: <%= @error.code %></h4>
+</div>
+
+<% else %>
 <hr>
 
   <h1>Upcoming Trips:</h1>
@@ -23,3 +32,5 @@
   <% end %>
 
 </div>
+
+<% end %>

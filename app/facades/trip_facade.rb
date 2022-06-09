@@ -1,14 +1,18 @@
 class TripFacade
   def self.get_trip_by_id(id)
     trip_data = TripService.get_trip_by_id(id)
-    Trip.new(
-      id: trip_data[:data][:id], attributes: {
-        name: trip_data[:data][:attributes][:name],
-        description: trip_data[:data][:attributes][:description],
-        start_date: trip_data[:data][:attributes][:start_date],
-        end_date: trip_data[:data][:attributes][:end_date]
-      }
-    )
+    if trip_data[:errors].present?
+      Error.new(trip_data[:errors])
+    else
+      Trip.new(
+        id: trip_data[:data][:id], attributes: {
+          name: trip_data[:data][:attributes][:name],
+          description: trip_data[:data][:attributes][:description],
+          start_date: trip_data[:data][:attributes][:start_date],
+          end_date: trip_data[:data][:attributes][:end_date]
+          }
+        )
+    end
   end
 
   def self.get_all_trip_info(id)
@@ -21,14 +25,21 @@ class TripFacade
   end
 
   def self.trips_by_user_id(user_id)
-    TripService.trips_by_user_id(user_id)[:data].map do |data|
-      Trip.new(data)
+    trips = TripService.trips_by_user_id(user_id)
+    if trips[:errors].present?
+      Error.new(trips[:errors])
+    else
+      trips[:data].map { |data| Trip.new(data)}
     end
   end
 
   def self.create_trip(params)
-    json = TripService.create(params)
-    Trip.new(json[:data])
+    trip = TripService.create(params)
+    if trip[:errors].present?
+      Error.new(trip[:errors])
+    else
+      Trip.new(trip[:data])
+    end
   end
 
   def self.destroy(id)
