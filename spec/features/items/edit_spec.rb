@@ -5,6 +5,7 @@ RSpec.describe "Item edit page" do
     @user = JSON.parse(File.read('spec/fixtures/user.json'), symbolize_names: true)
     @item = JSON.parse(File.read('spec/fixtures/item.json'), symbolize_names: true)
     @items = JSON.parse(File.read('spec/fixtures/items.json'), symbolize_names: true)
+    @updated_item = JSON.parse(File.read('spec/fixtures/updated_item.json'), symbolize_names: true)
     @trips = JSON.parse(File.read('spec/fixtures/trips.json'), symbolize_names: true)
   end
 
@@ -16,10 +17,11 @@ RSpec.describe "Item edit page" do
       allow(ItemService).to receive(:items).and_return(@items)
       allow(ItemService).to receive(:create).and_return(@item)
       allow(ItemService).to receive(:find_item).and_return(@item)
+      allow(ItemService).to receive(:update).and_return(@updated_item)
       allow(GearUpService).to receive(:user_trips).and_return(@trips)
       visit root_path
       click_link 'Login'
-      visit "/users/3/items/2/edit"
+      visit "/users/1/items/2/edit"
     end
 
     it "has a form to edit an item" do
@@ -34,13 +36,14 @@ RSpec.describe "Item edit page" do
     end
 
     it "updates the item when form is filled out" do
-      fill_in 'Description', with: "My Favorite Trail Mix"
+      allow(ItemService).to receive(:find_item).and_return(@updated_item)
 
+      fill_in 'Description', with: "My Favorite Harness"
       click_button "Update Item"
-
+      
       expect(current_path).to eq("/users/1/items/2")
-      expect(page).to have_content("Description: My Favorite Trail Mix")
-      expect(page).to have_content("Category: Tents")
+      expect(page).to have_content("Description: My Favorite Harness")
+      expect(page).to have_content("Category: Harnesses")
     end
   end
 
@@ -48,7 +51,7 @@ RSpec.describe "Item edit page" do
     before do
       allow(UserService).to receive(:user).and_return(@user)
       allow(ItemService).to receive(:items).and_return(@items)
-      visit "/users/3/items/2/edit"
+      visit "/users/1/items/2/edit"
     end
 
     it "does not show the form when visiting a different users edit page" do
