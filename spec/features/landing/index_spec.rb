@@ -14,7 +14,7 @@ RSpec.describe 'Landing index page' do
   end
 
   it 'has button to login via Google' do
-    click_link 'Login'
+    find('#login').click
     expect(current_path).to eq('/dashboard')
   end
 end
