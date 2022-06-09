@@ -5,6 +5,9 @@ class TripsController < ApplicationController
 
   def show
     @trip = TripFacade.get_all_trip_info(params[:id])
+    if @trip.class == Error
+      @error = @trip
+    end
   end
 
   def index

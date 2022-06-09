@@ -1,77 +1,97 @@
+<% if @error %>
 
+<div class="error_container">
+  <h1><%= @error.message %></h1>
+  <h4>Status: <%= @error.status %></h4>
+  <h4>Code: <%= @error.code %></h4>
+</div>
 
-<div class="area_container">
+<% else %>
 
-  <h2 class="section-title no-border v-3">Trips Show Page</h2>
-  <div class="article-content-main">
-    <div class="article-header">
-      <h2 class="entry-title"><a href="#">Name: <%= @trip.name %></a></h2>
-      <h3 class="entry-date">Start Date: <%= @trip.start_date %></h3>
-      <h3 class="entry-date">End Date: <%= @trip.end_date %></h3>
-    </div>
-      <p>Description: <%= @trip.description %></p>
-  </div>
+    <% if current_user.on_trip?(@trip) %>
 
-  <div id="google_map" class="map_container">
-    <iframe
-    width="650"
-    height="450"
-    frameborder="0" style="border:0"
-    referrerpolicy="no-referrer-when-downgrade"
-    src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["GOOGLE_MAPS_API_KEY"] %>&q=<%= @trip.lat %>,<%= @trip.long %>&zoom=13&maptype=satellite"
-    allowfullscreen>
-    </iframe>
-  </div>
+      <div class="area_container">
 
-  <div id="weather">
-    <% unless @trip.weather.class == String %>
-    <div class="card-group">
-      <% @trip.weather.each do |forecast| %>
-          <div class="card">
-            <h3><%= forecast.date %></h3>
-            <h4>
-              <%= forecast.weather_description %>
-              <img src="http://openweathermap.org/img/w/<%= forecast.weather_icon %>.png" alt="Weather Icon">
-            </h4>
-            <hr>
-            <h5>High: <%= forecast.high_temp %>°</h5>
-            <h5>Low: <%= forecast.low_temp %>°</h5>
-            <h5>Feels like: <%= forecast.feels_like %>°</h5>
-            <p>Humidity: <%= forecast.humidity %>%</p>
-            <p>Cloud coverage: <%= forecast.cloud_coverage %></p>
-            <p>Visibility: <%= forecast.visibility %></p>
-            <p>Wind direction: <%= forecast.wind_direction %>°</p>
-            <p>Wind gust: <%= forecast.wind_gust %> MPH</p>
-            <p>Wind speed: <%= forecast.wind_speed %> MPH</p>
+          <h2 class="section-title no-border v-3">Trips Show Page</h2>
+          <div class="article-content-main">
+            <div class="article-header">
+              <h2 class="entry-title"><a href="#">Name: <%= @trip.name %></a></h2>
+              <h3 class="entry-date">Start Date: <%= @trip.start_date %></h3>
+              <h3 class="entry-date">End Date: <%= @trip.end_date %></h3>
+            </div>
+            <p>Description: <%= @trip.description %></p>
           </div>
-      <% end %>
-    </div>
-    <% else %>
-      <p><%= @trip.weather %></p>
-    <% end %>
-  </div>
 
-  <div id="buttons">
-    <%= button_to "Delete #{@trip.name}", "/trips/#{@trip.id}", method: :delete %>
-    <%= button_to "Add my items", "/trips/#{@trip.id}/items", method: :get %>
-    <%= button_to "Edit the Trip", "/trips/#{@trip.id}/edit", method: :get %>
-  </div>
-</div>
-
-<div id="users" class="area_container">
-  <div class="card-group">
-    <% @trip.users.each do |user| %>
-      <div class="card">
-        <h4><%= user.first_name %> <%= user.last_name %></h4>
-        <p><%= user.email %></p>
-        <p>Items:</p>
-        <% @trip.items.each do |item| %>
-          <% if item.owner == user.first_name %>
-            <p><%= item.name %></p>
-            <p><%= item.category %></p>
-          <% end %>
-        <% end %>
+      <div id="google_map" class="map_container">
+          <iframe
+            width="650"
+            height="450"
+            frameborder="0" style="border:0"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/place?key=<%= ENV["GOOGLE_MAPS_API_KEY"] %>&q=<%= @trip.lat %>,<%= @trip.long %>&zoom=13&maptype=satellite"
+            allowfullscreen>
+          </iframe>
       </div>
+
+
+
+      <div id="weather">
+        <% unless @trip.weather.class == String %>
+        <div class="card-group">
+          <% @trip.weather.each do |forecast| %>
+            <div class="card">
+              <h3><%= forecast.date %></h3>
+              <h4>
+                <%= forecast.weather_description %>
+                <img src="http://openweathermap.org/img/w/<%=   forecast.weather_icon %>.png" alt="Weather Icon">
+              </h4>
+              <hr>
+              <h5>High: <%= forecast.high_temp %>°</h5>
+              <h5>Low: <%= forecast.low_temp %>°</h5>
+              <h5>Feels like: <%= forecast.feels_like %>°</h5>
+              <p>Humidity: <%= forecast.humidity %>%</p>
+              <p>Cloud coverage: <%= forecast.cloud_coverage %></p>
+              <p>Visibility: <%= forecast.visibility %></p>
+              <p>Wind direction: <%= forecast.wind_direction %>°</p>
+              <p>Wind gust: <%= forecast.wind_gust %> MPH</p>
+              <p>Wind speed: <%= forecast.wind_speed %> MPH</p>
+            </div>
+            <% end %>
+          </div>
+          <% else %>
+          <p><%= @trip.weather %></p>
+          <% end %>
+        </div>
+
+        <div id="buttons">
+          <%= button_to "Delete #{@trip.name}", "/trips/#{@trip.id}", method: :delete %>
+          <%= button_to "Edit the Trip", "/trips/#{@trip.id}/edit", method: :get %>
+          <%= button_to "Add my items", "/trips/#{@trip.id}/items", method: :get %>
+        </div>
+     
+
+      <div id="users" class="area_container">
+        <div class="card-group">
+          <% @trip.users.each do |user| %>
+          <div class="card">
+            <h4><%= user.first_name %> <%= user.last_name %></h4>
+            <p><%= user.email %></p>
+            <p>Items:</p>
+            <% @trip.items.each do |item| %>
+            <% if item.owner == user.first_name %>
+              <p><%= item.name %></p>
+              <p><%= item.category %></p>
+              <% end %>
+              <% end %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+
+    <% else %>
+
+      <h1> Sorry You Were Not Invited to This Trip! </h1>
+
     <% end %>
-  </div>
-</div>
+
+<% end %>
