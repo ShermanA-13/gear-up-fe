@@ -1,0 +1,26 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "item",
+            "attributes": {
+                "name": "Tent 1",
+                "description": "1 person Tent",
+                "count": 1,
+                "category": 0,
+                "user_id": 3
+            }
+        },
+        {
+            "id": "2",
+            "type": "item",
+            "attributes": {
+                "name": "Organic Crash Pad",
+                "description": "Large, red and blue",
+                "count": 5,
+                "category": 8,
+                "user_id": 3
+            }
+        }
+    ]
+}
