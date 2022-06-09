@@ -7,6 +7,8 @@ RSpec.describe "Trip edit page" do
   end
 
   it "updates trip record" do
-    expect(page).to have_content("Edit first trip")
+    fill_in "name", with: "another first trip"
+    click_button "Update Trip"
+    expect(current_path).to eq("/trips/1")
   end
 end
