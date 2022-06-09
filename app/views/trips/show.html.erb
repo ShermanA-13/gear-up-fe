@@ -54,6 +54,7 @@
   <div id="buttons">
     <%= button_to "Delete #{@trip.name}", "/trips/#{@trip.id}", method: :delete %>
     <%= button_to "Add my items", "/trips/#{@trip.id}/items", method: :get %>
+    <%= button_to "Edit the Trip", "/trips/#{@trip.id}/edit", method: :get %>
   </div>
 </div>
 
