@@ -1,6 +1,8 @@
 <% unless @error %>
   <div class="user_info area_container search_container">
-    <img src="<%= @user.user_photo[0..-4] %>720-c" alt="user pic">
+    <% if @user.user_photo %>
+        <img src="<%= @user.user_photo[0..-4] %>720-c" alt="user pic">
+    <% end %>
     <br><br>
     <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     <p><%= @user.email %></p>

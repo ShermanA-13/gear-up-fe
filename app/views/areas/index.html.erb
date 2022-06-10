@@ -3,7 +3,9 @@
     <h1><u>Search for Areas</u></h1>
     <br>
     <%= form_with url: "/areas", method: :get, local: true do |form| %>
-      <% form.label :name, "Search" %>
+    <div class="hide_me">
+      <%= form.label :name, "Search" %>
+    </div>
       <%= form.text_field :name %>
       <%= form.submit "Search" %>
     <% end %>
