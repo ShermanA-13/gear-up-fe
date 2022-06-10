@@ -1,7 +1,6 @@
 class AreaFacade
   class << self
     def search(name)
-      # require "pry"; binding.pry
       area = AreaService.search(name)
       if area[:errors].present?
         Error.new(area[:errors])
@@ -12,11 +11,13 @@ class AreaFacade
       end
     end
 
-
     def get_area_by_id(id)
-      area_data = AreaService.area_by_id(id)[:data]
-      Area.new(area_data)
-
+      area_data = AreaService.area_by_id(id)
+      if area_data[:errors].present?
+        Error.new(area_data[:errors])
+      else
+        Area.new(area_data[:data])
+      end
     end
   end
 end
