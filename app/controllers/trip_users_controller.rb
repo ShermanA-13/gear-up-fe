@@ -11,12 +11,19 @@ class TripUsersController < ApplicationController
   end
 
   def index
-    @users = TripUsersFacade.get_trip_by_id(params[:user_ids])
+    @trip_users = TripUsersFacade.trip_user(params[:trip_id])
+  end
+
+  def edit
+    @users = UserFacade.users
+
+    @invited = TripUsersFacade.trip_user(params[:trip_id])
+    @trip = TripFacade.get_trip_by_id(params[:trip_id])
   end
 
   def update
-    TripUsersFacade.edit_invitees(params[:trip_id], params[:users])
-    redirect_to "/trips/#{@trip.id}"
+    TripUsersFacade.edit_invitees(params[:user_ids], params[:trip_id])
+    redirect_to "/trips/#{params[:trip_id]}"
   end
 
   def destroy
