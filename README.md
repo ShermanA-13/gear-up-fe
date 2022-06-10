@@ -19,7 +19,7 @@
 
 <hr>
 
-## General Description
+## **Background and Description**
 
 Logistics for group adventures outdoors can be complicated, especially when it comes to getting all of your gear in order. __Gear Up__ simplifies this by giving users a platform to easily organize trips, decide who is bringing what gear, then determine what the group still needs and who might have that gear already!
 
@@ -79,7 +79,7 @@ Our “Back End” application will be an API built in Rails. It will act as the
 
 ### **Ruby and Rails Versions**
 ---
-- Ruby Version 2.7.2
+- Ruby Version 2.7.4
 - Rails Version 5.2.8
 
 ### **Gems Utilized**
@@ -110,12 +110,15 @@ Our “Back End” application will be an API built in Rails. It will act as the
 - [Google OAuth 2.0](https://developers.google.com/identity/protocols/oauth2)
 ## **Setup**
 1. Create a Base Directory
+* On your local machine open a terminal session and enter the following commands to create a base directory for the app.
+
 ```shell
 $ mkdir gear_up
+$ cd gear_up
 ```
 
-2. Clone this repository:
-On your local machine open a terminal session and enter the following commands for SSH or HTTPS to clone the repositiory.
+2. Clone these repositories:
+* On your local machine open a terminal session and enter the following commands for SSH or HTTPS to clone the [front end](#background-and-description) repositiory.
 
 
 - using ssh key <br>
@@ -128,13 +131,31 @@ $ git clone git@github.com:ShermanA-13/gear-up-fe.git
 $ git clone https://github.com/ShermanA-13/gear-up-fe.git
 ```
 
-Once cloned, you'll have a new local copy in the directory you ran the clone command in.<br>
+* Once cloned, enter the following commands for SSH or HTTPS to clone the [back end](#background-and-description) repositiory.
+
+- using ssh key <br>
+```shell
+$ git clone git@github.com:ShermanA-13/gear-up-be.git
+```
+
+- using https <br>
+```shell
+$ git clone https://github.com/ShermanA-13/gear-up-be.git
+```
+
+* Once cloned, you'll have a new local copies of the directories you ran the clone command in. You can check what is in the directory by running the following command<br>
+
+```sh
+$ ls
+#ex.
+  gear-up-be gear-up-fe
+```
 
 3. Change to the project directory:<br>
-In terminal, use `$ cd` to navigate to the backend Application project directory.
+In terminal, use `$ cd` to navigate to the front end application project directory.
 
 ```shell
-$ cd relational_rails
+$ cd gear-up-fe
 ```
 
 4. Install required Gems utilizing Bundler: <br>
@@ -181,7 +202,7 @@ Use `bundle info [gemname]` to see where a bundled gem is installed.
 
 5. Figaro installation<br>
 
-* Follow the [figaro](https://github.com/laserlemon/figaro) installation with the docs and get your [googlemaps.org](#apis-consumed) and [google client](#apis-consumed) keys. Add the google maps and google client keys to your newly created `config/application.yml` file and add it to your `.gitignore` file. Be sure to read the [open weather API docs](https://openweathermap.org/forecast5) for a deeper undestanding of the app.
+* Follow the [figaro](https://github.com/laserlemon/figaro) installation with the docs and get your [googlemaps.org](#apis-consumed) and [google client](#apis-consumed) keys. Add the google maps and google client keys to your newly created `config/application.yml` file and add it to your `.gitignore` file. Be sure to read the [google API docs](https://developers.google.com/docs/api) for a deeper undestanding of the app.
 
 ```sh
 $ bundle exec figaro install
