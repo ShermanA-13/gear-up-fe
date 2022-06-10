@@ -69,7 +69,8 @@ Our “Back End” application will be an API built in Rails. It will act as the
     * This app’s database can only have a “users” table
     * All other database storage must go through a “DatabaseService” that you implement to do any CRUD behavior on your Backend
       * This will follow the typical Facade and Service design patterns
-      * You will need HEAVY use of webmock to test expected results until the backend endpoints are finished. Planning the structure of your JSON ahead of time will go a long way in allowing both applications to proceed in a decoupled manner asynchronously
+      * You will need HEAVY use of webmock to test expected results until the backend endpoints are finished. 
+        Planning the structure of your JSON ahead of time will go a long way in allowing both applications to proceed in a decoupled manner asynchronously
       * Once the backend endpoints are finished, consider changing to VCR
   * Extension: using caching to cache responses retrieved from the backend application
 ```
