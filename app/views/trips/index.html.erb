@@ -9,19 +9,17 @@
     <div class="mt-5">
       <% @trips.each do |trip| %>
         <div id="trip-<%= trip.id %>">
-          <div class="d-style btn btn-brc-tp border-2 bgc-white btn-outline-blue btn-h-outline-blue btn-a-outline-blue w-100 my-2 py-3 shadow-sm">
-            <div class="row align-items-center">
-              <div class="col-12 col-md-4">
-                <h4 class="pt-3 text-170 text-600 text-primary-d1 letter-spacing">
-                  <%= trip.name %>
-                </h4>
-              </div>
-              <div class="list-unstyled mb-0 col-12 col-md-4 text-dark-l1 text-90 text-left my-4 my-md-0">
-                <%= trip.start_date %> to <%= trip.end_date %>
-              </div>
-              <div class="col-12 col-md-4 text-center">
-                <a href="/trips/<%= trip.id %>" class="f-n-hover btn btn-info btn-raised px-4 py-25 w-75 text-600">View Trip</a>
-              </div>
+          <div class="trip-index-container row align-items-center">
+            <div class="col-md-4">
+              <h4>
+                <%= trip.name %>
+              </h4>
+            </div>
+            <div class="col-md-4 text-center">
+              <%= trip.start_date %> to <%= trip.end_date %>
+            </div>
+            <div class="col-md-4 text-center">
+              <a href="/trips/<%= trip.id %>" class="f-n-hover btn btn-info btn-raised px-4 py-25 w-75 text-600">View Trip</a>
             </div>
           </div>
         </div>
