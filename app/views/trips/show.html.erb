@@ -19,7 +19,7 @@
             <h5 class="entry-date"><%= @trip.start_date %> - <%= @trip.end_date %></h5>
           </div>
             <p>
-              Learn more about this area on <a href="<%= @trip.url %>">Mountain Project</a>
+              Learn more about this area on <a target="_blank" href="<%= @trip.url %>">Mountain Project</a>
             </p>
         </div>
 
@@ -72,8 +72,9 @@
              <br>
              <%= button_to "Delete #{@trip.name}", "/trips/#{@trip.id}", method: :delete %>
              <br>
+             <%= button_to "Add/Remove my trip users", "/trips/#{@trip.id}/users", method: :get %>
             <% end %>
-            <%= button_to "Add/Remove my items", "/trips/#{@trip.id}/items", method: :get %>
+            <br><%= button_to "Add/Remove my items", "/trips/#{@trip.id}/items", method: :get %>
             <br>
           </center>
         </div>

@@ -15,34 +15,21 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 200
-      message: OK
+      code: 404
+      message: Not Found
     headers:
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - W/"a743ed834ad71eb0ce58521d5f9afc8a"
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - 7e669399-19bb-4e52-bca2-51e7c770d312
+      - b508a99f-27eb-447d-b151-5b2aab5ba15e
       X-Runtime:
-      - '0.382046'
+      - '0.001915'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"id":1,"type":"trip info","name":"first trip","start_date":"2022-06-08","end_date":"2022-06-09","host":"something","description":"baby''s
-        first trip","lat":"42.73982","long":"-108.84939","area":"2. Fairfield Central","state":"Wyoming","users":[{"id":1,"first_name":"something","last_name":"this","email":"email@email.com","user_photo":null},{"id":2,"first_name":"asda","last_name":"this","email":"cheese@email.com","user_photo":null}],"items":[{"id":63,"name":"Water
-        Bottle","description":null,"count":5,"category":"Sleeping Bag","owner":"something"},{"id":66,"name":"Fancy
-        Tent","description":null,"count":1,"category":"Dishes","owner":"asda"},{"id":64,"name":"Trail
-        Mix","description":null,"count":8,"category":"Stoves, Grills \u0026 Fuel","owner":"something"}],"weather":{"forecast":[{"date":"2022-06-09","weather":{"low_temp":47.73,"high_temp":69.4,"cloud_coverage":81,"feels_like":44.42,"humidity":60,"precipitation_probability":0.05666666666666667,"visibility":10000,"weather":"Clouds","weather_description":"Broken
-        Clouds","weather_icon":"04d","wind_direction":246,"wind_gust":6.93,"wind_speed":7.07}},{"date":"2022-06-10","weather":{"low_temp":51.08,"high_temp":72.03,"cloud_coverage":71,"feels_like":48.79,"humidity":62,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Broken
-        Clouds","weather_icon":"04d","wind_direction":243,"wind_gust":7.45,"wind_speed":7.65}},{"date":"2022-06-11","weather":{"low_temp":53.15,"high_temp":75.79,"cloud_coverage":100,"feels_like":50.85,"humidity":57,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Overcast
-        Clouds","weather_icon":"04d","wind_direction":236,"wind_gust":9.75,"wind_speed":9.51}},{"date":"2022-06-12","weather":{"low_temp":53.11,"high_temp":76.55,"cloud_coverage":15,"feels_like":51.08,"humidity":63,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Few
-        Clouds","weather_icon":"02d","wind_direction":238,"wind_gust":6.85,"wind_speed":6.58}},{"date":"2022-06-13","weather":{"low_temp":46.31,"high_temp":75.88,"cloud_coverage":1,"feels_like":41.72,"humidity":58,"precipitation_probability":0.065,"visibility":10000,"weather":"Clear","weather_description":"Clear
-        Sky","weather_icon":"01d","wind_direction":251,"wind_gust":20.07,"wind_speed":9.33}},{"date":"2022-06-14","weather":{"low_temp":40.69,"high_temp":51.28,"cloud_coverage":5,"feels_like":33.1,"humidity":43,"precipitation_probability":0.01,"visibility":10000,"weather":"Clear","weather_description":"Clear
-        Sky","weather_icon":"01d","wind_direction":256,"wind_gust":30.33,"wind_speed":13.78}}],"today_sunrise":"06/08/22
-        at 11:37:30 UTC","today_sunset":"06/09/22 at 02:51:43 UTC"}}'
-  recorded_at: Thu, 09 Jun 2022 03:07:43 GMT
+      string: '{"errors":[{"status":"NOT FOUND","message":"No trip with id 1","code":404}]}'
+  recorded_at: Thu, 09 Jun 2022 23:05:24 GMT
 recorded_with: VCR 6.1.0
