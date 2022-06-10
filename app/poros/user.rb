@@ -14,8 +14,7 @@ class User
   end
 
   def host?(trip)
-    trip.host_id == id.to_i
-    trip.host == first_name
+    trip.host_id == self.id.to_i
   end
 
   def is_present?(array)
