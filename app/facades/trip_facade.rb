@@ -8,10 +8,11 @@ class TripFacade
         id: trip_data[:data][:id], attributes: {
           name: trip_data[:data][:attributes][:name],
           description: trip_data[:data][:attributes][:description],
+          host_id: trip_data[:data][:attributes][:host_id],
           start_date: trip_data[:data][:attributes][:start_date],
           end_date: trip_data[:data][:attributes][:end_date]
-          }
-        )
+        }
+      )
     end
   end
 
@@ -29,7 +30,7 @@ class TripFacade
     if trips[:errors].present?
       Error.new(trips[:errors])
     else
-      trips[:data].map { |data| Trip.new(data)}
+      trips[:data].map { |data| Trip.new(data) }
     end
   end
 

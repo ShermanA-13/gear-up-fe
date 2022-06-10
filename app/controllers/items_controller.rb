@@ -2,29 +2,23 @@ class ItemsController < ApplicationController
   def show
     @user = UserFacade.user(params[:user_id])
     @item = ItemFacade.find_item(params[:user_id], params[:id])
-    unless @item.instance_of?(Item)
-      @error = @item
-    end
+    @error = @item unless @item.instance_of?(Item)
   end
 
   def index
     @user = UserFacade.user(params[:user_id])
     @items = ItemFacade.items(params[:user_id])
-    unless @items.instance_of?(Array)
-      @error = @items
-    end
+    @error = @items unless @items.instance_of?(Array)
   end
 
   def new
     @user = UserFacade.user(params[:user_id])
-    unless @user.instance_of?(User)
-      @error = @user
-    end
+    @error = @user unless @user.instance_of?(User)
   end
 
   def create
     item = ItemFacade.create(params)
-    if item.class == Item
+    if item.instance_of?(Item)
       redirect_to "/users/#{item.user_id}/items/#{item.id}"
     else
       flash[:alert] = item.message
@@ -48,6 +42,11 @@ class ItemsController < ApplicationController
 
   def update
     item = ItemFacade.update(params)
-    redirect_to "/users/#{item.user_id}/items/#{item.id}"
+    if item.instance_of?(Error)
+      flash[:notice] = item.message
+      redirect_to "/users/#{params[:user_id]}/items/#{params[:id]}/edit"
+    else
+      redirect_to "/users/#{item.user_id}/items/#{item.id}"
+    end
   end
 end
