@@ -17,22 +17,22 @@ RSpec.describe "User index page" do
       allow(ItemService).to receive(:items).and_return(@items)
       allow(TripService).to receive(:trips_by_user_id).and_return(@trips)
       visit root_path
-      click_link 'Login'
+      find('#login').click
       visit "/users"
     end
 
     it "displays all users fist last name and email" do
       within "#user-1" do
         expect(page).to have_content("Bonny Jowman")
-        expect(page).to have_content("Email: ivebeentrapped@inthecomputer.org")
+        expect(page).to have_content("ivebeentrapped@inthecomputer.org")
       end
       within "#user-2" do
         expect(page).to have_content("lonnie jenkins")
-        expect(page).to have_content("Email: cheese@email.com")
+        expect(page).to have_content("cheese@email.com")
       end
       within "#user-3" do
         expect(page).to have_content("monkey face")
-        expect(page).to have_content("Email: foo@email.com")
+        expect(page).to have_content("foo@email.com")
       end
     end
 
@@ -41,8 +41,8 @@ RSpec.describe "User index page" do
         click_link("Bonny Jowman")
       end
       expect(current_path).to eq("/users/1")
-      expect(page).to have_content("Bonny Jowman's Page")
-      expect(page).not_to have_content("monkey face's Page")
+      expect(page).to have_content("Bonny Jowman")
+      expect(page).not_to have_content("monkey face")
     end
   end
 end
