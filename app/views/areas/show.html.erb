@@ -1,9 +1,19 @@
+<% if @error %>
+
+    <div class="error_container">
+      <h1><%= @error.message %></h1>
+      <h4>Status: <%= @error.status %></h4>
+      <h4>Code: <%= @error.code %></h4>
+    </div>
+
+<% else %>
+
 <div class="area_container">
   <h1><%= @area.name %></h1>
 
   <h3><%= @area.state %></h3>
   <p>
-    Learn more about this area on <a href="<%= @area.url %>">Mountain Project</a>
+    Learn more about this area on <a target="_blank" href="<%= @area.url %>">Mountain Project<a>
   </p>
 
   <div class="map_container">
@@ -53,3 +63,5 @@
     <% end %>
   </div>
 </div>
+
+<% end %>

@@ -21,60 +21,21 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"bd80014fb93809fa1f50bcfa523caaaf"
+      - W/"496a032fe1a15f7fb8ed694f93b27dde"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 45e986d6-c8d9-45b9-b641-2a9ee7e6d1d4
+      - 1b5436c3-86e3-472e-8f69-54d6ee9d9c9c
       X-Runtime:
-      - '0.075063'
+      - '0.034446'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":[{"id":"2107","type":"area","attributes":{"name":"Little Yosemite
-        Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}},{"id":"2370","type":"area","attributes":{"name":"Yosemite
-        Point","state":"California","url":"https://www.mountainproject.com/area/105916888/yosemite-point","lat":"37.75452","long":"-119.5928"}},{"id":"2371","type":"area","attributes":{"name":"Yosemite
-        Falls Wall","state":"California","url":"https://www.mountainproject.com/area/111733991/yosemite-falls-wall","lat":"37.75604","long":"-119.59553"}},{"id":"13548","type":"area","attributes":{"name":"Yosemite
-        Crack Zone (Left)","state":"Colorado","url":"https://www.mountainproject.com/area/105827948/yosemite-crack-zone-left","lat":"37.3183","long":"-107.836"}},{"id":"20158","type":"area","attributes":{"name":"Yosemite
-        Boulder Area, The","state":"New Hampshire","url":"https://www.mountainproject.com/area/106523370/the-yosemite-boulder-area","lat":"43.11916","long":"-71.18372"}},{"id":"24344","type":"area","attributes":{"name":"Little
-        Yosemite","state":"Pennsylvania","url":"https://www.mountainproject.com/area/106454642/little-yosemite","lat":"39.91958","long":"-79.5805"}},{"id":"24412","type":"area","attributes":{"name":"Yosemite
-        Boulder","state":"Rhode Island","url":"https://www.mountainproject.com/area/106834295/yosemite-boulder","lat":"41.90152","long":"-71.4372"}},{"id":"31971","type":"area","attributes":{"name":"Yosemite
-        Highball boulder","state":"Washington","url":"https://www.mountainproject.com/area/118702033/yosemite-highball-boulder","lat":"47.55266","long":"-120.76358"}}]}'
-  recorded_at: Tue, 07 Jun 2022 19:13:56 GMT
-- request:
-    method: get
-    uri: http://localhost:5000/api/v1/areas/2107
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.3.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Etag:
-      - W/"06047cd319d47923ad8dd80444dc49b7"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 4c8761c3-7ee4-44cb-a5c7-81464bf8c9d2
-      X-Runtime:
-      - '0.002358'
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: '{"data":{"id":"2107","type":"area","attributes":{"name":"Little Yosemite
-        Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}}}'
-  recorded_at: Tue, 07 Jun 2022 19:13:56 GMT
+      string: '{"data":[{"id":"47459","type":"area","attributes":{"name":"Yosemite
+        Crack Zone (Left)","state":"Colorado","url":"https://www.mountainproject.com/area/105827948/yosemite-crack-zone-left","lat":"37.3183","long":"-107.836"}},{"id":"36018","type":"area","attributes":{"name":"Little
+        Yosemite Valley","state":"California","url":"https://www.mountainproject.com/area/117131021/little-yosemite-valley","lat":"37.73648","long":"-119.47885"}},{"id":"36281","type":"area","attributes":{"name":"Yosemite
+        Point","state":"California","url":"https://www.mountainproject.com/area/105916888/yosemite-point","lat":"37.75452","long":"-119.5928"}},{"id":"36282","type":"area","attributes":{"name":"Yosemite
+        Falls Wall","state":"California","url":"https://www.mountainproject.com/area/111733991/yosemite-falls-wall","lat":"37.75604","long":"-119.59553"}}]}'
+  recorded_at: Thu, 09 Jun 2022 23:05:22 GMT
 recorded_with: VCR 6.1.0

@@ -8,7 +8,6 @@ describe "Trips Index page" do
     @trips = JSON.parse(File.read('spec/fixtures/trips.json'), symbolize_names: true)
   end
   describe "When logged in" do
-
     before do
       Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:google_oauth2]
 
@@ -22,23 +21,16 @@ describe "Trips Index page" do
       find('#login').click
       visit "users/1/trips/"
     end
-    it "displays trip attributes" do
 
+    it "displays trip attributes" do
       within "#trip-1" do
-        expect(page).to have_content("Name: boo boo trip")
-        expect(page).to have_content("Start Date: 2022-06-07")
-        expect(page).to have_content("End Date: 2022-06-08")
-        expect(page).to have_content("Description: trip I guess")
+        expect(page).to have_content("boo boo trip")
+        expect(page).to have_content("2022-06-07 to 2022-06-08")
       end
       within "#trip-2" do
-        expect(page).to have_content("Name: first trip")
-        expect(page).to have_content("Start Date: 2022-06-06")
-        expect(page).to have_content("End Date: 2022-06-07")
-        expect(page).to have_content("Description: baby's first trip")
+        expect(page).to have_content("first trip")
+        expect(page).to have_content("2022-06-06 to 2022-06-07")
       end
-
     end
-
   end
-
 end
