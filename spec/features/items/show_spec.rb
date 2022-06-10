@@ -6,6 +6,8 @@ RSpec.describe "Item show page" do
     @item = JSON.parse(File.read('spec/fixtures/item.json'), symbolize_names: true)
     @items = JSON.parse(File.read('spec/fixtures/items.json'), symbolize_names: true)
     @trips = JSON.parse(File.read('spec/fixtures/trips.json'), symbolize_names: true)
+    @user_not_found = JSON.parse(File.read('spec/fixtures/user_not_found.json'), symbolize_names: true)
+    @item_not_found = JSON.parse(File.read('spec/fixtures/item_not_found.json'), symbolize_names: true)
   end
 
   describe "when logged in" do
@@ -61,25 +63,26 @@ RSpec.describe "Item show page" do
       expect(page).not_to have_link("Delete Harness")
     end
   end
-  
-end
 
+  describe "error handling" do
+    before do
+      allow(UserService).to receive(:user).and_return(@user_not_found)
+      allow(ItemService).to receive(:find_item).and_return(@item_not_found)
+    end
 
+    it "fails gracefully" do
+      visit "users/0/items/0"
+      expect(page).to have_content("No item with id 0")
+      expect(page).to have_content("Status: NOT FOUND")
+      expect(page).to have_content("Code: 404")
+    end
 
-
-describe "error handling" do
-
-  it "fails gracefully" do
-    visit "users/0/items/1"
-    expect(page).to have_content("No user with id 0")
-    expect(page).to have_content("Status: NOT FOUND")
-    expect(page).to have_content("Code: 404")
+    it "fails gracefully" do
+      visit "users/1/items/0"
+      expect(page).to have_content("No item with id 0")
+      expect(page).to have_content("Status: NOT FOUND")
+      expect(page).to have_content("Code: 404")
+    end
   end
 
-  it "fails gracefully" do
-    visit "users/1/items/0"
-    expect(page).to have_content("No item with id 0")
-    expect(page).to have_content("Status: NOT FOUND")
-    expect(page).to have_content("Code: 404")
-  end
 end
