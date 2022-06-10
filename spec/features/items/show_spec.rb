@@ -48,8 +48,6 @@ RSpec.describe "Item show page" do
       expect(current_path).to eq("/users/1/items/3/edit")
     end
   end
-end
-
 
   describe 'when not logged in' do
     before do
@@ -63,6 +61,10 @@ end
       expect(page).not_to have_link("Delete Harness")
     end
   end
+  
+end
+
+
 
 
 describe "error handling" do
