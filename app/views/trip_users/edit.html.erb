@@ -1,11 +1,12 @@
-<h1>Add Friends to <%= @trip.name %></h1>
+<h1>Add/Remove Friends to <%= @trip.name %></h1>
 
 <%= form_with url: "/trips/#{@trip.id}/users", method: :patch, local: true do |f| %>
 
 
 <% @users.each do |user| %>
-
+<% if user.id.to_i != @trip.host_id.to_i %>
     <div id="check-box-<%=user.id%>">
+
         <% if user.is_present?(@invited) %>
 
           <p> <%= "#{user.first_name}" %>
@@ -15,9 +16,9 @@
               <%= check_box_tag "users[]", user.id%> </p>
         <% end %>
     </div>
-
+<% end %>
   <% end %>
-<%= f.submit "Add these friends!" %>
+<%= f.submit "Update friends!" %>
 <% end %>
 
 

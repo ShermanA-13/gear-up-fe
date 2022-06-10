@@ -22,7 +22,7 @@ class TripUsersController < ApplicationController
   end
 
   def update
-    TripUsersFacade.edit_invitees(params[:user_ids], params[:trip_id])
+    TripUsersFacade.edit_invitees(params[:users], params[:trip_id])
     redirect_to "/trips/#{params[:trip_id]}"
   end
 
