@@ -10,10 +10,15 @@ class User
   end
 
   def on_trip?(trip)
-    trip.users.any? {|user| user.id == self.id.to_i}
+    trip.users.any? { |user| user.id == id.to_i }
   end
 
   def host?(trip)
-    trip.host_id == self.id.to_i
+    trip.host_id == id.to_i
+    trip.host == first_name
+  end
+
+  def is_present?(array)
+    !array.select { |user| user.id == id }.empty?
   end
 end
