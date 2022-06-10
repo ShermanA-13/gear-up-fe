@@ -2,10 +2,10 @@ class ItemFacade
   class << self
     def find_item(user_id, item_id)
       json = ItemService.find_item(user_id, item_id)
-      if json[:data]
-        Item.new(json[:data])
-      else
+      if json[:errors].present?
         Error.new(json[:errors])
+      else
+        Item.new(json[:data] || json[:errors])
       end
     end
 
@@ -35,12 +35,16 @@ class ItemFacade
 
     def update(parameters)
       json = ItemService.update(parameters)
-      Item.new(json[:data])
+      if json[:errors].present?
+        Error.new(json[:errors])
+      else
+        Item.new(json[:data])
+      end
     end
 
     def trip_items(user_id, trip_id)
       json = ItemService.find_trip_items(user_id, trip_id)
-      json[:data].map {|data| Item.new(data)}
+      json[:data].map { |data| Item.new(data) }
     end
   end
 end

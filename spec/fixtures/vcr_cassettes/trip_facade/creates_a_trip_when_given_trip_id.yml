@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:5000/api/v1/trips/1
+    uri: http://localhost:5000/api/v1/trips/1/info
     body:
       encoding: US-ASCII
       string: ''
@@ -21,18 +21,18 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f138e4c5359a9a9e9ba18de7dfe71be4"
+      - W/"6e229319235db2d3219bb1ffc60a9bcd"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c00765b1-4a24-49eb-942c-8c1e53e4f205
+      - 25364d27-9613-49df-b793-d5bc4c41e4bc
       X-Runtime:
-      - '0.004424'
+      - '0.008324'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"data":{"id":"1","type":"trip","attributes":{"name":"first trip","area_id":1,"description":"baby''s
-        first trip","host_id":1,"start_date":"2022-06-05","end_date":"2022-06-06"}}}'
-  recorded_at: Tue, 07 Jun 2022 00:38:49 GMT
+      string: '{"data":{"id":"1","type":"trip","attributes":{"name":"another first
+        trip","area_id":33914,"description":"baby''s first trip","host_id":1,"start_date":"2022-06-08","end_date":"2022-06-09"}}}'
+  recorded_at: Fri, 10 Jun 2022 02:27:08 GMT
 recorded_with: VCR 6.1.0

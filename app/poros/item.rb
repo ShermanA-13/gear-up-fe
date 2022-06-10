@@ -13,20 +13,20 @@ class Item
 
   def self.category_list
     [
-      "Tents",
-      "Sleeping Bag",
-      "Stoves, Grills & Fuel",
-      "Cookware",
-      "Dishes",
-      "Ropes",
-      "Harnesses",
-      "Belay & Rappel",
-      "Crash Pads",
-      "Quickdraws"
+      'Tents',
+      'Sleeping Bag',
+      'Stoves, Grills & Fuel',
+      'Cookware',
+      'Dishes',
+      'Ropes',
+      'Harnesses',
+      'Belay & Rappel',
+      'Crash Pads',
+      'Quickdraws'
     ]
   end
 
   def is_present?(array)
-    !array.select {|item| item.id == self.id}.empty?
+    !array.select { |item| item.id == id }.empty?
   end
 end

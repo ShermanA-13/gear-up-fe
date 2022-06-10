@@ -1,13 +1,13 @@
 class TripInfo
-  attr_reader :id, :name, :start_date, :end_date, :host, :description, :lat, :long, :area, :state, :users, :items, :weather, :url
+  attr_reader :id, :name, :start_date, :end_date, :host, :description, :lat, :long, :area, :state, :users, :items, :weather, :url, :host_id
 
   def initialize(data)
-    # binding.pry
     @id = data[:id]
     @name = data[:name]
     @start_date = data[:start_date]
     @end_date = data[:end_date]
     @host = data[:host]
+    @host_id = data[:host_id]
     @description = data[:description]
     @lat = data[:lat]
     @long = data[:long]
