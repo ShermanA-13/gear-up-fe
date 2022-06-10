@@ -28,11 +28,10 @@ Rails.application.routes.draw do
 
   resources :trips, only: [:show, :edit, :update, :destroy]
 
-  # get "/trips/:trip_id/users", to: "trip_users#index"
-
   get "/areas/:area_id/trips/:trip_id/users/new", to: "trip_users#new"
   get "/areas/:area_id/trips/new", to: "trips#new"
   post "/users/:user_id/trips/new", to: "trips#create"
+  get "/trips/:trip_id/users", to: "trip_users#edit"
   post "/trips/:trip_id/users", to: "trip_users#create"
   patch "/trips/:trip_id/users", to: "trip_users#update"
 
