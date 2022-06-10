@@ -14,6 +14,6 @@ class User
   end
 
   def host?(trip)
-    trip.host == self.first_name
+    trip.host_id == self.id.to_i
   end
 end

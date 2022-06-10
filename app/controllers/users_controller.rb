@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user = UserFacade.user(params[:id])
-
     if @user.class == User
       @items = ItemFacade.items(params[:id])[0..2]
-      @trips = TripFacade.trips_by_user_id(params[:user_id]).sort_by{|trip| trip.start_date}[0..1]
+      @trips = TripFacade.trips_by_user_id(params[:id]).sort_by{|trip| trip.start_date}[0..1]
     else
       @error = @user
     end
