@@ -1,5 +1,5 @@
 
-# <a href="https://gearupbeta.herokuapp.com/" target="_blank" rel="noopener noreferrer">**Gear-UP**</a>
+# <a target="_blank" rel="noopener noreferrer" href="https://gearupbeta.herokuapp.com/">**Gear-UP**</a>
 
 ![languages](https://img.shields.io/github/languages/top/ShermanA-13/gear-up-fe?color=red)
 ![rspec](https://img.shields.io/gem/v/rspec?color=blue&label=rspec)
