@@ -1,0 +1,14 @@
+{
+    "data": {
+        "id": "1",
+        "type": "trip",
+        "attributes": {
+            "name": "another first trip",
+            "area_id": 33914,
+            "description": "baby's first trip",
+            "host_id": 1,
+            "start_date": "2023-06-08",
+            "end_date": "2023-06-09"
+        }
+    }
+}

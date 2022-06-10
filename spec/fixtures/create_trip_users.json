@@ -1,0 +1,14 @@
+{
+  "data": {
+    "id": "31",
+    "type": "trip",
+    "attributes": {
+      "name": "Nothing",
+      "area_id":7397,
+      "description": "dfsd",
+      "host_id":19,
+      "start_date": "2022-06-17",
+      "end_date": "2022-06-17"
+    }
+  }
+}
