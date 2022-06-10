@@ -1,0 +1,9 @@
+{
+    "errors": [
+        {
+            "status": "NOT FOUND",
+            "message": "No user with id 1000",
+            "code": 404
+        }
+    ]
+}
