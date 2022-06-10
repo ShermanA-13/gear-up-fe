@@ -17,21 +17,21 @@ RSpec.describe "User show page" do
       allow(ItemService).to receive(:find_item).and_return(@item)
       allow(TripService).to receive(:trips_by_user_id).and_return(@trips)
       visit root_path
-      click_link 'Login'
-      visit 'users/2'
+      find('#login').click
+      visit '/users/2'
     end
 
     it "shows user data" do
-      expect(page).to have_content("Bonny Jowman's Page")
-      expect(page).to have_content("Email: ivebeentrapped@inthecomputer.org")
+      expect(page).to have_content("Bonny Jowman")
+      expect(page).to have_content("ivebeentrapped@inthecomputer.org")
 
-      expect(page).not_to have_content("monkey face's Page")
-      expect(page).not_to have_content("Email: foo@email.com")
+      expect(page).not_to have_content("monkey face")
+      expect(page).not_to have_content("foo@email.com")
     end
 
     it "shows a user's top 3 items" do
       within "#items" do
-        expect(page).to have_content("Bonny Jowman's Item Shed")
+        expect(page).to have_content("Bonny's Shed")
 
         expect(page).to have_content("Tent 1")
         expect(page).to have_content("Count: 1")
@@ -49,13 +49,13 @@ RSpec.describe "User show page" do
       end
 
       expect(current_path).to eq("/users/1/items/1")
-      expect(page).to have_content("Name: Tent 1")
+      expect(page).to have_content("Tent 1")
       expect(page).to_not have_content("Organic Crash Pad")
     end
 
     it "has a link to the user shed" do
       within "#items" do
-        click_link "Bonny Jowman's Shed"
+        click_link "Bonny's Shed"
       end
 
       expect(current_path).to eq("/users/1/items")
@@ -64,7 +64,7 @@ RSpec.describe "User show page" do
     end
 
     it "shows next 2 upcoming trips the user is a part of" do
-      expect(page).to have_content("Bonny Jowman's Upcoming Trips")
+      expect(page).to have_content("Upcoming Trips")
 
       within "#trip-1" do
         expect(page).to have_content("boo boo trip")
