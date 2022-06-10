@@ -1,5 +1,4 @@
 <% unless @error %>
-<hr>
 <div class="area_container">
   <p><a href="/users/<%= @item.user_id %>/items">Return to <%= @user.first_name %>'s Shed</a></p>
 
@@ -12,7 +11,9 @@
       <%= link_to "Delete #{@item.name}", "/users/#{session[:user_id]}/items/#{@item.id}", method: :delete %>
     </p>
 
+    <center>
     <%= button_to "Edit #{@item.name}", "/users/#{session[:user_id]}/items/#{@item.id}/edit", method: :get %>
+    </center>
   <% end %>
 
 </div>
