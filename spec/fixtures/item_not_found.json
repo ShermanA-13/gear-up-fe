@@ -1,0 +1,9 @@
+{
+    "errors": [
+        {
+            "status": "NOT FOUND",
+            "message": "No item with id 0",
+            "code": 404
+        }
+    ]
+}

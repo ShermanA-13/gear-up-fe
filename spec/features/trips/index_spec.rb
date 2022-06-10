@@ -2,36 +2,43 @@ require "rails_helper"
 
 describe "Trips Index page" do
   before do
-    visit "users/1/trips/"
+    @user = JSON.parse(File.read('spec/fixtures/user.json'), symbolize_names: true)
+    @item = JSON.parse(File.read('spec/fixtures/item.json'), symbolize_names: true)
+    @items = JSON.parse(File.read('spec/fixtures/items.json'), symbolize_names: true)
+    @trips = JSON.parse(File.read('spec/fixtures/trips.json'), symbolize_names: true)
   end
-  it "displays trip attributes", :vcr do
-    within "#trip-1" do
-      expect(page).to have_content("Name: first trip")
-      expect(page).to have_content("Start Date: 2022-06-05")
-      expect(page).to have_content("End Date: 2022-06-06")
-      expect(page).to have_content("Description: baby's first trip")
+  describe "When logged in" do
+
+    before do
+      Rails.application.env_config['omniauth.auth'] = OmniAuth.config.mock_auth[:google_oauth2]
+
+      allow(UserService).to receive(:create_user).and_return(@user)
+      allow(UserService).to receive(:user).and_return(@user)
+      allow(ItemService).to receive(:items).and_return(@items)
+      allow(ItemService).to receive(:find_item).and_return(@item)
+      allow(TripService).to receive(:trips_by_user_id).and_return(@trips)
+
+      visit root_path
+      find('#login').click
+      visit "users/1/trips/"
     end
-    within "#trip-2" do
-      expect(page).to have_content("Name: boo boo trip")
-      expect(page).to have_content("Start Date: 2022-06-05")
-      expect(page).to have_content("End Date: 2022-06-06")
-      expect(page).to have_content("Description: trip I guess")
+    it "displays trip attributes" do
+
+      within "#trip-1" do
+        expect(page).to have_content("Name: boo boo trip")
+        expect(page).to have_content("Start Date: 2022-06-07")
+        expect(page).to have_content("End Date: 2022-06-08")
+        expect(page).to have_content("Description: trip I guess")
+      end
+      within "#trip-2" do
+        expect(page).to have_content("Name: first trip")
+        expect(page).to have_content("Start Date: 2022-06-06")
+        expect(page).to have_content("End Date: 2022-06-07")
+        expect(page).to have_content("Description: baby's first trip")
+      end
+
     end
-    # within "#trip-3" do
-    #   expect(page).to have_content("Name: third trip")
-    #   expect(page).to have_content("Start Date: 2022-06-08")
-    #   expect(page).to have_content("End Date: 2022-06-09")
-    #   expect(page).to have_content("Description: baby's third trip")
-    # end
+
   end
 
-  # it "has links to trips show pages", :vcr do
-  #   within "#trip-2" do
-  #     click_on("View Trip")
-  #   end
-  #   expect(current_path).to eq("/trips/2")
-  #
-  #   expect(page).to have_content("Trip Show Page")
-  #   expect(page).not_to have_content("any other Page")
-  # end
 end

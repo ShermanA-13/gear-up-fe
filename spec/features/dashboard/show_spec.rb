@@ -11,7 +11,7 @@ RSpec.describe 'user show page' do
     allow(ItemService).to receive(:items).and_return(@items)
     allow(TripService).to receive(:trips_by_user_id).and_return(@trips)
     visit root_path
-    click_link 'Login'
+    find('#login').click
   end
 
   it 'displays user name' do

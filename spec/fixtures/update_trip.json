@@ -1,0 +1,14 @@
+{
+  "data":  {
+    "id": "1",
+    "type": "trip",
+    "attributes": {
+      "name": "another first trip",
+      "area_id": 7397,
+      "description": "dfsdsss",
+      "host_id": 19,
+      "start_date": "2022-06-17",
+      "end_date": "2022-06-17"
+    }
+  }
+}
