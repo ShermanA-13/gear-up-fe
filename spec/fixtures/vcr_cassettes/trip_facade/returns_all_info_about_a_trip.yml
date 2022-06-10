@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/trips/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"0947b5d01ce8577991e314a887d1d942"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4fdffcea-183a-49a9-b477-760c96241973
+      X-Runtime:
+      - '0.669415'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"type":"trip info","name":"another first trip","start_date":"2022-06-08","end_date":"2022-06-09","host":"something","description":"baby''s
+        first trip","lat":"42.73982","long":"-108.84939","url":"https://www.mountainproject.com/area/105827602/fairfield-central","area":"2.
+        Fairfield Central","state":"Wyoming","users":[{"id":1,"first_name":"something","last_name":"this","email":"email@email.com","user_photo":null},{"id":2,"first_name":"asda","last_name":"this","email":"cheese@email.com","user_photo":null}],"items":[{"id":63,"name":"Water
+        Bottle","description":null,"count":5,"category":1,"owner":"something"},{"id":66,"name":"Fancy
+        Tent","description":null,"count":1,"category":4,"owner":"asda"},{"id":64,"name":"Trail
+        Mix","description":null,"count":8,"category":2,"owner":"something"}],"weather":{"forecast":[{"date":"2022-06-10","weather":{"low_temp":51.67,"high_temp":71.58,"cloud_coverage":85,"feels_like":49.41,"humidity":61,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Overcast
+        Clouds","weather_icon":"04d","wind_direction":245,"wind_gust":8.59,"wind_speed":7.78}},{"date":"2022-06-11","weather":{"low_temp":53.64,"high_temp":75.09,"cloud_coverage":89,"feels_like":52,"humidity":70,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Overcast
+        Clouds","weather_icon":"04d","wind_direction":229,"wind_gust":12.93,"wind_speed":9.44}},{"date":"2022-06-12","weather":{"low_temp":51.44,"high_temp":73.56,"cloud_coverage":15,"feels_like":49.3,"humidity":64,"precipitation_probability":0,"visibility":10000,"weather":"Clouds","weather_description":"Few
+        Clouds","weather_icon":"02d","wind_direction":236,"wind_gust":9.13,"wind_speed":8.1}},{"date":"2022-06-13","weather":{"low_temp":48.43,"high_temp":72.61,"cloud_coverage":2,"feels_like":46.47,"humidity":75,"precipitation_probability":0.03875,"visibility":10000,"weather":"Clear","weather_description":"Clear
+        Sky","weather_icon":"01d","wind_direction":246,"wind_gust":7.16,"wind_speed":4.85}},{"date":"2022-06-14","weather":{"low_temp":35.46,"high_temp":57.52,"cloud_coverage":26,"feels_like":29.95,"humidity":61,"precipitation_probability":0.3325,"visibility":10000,"weather":"Clouds","weather_description":"Scattered
+        Clouds","weather_icon":"03d","wind_direction":239,"wind_gust":7.34,"wind_speed":6.55}},{"date":"2022-06-15","weather":{"low_temp":46.9,"high_temp":46.9,"cloud_coverage":4,"feels_like":38.89,"humidity":35,"precipitation_probability":0,"visibility":10000,"weather":"Clear","weather_description":"Clear
+        Sky","weather_icon":"01d","wind_direction":269,"wind_gust":24.87,"wind_speed":23.38}}],"today_sunrise":"06/09/22
+        at 11:37:17 UTC","today_sunset":"06/10/22 at 02:52:18 UTC"}}'
+  recorded_at: Fri, 10 Jun 2022 02:26:46 GMT
+recorded_with: VCR 6.1.0

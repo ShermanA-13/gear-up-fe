@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:5000/api/v1/users/1/trips
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9fe6658618c8128cccd439e4ea031b65"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0574dd01-ebd4-4b45-b6b0-37f8c44e0da1
+      X-Runtime:
+      - '0.037134'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"data":[{"id":"1","type":"trip","attributes":{"name":"another first
+        trip","area_id":33914,"description":"baby''s first trip","host_id":1,"start_date":"2022-06-08","end_date":"2022-06-09"}},{"id":"2","type":"trip","attributes":{"name":"boo
+        boo trip","area_id":33914,"description":"trip I guess","host_id":3,"start_date":"2022-06-08","end_date":"2022-06-09"}},{"id":"19","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"19","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"20","type":"trip","attributes":{"name":"A
+        trip with 2 of my friends","area_id":41,"description":"Monster Energy","host_id":19,"start_date":"2022-06-11","end_date":"2022-06-26"}},{"id":"23","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"23","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"24","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"24","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"25","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"25","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"26","type":"trip","attributes":{"name":"Losing
+        100 Pounds","area_id":105,"description":"We''re gonna work it out!","host_id":19,"start_date":"2022-06-10","end_date":"2022-06-11"}},{"id":"27","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}},{"id":"27","type":"trip","attributes":{"name":"Super
+        Fun Trip","area_id":2108,"description":"A fun thing at a fun place","host_id":1,"start_date":"2023-06-07","end_date":"2023-06-09"}}]}'
+  recorded_at: Fri, 10 Jun 2022 02:28:01 GMT
+recorded_with: VCR 6.1.0
