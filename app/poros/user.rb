@@ -10,10 +10,10 @@ class User
   end
 
   def on_trip?(trip)
-    trip.users.any? {|user| user.id == self.id.to_i}
+    trip.users.any? { |user| user.id == id.to_i }
   end
 
   def host?(trip)
-    trip.host == self.first_name
+    trip.host == first_name
   end
 end

@@ -1,71 +1,31 @@
 <% if @error %>
-
-<div class="error_container">
-  <h1><%= @error.message %></h1>
-  <h4>Status: <%= @error.status %></h4>
-  <h4>Code: <%= @error.code %></h4>
-</div>
-
-<% else %>
-        
-  <div class="area_container search_container">
-    <h1><u>Upcoming Trips</u></h1>
+  <div class="error_container">
+    <h1><%= @error.message %></h1>
+    <h4>Status: <%= @error.status %></h4>
+    <h4>Code: <%= @error.code %></h4>
   </div>
-
-<div class="card-group">
-<div class="mt-5">
-  <% @trips.each do |trip| %>
-    <div id="trip-<%= trip.id %>">
-      <div class="d-style btn btn-brc-tp border-2 bgc-white btn-outline-blue btn-h-outline-blue btn-a-outline-blue w-100 my-2 py-3 shadow-sm">
-    
-        <div class="row align-items-center">
-          <div class="col-12 col-md-4">
-            <h4 class="pt-3 text-170 text-600 text-primary-d1 letter-spacing">
-              Name: <%= trip.name %>
-            </h4>
-
-            <div class="text-secondary-d1 text-120">
-              <span class="ml-n15 align-text-bottom"></span><span class="text-180"></span> <% if !trip.description || trip.description.empty?%>
-                <p class="card-text">No Description</p>
-              <% else %>
-                <p class="card-text"> Description: <%= trip.description %></p>
-              <% end %>
+<% else %>
+  <div class="container" style="">
+    <div class="mt-5">
+      <% @trips.each do |trip| %>
+        <div id="trip-<%= trip.id %>">
+          <div class="d-style btn btn-brc-tp border-2 bgc-white btn-outline-blue btn-h-outline-blue btn-a-outline-blue w-100 my-2 py-3 shadow-sm">
+            <div class="row align-items-center">
+              <div class="col-12 col-md-4">
+                <h4 class="pt-3 text-170 text-600 text-primary-d1 letter-spacing">
+                  <%= trip.name %>
+                </h4>
+              </div>
+              <div class="list-unstyled mb-0 col-12 col-md-4 text-dark-l1 text-90 text-left my-4 my-md-0">
+                <%= trip.start_date %> to <%= trip.end_date %>
+              </div>
+              <div class="col-12 col-md-4 text-center">
+                <a href="/trips/<%= trip.id %>" class="f-n-hover btn btn-info btn-raised px-4 py-25 w-75 text-600">View Trip</a>
+              </div>
             </div>
           </div>
-
-          <ul class="list-unstyled mb-0 col-12 col-md-4 text-dark-l1 text-90 text-left my-4 my-md-0">
-            <li>
-
-              <span>
-                <span class="text-110">Start Date: <%= trip.start_date %></span>
-
-              </span>
-            </li>
-
-            <li class="mt-25">
-
-              <span class="text-110">
-                End Date: <%= trip.end_date %>
-            </span>
-            </li>
-
-            <li class="mt-25">
-              <i class="fa fa-times text-danger-m3 text-110 mr-25 mt-1"></i>
-              <span class="text-110">
-
-            </span>
-            </li>
-          </ul>
-
-          <div class="col-12 col-md-4 text-center">
-            <a href="/trips/<%= trip.id %>" class="f-n-hover btn btn-info btn-raised px-4 py-25 w-75 text-600">View Trip</a>
-          </div>
         </div>
-
-      </div>
-      </div>
+      <% end %>
     </div>
-    <% end %>
-</div>
-
+  </div>
 <% end %>
