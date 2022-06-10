@@ -6,6 +6,7 @@ RSpec.describe "User show page" do
     @item = JSON.parse(File.read('spec/fixtures/user_item_show.json'), symbolize_names: true)
     @items = JSON.parse(File.read('spec/fixtures/items.json'), symbolize_names: true)
     @trips = JSON.parse(File.read('spec/fixtures/trips.json'), symbolize_names: true)
+    @user_not_found = JSON.parse(File.read('spec/fixtures/user_not_found.json'), symbolize_names: true)
   end
 
   describe "when logged in" do
@@ -84,10 +85,11 @@ RSpec.describe "User show page" do
 
   describe "error handling" do
     before do
-      visit "users/0"
+      allow(UserService).to receive(:user).and_return(@user_not_found)
     end
 
     it "fails gracefully" do
+      visit "users/0"
       expect(page).to have_content("No user with id 0")
       expect(page).to have_content("Code: 404")
     end
