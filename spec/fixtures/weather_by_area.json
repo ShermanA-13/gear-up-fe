@@ -1,0 +1,119 @@
+{
+    "id": 2107,
+    "type": "weather info",
+    "name": "Little Yosemite Valley",
+    "weather": {
+        "forecast": [
+            {
+                "date": "2022-06-10",
+                "weather": {
+                    "low_temp": 57.88,
+                    "high_temp": 81.54,
+                    "cloud_coverage": 66,
+                    "feels_like": 56.05,
+                    "humidity": 57,
+                    "precipitation_probability": 0,
+                    "visibility": 10000,
+                    "weather": "Clouds",
+                    "weather_description": "Broken Clouds",
+                    "weather_icon": "04n",
+                    "wind_direction": 79,
+                    "wind_gust": 3.67,
+                    "wind_speed": 4.25
+                }
+            },
+            {
+                "date": "2022-06-11",
+                "weather": {
+                    "low_temp": 56.28,
+                    "high_temp": 78.39,
+                    "cloud_coverage": 17,
+                    "feels_like": 54.14,
+                    "humidity": 54,
+                    "precipitation_probability": 0,
+                    "visibility": 10000,
+                    "weather": "Clouds",
+                    "weather_description": "Few Clouds",
+                    "weather_icon": "02n",
+                    "wind_direction": 88,
+                    "wind_gust": 3.76,
+                    "wind_speed": 3.56
+                }
+            },
+            {
+                "date": "2022-06-12",
+                "weather": {
+                    "low_temp": 54.37,
+                    "high_temp": 74.89,
+                    "cloud_coverage": 37,
+                    "feels_like": 52.57,
+                    "humidity": 65,
+                    "precipitation_probability": 0,
+                    "visibility": 10000,
+                    "weather": "Clouds",
+                    "weather_description": "Scattered Clouds",
+                    "weather_icon": "03n",
+                    "wind_direction": 133,
+                    "wind_gust": 4.38,
+                    "wind_speed": 4.5
+                }
+            },
+            {
+                "date": "2022-06-13",
+                "weather": {
+                    "low_temp": 41.36,
+                    "high_temp": 66.4,
+                    "cloud_coverage": 18,
+                    "feels_like": 37.94,
+                    "humidity": 54,
+                    "precipitation_probability": 0.0925,
+                    "visibility": 10000,
+                    "weather": "Clouds",
+                    "weather_description": "Few Clouds",
+                    "weather_icon": "02n",
+                    "wind_direction": 119,
+                    "wind_gust": 4.83,
+                    "wind_speed": 5.17
+                }
+            },
+            {
+                "date": "2022-06-14",
+                "weather": {
+                    "low_temp": 44.87,
+                    "high_temp": 74.25,
+                    "cloud_coverage": 0,
+                    "feels_like": 42.1,
+                    "humidity": 12,
+                    "precipitation_probability": 0,
+                    "visibility": 10000,
+                    "weather": "Clear",
+                    "weather_description": "Clear Sky",
+                    "weather_icon": "01n",
+                    "wind_direction": 72,
+                    "wind_gust": 4.36,
+                    "wind_speed": 5.14
+                }
+            },
+            {
+                "date": "2022-06-15",
+                "weather": {
+                    "low_temp": 71.94,
+                    "high_temp": 71.94,
+                    "cloud_coverage": 0,
+                    "feels_like": 69.55,
+                    "humidity": 15,
+                    "precipitation_probability": 0,
+                    "visibility": 10000,
+                    "weather": "Clear",
+                    "weather_description": "Clear Sky",
+                    "weather_icon": "01d",
+                    "wind_direction": 284,
+                    "wind_gust": 8.05,
+                    "wind_speed": 9.13
+                }
+            }
+        ],
+        "today_sunrise": "06/09/22 at 12:35:56 UTC",
+        "today_sunset": "06/10/22 at 03:18:42 UTC"
+    }
+}

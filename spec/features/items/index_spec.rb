@@ -6,6 +6,7 @@ RSpec.describe "Item index page" do
     @item = JSON.parse(File.read('spec/fixtures/item.json'), symbolize_names: true)
     @items = JSON.parse(File.read('spec/fixtures/items.json'), symbolize_names: true)
     @trips = JSON.parse(File.read('spec/fixtures/trips.json'), symbolize_names: true)
+    @user_not_found = JSON.parse(File.read('spec/fixtures/user_not_found.json'), symbolize_names: true)
   end
 
   describe "when logged in" do
@@ -17,7 +18,7 @@ RSpec.describe "Item index page" do
       allow(ItemService).to receive(:find_item).and_return(@item)
       allow(TripService).to receive(:trips_by_user_id).and_return(@trips)
       visit root_path
-      click_link 'Login'
+      find('#login').click
       visit "/users/1/items"
     end
 
@@ -40,13 +41,26 @@ RSpec.describe "Item index page" do
       end
 
       expect(current_path).to eq("/users/1/items/1")
-      expect(page).to have_content("Name: Harness")
+      expect(page).to have_content("Harness")
       expect(page).to have_content("Count: 1")
     end
 
     it "has a button to create a new item" do
       click_button("Add an item to your Shed")
       expect(current_path).to eq("/users/1/items/new")
+    end
+
+    describe "error handling" do
+      before do
+        allow(UserService).to receive(:user).and_return(@user_not_found)
+      end
+
+      it "fails gracefully" do
+        visit "users/0"
+        expect(page).to have_content("No user with id 0")
+        expect(page).to have_content("Status: NOT FOUND")
+        expect(page).to have_content("Code: 404")
+      end
     end
   end
 
@@ -59,18 +73,6 @@ RSpec.describe "Item index page" do
 
     it "does not show add item button when visiting a different users page" do
       expect(page).not_to have_button("Add an item to your Shed")
-    end
-  end
-
-  describe "error handling" do
-    before do
-      visit "users/0/items"
-    end
-
-    it "fails gracefully" do
-      expect(page).to have_content("No user with id 0")
-      expect(page).to have_content("Status: NOT FOUND")
-      expect(page).to have_content("Code: 404")
     end
   end
 end

@@ -19,7 +19,7 @@ RSpec.describe "Item edit page" do
       allow(ItemService).to receive(:update).and_return(@updated_item)
       allow(TripService).to receive(:trips_by_user_id).and_return(@trips)
       visit root_path
-      click_link 'Login'
+      find('#login').click
       visit "/users/1/items/2/edit"
     end
 
@@ -42,7 +42,7 @@ RSpec.describe "Item edit page" do
 
       expect(current_path).to eq("/users/1/items/2")
       expect(page).to have_content("Description: My Favorite Harness")
-      expect(page).to have_content("Category: Harnesses")
+      expect(page).to have_content("Category - Harnesses")
     end
   end
 

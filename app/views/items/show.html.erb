@@ -1,7 +1,7 @@
 <% unless @error %>
 <hr>
 <div class="area_container">
-  <p><a href="/users/<%= @item.user_id %>/items">Return to My Shed</a></p>
+  <p><a href="/users/<%= @item.user_id %>/items">Return to <%= @user.first_name %>'s Shed</a></p>
 
   <h3><%= @item.name %></h3>
   <p>Description: <%= @item.description %></p>
