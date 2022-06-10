@@ -30,7 +30,7 @@ RSpec.describe "Item show page" do
     end
 
     it "has a link to return to the user's item index" do
-      click_link("Return to the Item Shed")
+      click_link("Return to Bonny's Shed")
       expect(current_path).to eq("/users/1/items")
     end
 
