@@ -1,0 +1,14 @@
+{
+  "data": {
+    "id": "1721",
+    "type": "trip",
+    "attributes": {
+      "name": "corporis",
+      "area_id": "1698",
+      "description": "It is the unknown we fear when we look upon death and darkness, nothing more.",
+      "host_id": "10",
+      "start_date": "2022-06-09",
+      "end_date": "2022-06-10"
+    }
+  }
+}
