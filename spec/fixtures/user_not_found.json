@@ -2,7 +2,7 @@
     "errors": [
         {
             "status": "NOT FOUND",
-            "message": "No user with id 1000",
+            "message": "No user with id 0",
             "code": 404
         }
     ]
