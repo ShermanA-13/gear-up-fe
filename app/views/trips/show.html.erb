@@ -72,7 +72,7 @@
              <br>
              <%= button_to "Delete #{@trip.name}", "/trips/#{@trip.id}", method: :delete %>
              <br>
-             <%= button_to "Add/Remove my trip users", "/trips/#{@trip.id}/users", method: :get %>
+             <%= button_to "Add/Remove Friends", "/trips/#{@trip.id}/users", method: :get %>
             <% end %>
             <br><%= button_to "Add/Remove my items", "/trips/#{@trip.id}/items", method: :get %>
             <br>
