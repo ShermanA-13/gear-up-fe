@@ -41,21 +41,20 @@
             <div class="card-group">
               <% @trip.weather.each do |forecast| %>
                 <div class="card">
-                  <h3><%= forecast.date %></h3>
-                  <h4>
-                    <%= forecast.weather_description %>
-                    <img src="http://openweathermap.org/img/w/<%=   forecast.weather_icon %>.png" alt="Weather Icon">
-                  </h4>
+                  <%= forecast.date %>
+                  <br>
+                  <%= forecast.weather_description %>
+                  <h4><img src="http://openweathermap.org/img/w/<%= forecast.weather_icon %>.png" alt="Weather Icon"></h3>
                   <hr>
-                  <h5>High: <%= forecast.high_temp %>°</h5>
-                  <h5>Low: <%= forecast.low_temp %>°</h5>
-                  <h5>Feels like: <%= forecast.feels_like %>°</h5>
-                  <p>Humidity: <%= forecast.humidity %>%</p>
-                  <p>Cloud coverage: <%= forecast.cloud_coverage %></p>
-                  <p>Visibility: <%= forecast.visibility %></p>
-                  <p>Wind direction: <%= forecast.wind_direction %>°</p>
-                  <p>Wind gust: <%= forecast.wind_gust %> MPH</p>
-                  <p>Wind speed: <%= forecast.wind_speed %> MPH</p>
+                  High: <%= forecast.high_temp %>°<br>
+                  Low: <%= forecast.low_temp %>°<br>
+                  Feels like: <%= forecast.feels_like %>°<br>
+                  Humidity: <%= forecast.humidity %>%<br>
+                  Cloud coverage: <%= forecast.cloud_coverage %>%<br>
+                  Visibility: <%= forecast.visibility %><br>
+                  Wind direction: <%= forecast.wind_direction %>°<br>
+                  Wind gust: <%= forecast.wind_gust %> MPH<br>
+                  Wind speed: <%= forecast.wind_speed %> MPH<br>
                 </div>
             <% end %>
               </div>
