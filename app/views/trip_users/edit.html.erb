@@ -1,25 +1,27 @@
-<h1>Add/Remove Friends to <%= @trip.name %></h1>
+<div class = "area_container">
+  <h1>Edit Friends for <%= @trip.name %></h1>
 
-<%= form_with url: "/trips/#{@trip.id}/users", method: :patch, local: true do |f| %>
+  <%= form_with url: "/trips/#{@trip.id}/users", method: :patch, local: true do |f| %>
 
 
-<% @users.each do |user| %>
-<% if user.id.to_i != @trip.host_id.to_i %>
-    <div id="check-box-<%=user.id%>">
+  <% @users.each do |user| %>
+  <% if user.id.to_i != @trip.host_id.to_i %>
+      <div id="check-box-<%=user.id%>">
 
-        <% if user.is_present?(@invited) %>
+          <% if user.is_present?(@invited) %>
 
-          <p> <%= "#{user.first_name}" %>
-              <%= check_box_tag "users[]", user.id, checked: true %></p>
-        <% else %>
-          <p> <%= "#{user.first_name}" %>
-              <%= check_box_tag "users[]", user.id%> </p>
-        <% end %>
-    </div>
-<% end %>
+            <p> <%= "#{user.first_name}" %>
+                <%= check_box_tag "users[]", user.id, checked: true %></p>
+          <% else %>
+            <p> <%= "#{user.first_name}" %>
+                <%= check_box_tag "users[]", user.id%> </p>
+          <% end %>
+      </div>
   <% end %>
-<%= f.submit "Update friends!" %>
-<% end %>
+    <% end %>
+  <%= f.submit "Update friends!" %>
+  <% end %>
+</div>
 
 
  
