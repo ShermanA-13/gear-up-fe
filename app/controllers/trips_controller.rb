@@ -4,6 +4,7 @@ class TripsController < ApplicationController
   end
 
   def show
+    @user = UserFacade.user(session[:user_id])
     @trip = TripFacade.get_all_trip_info(params[:id])
     @error = @trip if @trip.instance_of?(Error)
   end
@@ -47,6 +48,6 @@ class TripsController < ApplicationController
 
   def destroy
     TripFacade.destroy(params[:id])
-    redirect_to '/dashboard'
+    redirect_to "/dashboard"
   end
 end
