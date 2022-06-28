@@ -1,33 +1,33 @@
-require "rails_helper"
+require 'rails_helper'
 
-describe "Weather PORO" do
+describe 'Weather PORO' do
   before do
     weather_attr = {
-    id: 2107,
-    type: "weather info",
-    name: "Little Yosemite Valley",
-    weather: {
-      forecast: [
-        {
-          date: "2022-06-09",
-          weather: {
+      id: 2107,
+      type: 'weather info',
+      name: 'Little Yosemite Valley',
+      weather: {
+        forecast: [
+          {
+            date: '2022-06-09',
+            weather: {
               low_temp: 69.28,
               high_temp: 74.88,
               cloud_coverage: 95,
               feels_like: 67.32,
               humidity: 30,
               precipitation_probability: 0,
-              visibility: 10000,
-              weather: "Clouds",
-              weather_description: "Overcast Clouds",
-              weather_icon: "04d",
+              visibility: 10_000,
+              weather: 'Clouds',
+              weather_description: 'Overcast Clouds',
+              weather_icon: '04d',
               wind_direction: 256,
               wind_gust: 7.47,
               wind_speed: 6.76
             }
           },
           {
-            date: "2022-06-10",
+            date: '2022-06-10',
             weather: {
               low_temp: 57.94,
               high_temp: 81.45,
@@ -35,10 +35,10 @@ describe "Weather PORO" do
               feels_like: 55.98,
               humidity: 54,
               precipitation_probability: 0,
-              visibility: 10000,
-              weather: "Clouds",
-              weather_description: "Overcast Clouds",
-              weather_icon: "04n",
+              visibility: 10_000,
+              weather: 'Clouds',
+              weather_description: 'Overcast Clouds',
+              weather_icon: '04n',
               wind_direction: 84,
               wind_gust: 3.29,
               wind_speed: 3.8
@@ -53,13 +53,19 @@ describe "Weather PORO" do
     end
   end
 
-  it "exists and has attributes" do
+  it 'exists and has attributes' do
     expect(@weather).to be_an(Array)
     expect(@weather[1]).to be_a(Weather)
 
-    expect(@weather[0].date).to eq("2022-06-09")
+    expect(@weather[0].date).to eq('Thursday, 9 Jun, 2022')
     expect(@weather[0].low_temp).to eq(69.28)
     expect(@weather[0].high_temp).to eq(74.88)
     expect(@weather[0].cloud_coverage).to eq(95)
+  end
+
+  describe 'methods' do
+    it '.readable_date' do
+      expect(@weather[1].date).to eq('Friday,10 Jun, 2022')
+    end
   end
 end

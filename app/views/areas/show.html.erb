@@ -40,15 +40,15 @@
               <img src="http://openweathermap.org/img/w/<%= forecast.weather_icon %>.png" alt="Weather Icon">
             </h4>
             <hr>
-            <h5>High: <%= forecast.high_temp %>°</h5>
-            <h5>Low: <%= forecast.low_temp %>°</h5>
-            <h5>Feels like: <%= forecast.feels_like %>°</h5>
-            <p>Humidity: <%= forecast.humidity %>%</p>
-            <p>Cloud coverage: <%= forecast.cloud_coverage %></p>
+            <h5>High: <%= forecast.high_temp.round %>°</h5>
+            <h5>Low: <%= forecast.low_temp.round %>°</h5>
+            <h5>Feels like: <%= forecast.feels_like.round %>°</h5>
+            <p>Humidity: <%= forecast.humidity.round %>%</p>
+            <p>Cloud coverage: <%= forecast.cloud_coverage %>%</p>
             <p>Visibility: <%= forecast.visibility %></p>
             <p>Wind direction: <%= forecast.wind_direction %>°</p>
-            <p>Wind gust: <%= forecast.wind_gust %> MPH</p>
-            <p>Wind speed: <%= forecast.wind_speed %> MPH</p>
+            <p>Wind gust: <%= forecast.wind_gust.round %> MPH</p>
+            <p>Wind speed: <%= forecast.wind_speed.round %> MPH</p>
           </div>
       <% end %>
     </div>
