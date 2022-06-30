@@ -107,14 +107,24 @@
       <div class="area_container">
         <h3 style="text-align: left;"><u><b>Comments</u></b></h3>
 
-        <!-- @comment.user.pic -->
-        <!-- @comment.user.name -->
-        <!-- @comment.message -->
-        <!-- @comment.created_at -->
+          <% @trip.comments.each do |comment| %>
+            <div class="card comment_info" style="text-align: left;">
+              <a>
+              <img src="<%= comment.user_photo[0..-4] %>720-c" alt="user pic"> <b><%= comment.user_name %></b></a>
+              <br>
+              <%= comment.message %>
+              <hr>
+              <%= comment.created_at %><br>
+              </hr>
+              <% if session[:user_id] == @user.id %>
+                <%= link_to "Delete Comment", "/trips/#{@trip.id}/comments/#{comment.id}", method: :delete %>
+              <% end %>
+            </div>
+          <% end %>
 
         <% unless @error %>
             <% if session[:user_id] == @user.id %>
-              <%= form_with url: "trips/#{@trip.id}/#{@user.id}/comments", method: :post, local: true do |form| %>
+              <%= form_with url: "/trips/#{@trip.id}/#{@user.id}/comments", method: :post, local: true do |form| %>
                 <div class="comment_form_container">
                   <%= form.text_area :message, class: "text_area_container" %><br>
                   <%= form.submit "Add Comment" %>

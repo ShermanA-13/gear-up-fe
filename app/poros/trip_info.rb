@@ -1,5 +1,6 @@
 class TripInfo
-  attr_reader :id, :name, :start_date, :end_date, :host, :description, :lat, :long, :area, :state, :users, :items, :weather, :url, :host_id
+  attr_reader :id, :name, :start_date, :end_date, :host, :description, :lat, :long, :area, :state, :users, :items,
+              :comments, :weather, :url, :host_id
 
   def initialize(data)
     @id = data[:id]
@@ -16,11 +17,12 @@ class TripInfo
     @state = data[:state]
     @users = create_users(data[:users])
     @items = create_items(data[:items])
+    @comments = create_comments(data[:comments])
     @weather = if data[:weather].instance_of?(String)
-      data[:weather]
-    else
-      create_weather(data[:weather][:forecast])
-    end
+                 data[:weather]
+               else
+                 create_weather(data[:weather][:forecast])
+               end
   end
 
   def create_users(users)
@@ -47,6 +49,22 @@ class TripInfo
         }
       }
       Item.new(data)
+    end
+  end
+
+  def create_comments(comments)
+    comments.map do |comment|
+      data = {
+        id: comment[:id],
+        attributes: {
+          user_name: comment[:user_name],
+          user_id: comment[:user_id],
+          user_photo: comment[:user_photo],
+          created_at: comment[:created_at],
+          message: comment[:message]
+        }
+      }
+      Comment.new(data)
     end
   end
 

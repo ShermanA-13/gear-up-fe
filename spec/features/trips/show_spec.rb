@@ -58,12 +58,5 @@ describe 'Trip show page' do
       expect(page).to have_content('Comments')
       expect(page).to have_button('Add Comment')
     end
-
-    it 'can post comments' do
-      fill_in :message, with: 'Test comment.'
-      click_button 'Add Comment'
-
-      expect(page).to have_content 'Test comment.'
-    end
   end
 end

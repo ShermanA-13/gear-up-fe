@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'user service' do
-  before :each do
+  before do
     @data = {
       first_name: 'Don',
       last_name: 'Rickles',
