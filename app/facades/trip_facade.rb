@@ -63,4 +63,12 @@ class TripFacade
   def self.edit_items_on_trip(id, items, user)
     TripService.edit_items_on_trip(id, items, user)
   end
+
+  def self.add_comment_to_trip(trip, user, comment)
+    TripService.add_comment_to_trip(trip, user, comment)
+  end
+
+  def self.delete_comment_on_trip(trip, comment)
+    TripService.delete_comment_on_trip(trip, comment)
+  end
 end

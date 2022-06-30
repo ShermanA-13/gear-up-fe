@@ -17,6 +17,7 @@ RSpec.describe 'user facade' do
 
   it 'returns user data by user id', :vcr do
     user = UserFacade.user(@created_user.id)
+
     expect(user.first_name).to eq('Don')
     expect(user.last_name).to eq('Rickles')
     expect(user.email).to eq('ricklord@ricks.org')

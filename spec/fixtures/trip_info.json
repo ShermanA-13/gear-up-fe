@@ -14,11 +14,11 @@
     "state": "Wyoming",
     "users": [
         {
-          "id": 1,
-          "first_name": "Bonny",
-          "last_name": "Jowman",
-          "email": "ivebeentrapped@inthecomputer.org",
-          "user_photo": "https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c"
+            "id": 1,
+            "first_name": "Bonny",
+            "last_name": "Jowman",
+            "email": "ivebeentrapped@inthecomputer.org",
+            "user_photo": "https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c"
         },
         {
             "id": 2,
@@ -52,6 +52,15 @@
             "count": 8,
             "category": 2,
             "owner": "something"
+        }
+    ],
+    "comments": [
+        {
+            "user_name": "Bonny Jowman",
+            "user_id": 1,
+            "user_photo": "https://lh3.googleusercontent.com/a-/AOh14GjhYI5RIF0qkDbiUtgXjH59K7hoEZ1QpLykFsEh2g=s96-c",
+            "created_at": "2022-06-29T21:22:14.260Z",
+            "message": "This is awesome!"
         }
     ],
     "weather": {

@@ -1,5 +1,4 @@
 class TripItemsController < ApplicationController
-
   def new
     @trip_id = params[:trip_id]
     @items = ItemFacade.items(session[:user_id])

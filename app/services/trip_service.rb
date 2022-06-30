@@ -22,7 +22,7 @@ class TripService < BaseService
       start_date: parameters[:start_date].to_s,
       end_date: parameters[:end_date].to_s,
       area_id: parameters[:area_id].to_s
-    }.to_json, "Content-Type" => "application/json"
+    }.to_json, 'Content-Type' => 'application/json'
     get_json(response)
   end
 
@@ -32,7 +32,7 @@ class TripService < BaseService
       start_date: (params[:start_date]).to_s,
       end_date: (params[:end_date]).to_s,
       description: (params[:description]).to_s
-    }.to_json, "Content-Type" => "application/json"
+    }.to_json, 'Content-Type' => 'application/json'
     get_json(response)
   end
 
@@ -41,12 +41,25 @@ class TripService < BaseService
   end
 
   def self.add_items_to_trip(id, items)
-    response = conn.post "/api/v1/trips/#{id}/items", {items: items}.to_json, "Content-Type" => "application/json"
+    response = conn.post "/api/v1/trips/#{id}/items", { items: items }.to_json, 'Content-Type' => 'application/json'
     get_json(response)
   end
 
   def self.edit_items_on_trip(id, items, user)
-    response = conn.patch "/api/v1/trips/#{id}/items", {items: items, user_id: user}.to_json, "Content-Type" => "application/json"
+    response = conn.patch "/api/v1/trips/#{id}/items", { items: items, user_id: user }.to_json,
+                          'Content-Type' => 'application/json'
     get_json(response)
+  end
+
+  def self.add_comment_to_trip(trip, user, comment)
+    response = conn.post "/api/v1/trips/#{trip}/#{user}/comments", {
+      message: comment
+    }.to_json, 'Content-Type' => 'application/json'
+
+    get_json(response)
+  end
+
+  def self.delete_comment_on_trip(trip, comment)
+    response = conn.delete("/api/v1/trips/#{trip}/comments/#{comment}")
   end
 end
