@@ -116,7 +116,7 @@
               <hr>
               <%= comment.created_at %><br>
               </hr>
-              <% if session[:user_id] == @user.id %>
+              <% if comment.user_id == @user.id.to_i %>
                 <%= link_to "Delete Comment", "/trips/#{@trip.id}/comments/#{comment.id}", method: :delete %>
               <% end %>
             </div>
